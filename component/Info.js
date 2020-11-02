@@ -6,7 +6,7 @@ const Info = () => {
     return (
         <WebView
             source ={ {
-                uri: 'https://ru.reactjs.org',
+                uri: 'https://github.com/login/oauth/authorize',
                 }}
             style = { { marginTop : 20 }}/>
     );

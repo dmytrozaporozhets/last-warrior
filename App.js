@@ -19,7 +19,7 @@ const App = (navigation) => {
     return (
         <View style={styles.main}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Example">
+                <Stack.Navigator initialRouteName="Form">
                     <Stack.Screen
                         name="Home"
                         component={HomeScreen}
