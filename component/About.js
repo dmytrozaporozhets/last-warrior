@@ -11,7 +11,7 @@ const About = ({navigation}) => {
             <ImageBackground source={image} style={styles.image}>
                 <View style={styles.home}>
                     <Text style={styles.text}>
-                        About page
+                        About
                     </Text>
                 </View>
             </ImageBackground>
