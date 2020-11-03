@@ -9,7 +9,7 @@ const Account = ({navigation}) =>  {
             <View style={styles.main}>
                 <View style={styles.container}>
                     <Text style={styles.text}>
-                        Добро пожаловать на GitHub!
+                        Добро пожаловать!
                     </Text>
                 </View>
             </View>

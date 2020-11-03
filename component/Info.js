@@ -3,13 +3,17 @@ import {WebView} from "react-native-webview";
 
 
 const Info = () => {
+
     return (
-        <WebView
-            source ={ {
-                uri: 'https://github.com/login/oauth/authorize',
-                }}
-            style = { { marginTop : 20 }}/>
+        < WebView
+
+            source = { { uri :  'https://www.google.com/' } }
+            onNavigationStateChange = { ( navState ) => {
+                this . canGoBack  =  navState . canGoBack ;
+            } }
+        />
     );
 }
+
 
 export default Info;

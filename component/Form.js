@@ -1,6 +1,13 @@
-import React, {useState} from 'react'
-import {TextInput, View, Text, StyleSheet, ImageBackground, TouchableOpacity, Alert} from "react-native";
-import WebView from "react-native-webview";
+import React, {useCallback, useState} from 'react'
+import {
+    TextInput,
+    View,
+    Text,
+    StyleSheet,
+    ImageBackground,
+    TouchableOpacity,
+    Alert,
+} from "react-native";
 
 const image = { uri: "https://cdn.pixabay.com/photo/2020/10/23/12/07/beach-5678562_960_720.jpg" };
 
@@ -20,9 +27,7 @@ function Form({navigation}) {
         }
     }
 
-    const GitHub = () => {
-        setComeIn(() => {navigation.navigate('Info')})
-    }
+    const GitHub = () => navigation.navigate('ComeInOAuth')
 
     return (
         <View style={styles.main}>

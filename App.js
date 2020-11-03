@@ -11,10 +11,12 @@ import Info from "./component/Info";
 import Form from "./component/Form";
 import Account from "./component/page/Account";
 import Example from './component/page/Example'
+import Test from "./component/page/Test";
+import ComeInOAuth from "./component/page/ComeInOAuth";
 
 const Stack = createStackNavigator();
 
-const App = (navigation) => {
+const App = () => {
 
     return (
         <View style={styles.main}>
@@ -40,13 +42,16 @@ const App = (navigation) => {
                     />
                     <Stack.Screen
                         name="Display"
-                        component={Display} />
+                        component={Display}
+                    />
                     <Stack.Screen
                         name="Form"
-                        component={Form} />
+                        component={Form}
+                    />
                     <Stack.Screen
                         name="About"
-                        component={About} />
+                        component={About}
+                    />
                     <Stack.Screen
                         name="Info"
                         component={Info}
@@ -58,6 +63,14 @@ const App = (navigation) => {
                     <Stack.Screen
                         name="Example"
                         component={Example}
+                    />
+                    <Stack.Screen
+                        name="Test"
+                        component={Test}
+                    />
+                    <Stack.Screen
+                        name="ComeInOAuth"
+                        component={ComeInOAuth}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
