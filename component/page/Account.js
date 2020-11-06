@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, ImageBackground, StyleSheet, Button} from "react-native";
+import {View, Text, ImageBackground, StyleSheet} from "react-native";
 
 const image = {uri: 'https://cdn.pixabay.com/photo/2020/10/13/05/31/sunset-5650773_960_720.jpg'}
 
