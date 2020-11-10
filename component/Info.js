@@ -1,17 +1,15 @@
 import React from 'react'
-import WebView from "react-native-webview";
+import {Text, View} from "react-native-reanimated";
 
 
 const Info = () => {
 
     return (
-        < WebView
-
-            source = { { uri :  'https://www.google.com/' } }
-            onNavigationStateChange = { ( navState ) => {
-                this . canGoBack  =  navState . canGoBack ;
-            } }
-        />
+        <View>
+            <Text>
+                My info page
+            </Text>
+        </View>
     );
 }
 

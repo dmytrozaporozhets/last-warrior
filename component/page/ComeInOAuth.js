@@ -1,40 +1,54 @@
 import React from 'react'
 import {WebView} from "react-native-webview";
+import axios from 'axios';
 
-const  ComeInOAuth = () => {
+const ComeInOAuth = () => {
 
     const requestURL = 'https://github.com/login/oauth/authorize?' +
         'scope=user:email&' +
         'client_id=e7e0ddce3824fe141cac&' +
         'login=dimkazaporozhets@gmail.com&';
     const requestToken = 'https://github.com/login/oauth/access_token';
-    const clientId = 'e7e0ddce3824fe141cac&';
-    const clientSecret = '8ba8fcdf1cb180c40a71dc03d8409376574e4a5c';
+    const clientId = 'e7e0ddce3824fe141cac';
+    const clientSecret = '30bc446bee1112f5730012702b82f394fa17e6e3';
+    const requestTokenUrl = 'https://api.github.com/user';
 
     return (
         <WebView
             source ={ {
                 uri: requestURL }}
-            onNavigationStateChange={(navState) => {
-                console.log(navState.url)
+            onLoadStart={(syntheticEvent) => {
+                const {nativeEvent} = syntheticEvent
+                console.log(nativeEvent.url)
 
-
-                if (navState.url.startsWith('https://www.google.com/')) {
-                    const indexCode = navState.url.indexOf('=')
-                    const searchCode = navState.url.substr(indexCode+1,navState.url.length)
+                if (nativeEvent.url.startsWith('https://www.google.com/')) {
+                    const indexCode = nativeEvent.url.indexOf('=')
+                    const searchCode = nativeEvent.url.substr(indexCode + 1, nativeEvent.url.length)
                     console.log(searchCode)
-                }
+
+                    axios.post(requestToken,
+                        {
+                            client_id: clientId,
+                            client_secret: clientSecret,
+                            code: searchCode,
+
+                        }, {
+                            headers: {
+                                'Content-Type': 'application/json',
+                                Accept: 'application/json'
+                            }
+                        }).then( response => console.log (response.data))
+                        .catch(error => console.log(error))
 
 
-                const sendRequest = () => {
-                    return fetch(requestToken, {
-                        clientId: clientId,
-                        clientSecret: clientSecret,
-                        code: sessionCode,
-                    }).then( response => {
-                            console.log (response)
+                    axios.get(requestTokenUrl, {
+                        params: {
+                            access_token: accessToken,
                         }
-                    )}
+                    }).then(response => console.log(response.data))
+                        .catch(error => console.log(error))
+
+                }
             }}
         />
     );

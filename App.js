@@ -13,6 +13,7 @@ import Account from "./component/page/Account";
 import Example from './component/page/Example'
 import Test from "./component/page/Test";
 import ComeInOAuth from "./component/page/ComeInOAuth";
+import MyPage from "./component/page/MyPage";
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,7 @@ const App = () => {
     return (
         <View style={styles.main}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Form">
+                <Stack.Navigator initialRouteName="MyPage">
                     <Stack.Screen
                         name="Home"
                         component={HomeScreen}
@@ -71,6 +72,10 @@ const App = () => {
                     <Stack.Screen
                         name="ComeInOAuth"
                         component={ComeInOAuth}
+                    />
+                    <Stack.Screen
+                        name="MyPage"
+                        component={MyPage}
                     />
                 </Stack.Navigator>
             </NavigationContainer>

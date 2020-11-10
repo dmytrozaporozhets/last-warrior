@@ -1,9 +1,9 @@
 import React,{useState} from "react";
 import {FlatList, ImageBackground, StyleSheet, View} from "react-native";
-import Navbar from "../src/Navnar";
-import Header from "../src/Header";
-import AddNote from "../src/AddNote";
-import Note from "../src/Note";
+import Navbar from "./componentDisplay/Navnar";
+import Header from "./componentDisplay/Header";
+import AddNote from "./componentDisplay/AddNote";
+import Note from "./componentDisplay/Note";
 
 const image = { uri: "https://cdn.pixabay.com/photo/2020/06/12/08/33/mountain-5289671_960_720.jpg" };
 
