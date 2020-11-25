@@ -1,16 +1,11 @@
 import React, {useState} from 'react'
 import {View, Text, ImageBackground, StyleSheet, TouchableOpacity} from "react-native";
-import createStore from '../reduxComponent/createStore';
-import rootReducer from "../reduxComponent/rootReducer";
+import {increment, decrement, asyncIncrement} from '../../Redux/Display/actions';
+import { useSelector, useDispatch } from 'react-redux';
+import {SafeAreaView} from "react-native-safe-area-context";
 
-const store = createStore(rootReducer)
-
-
-
-
-
-const firstFon = require('../image/firstFon.jpg')
-const secondFon = require('../image/secondFon.jpg')
+const firstFon = require('../../component/image/firstFon.jpg')
+const secondFon = require('../../component/image/secondFon.jpg')
 
 const setColor = (backgroundColor) => {
     return {
@@ -18,29 +13,31 @@ const setColor = (backgroundColor) => {
     }
 }
 
-const MyPage = () =>  {
+const DisplayScreen = () =>  {
 
-    const [counter, setCounter] = useState(0)
     const [theme, setTheme] = useState(true)
-    const [disabled,setDisabled] = useState(false)
+
+    const state = useSelector(state => state);
+    const dispatch = useDispatch();
+    console.log(state);
+
+
 
     const addValue = () => {
-        setCounter(counter + 1)
+        dispatch(increment())
     }
 
     const subValue = () => {
-        setCounter(counter - 1)
+        dispatch(decrement())
     }
 
     const asyncValue = () => {
-        setTimeout(() => {
-            setCounter(counter+1)
-        },2000)
+        dispatch(asyncIncrement())
     }
 
     return (
         <ImageBackground source={ theme ? firstFon : secondFon} style={styles.image} >
-            <View style={styles.main}>
+            <SafeAreaView style={styles.main}>
                 <View style={styles.containerTheme}>
                     <TouchableOpacity
                         style={{...styles.buttonTheme,...setColor('pink')}}
@@ -48,6 +45,7 @@ const MyPage = () =>  {
                         onPress={()=>{
                             setTheme(!theme)
                         }}
+                        disabled={state.block.disabled}
                     >
                         <Text style={styles.textButtonTheme}>
                             Сменить тему
@@ -61,18 +59,20 @@ const MyPage = () =>  {
                 </View>
                 <View style={styles.container}>
                     <Text style={styles.textDisplay}>
-                        Счётчик: {counter}
+                        Счётчик: {state.counter}
                     </Text>
                 </View>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={{...styles.button,...setColor('blue')}}
-                                      onPress={addValue}>
+                                      onPress={addValue}
+                                      disabled={state.block.disabled}>
                         <Text style={styles.textButton}>
                             Добавить
                         </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{...styles.button,...setColor('red')}}
-                                      onPress={subValue}>
+                                      onPress={subValue}
+                                      disabled={state.block.disabled}>
                         <Text style={styles.textButton}>
                             Убрать
                         </Text>
@@ -85,7 +85,7 @@ const MyPage = () =>  {
                         </Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </SafeAreaView>
         </ImageBackground>
     );
 }
@@ -148,9 +148,10 @@ const styles = StyleSheet.create({
         color: 'black',
     },
     containerTheme: {
-        justifyContent: 'center',
-        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
         paddingTop: 10,
+        flexDirection: 'row',
     },
     textDisplay: {
         textAlign:'center',
@@ -162,5 +163,5 @@ const styles = StyleSheet.create({
     },
 })
 
-export default MyPage;
+export default DisplayScreen;
 

@@ -3,7 +3,7 @@ import {View, Text, ImageBackground, StyleSheet} from "react-native";
 
 const image = {uri: 'https://cdn.pixabay.com/photo/2020/10/13/05/31/sunset-5650773_960_720.jpg'}
 
-const Account = ({navigation}) =>  {
+const SignInScreen = ({navigation}) =>  {
     return (
         <ImageBackground source={image} style={styles.image}>
             <View style={styles.main}>
@@ -42,5 +42,5 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Account;
+export default SignInScreen;
 

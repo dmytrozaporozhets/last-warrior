@@ -1,6 +1,10 @@
 import React from 'react'
 import {WebView} from "react-native-webview";
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import {accessToken, hideLoader, showLoader} from "../../Redux/Form/actions";
+import {Loader} from "../../component/Loader";
+
 
 const ComeInOAuth = () => {
 
@@ -11,7 +15,16 @@ const ComeInOAuth = () => {
     const requestToken = 'https://github.com/login/oauth/access_token';
     const clientId = 'e7e0ddce3824fe141cac';
     const clientSecret = '30bc446bee1112f5730012702b82f394fa17e6e3';
-    const requestTokenUrl = 'https://api.github.com/user';
+
+    const state = useSelector(state => state);
+    const loading = useSelector(state => state.loading.loading)
+    const dispatch = useDispatch();
+
+    if (loading) {
+        return (
+            <Loader/>
+        )
+    }
 
     return (
         <WebView
@@ -31,23 +44,22 @@ const ComeInOAuth = () => {
                             client_id: clientId,
                             client_secret: clientSecret,
                             code: searchCode,
-
                         }, {
                             headers: {
                                 'Content-Type': 'application/json',
                                 Accept: 'application/json'
                             }
-                        }).then( response => console.log (response.data))
-                        .catch(error => console.log(error))
-
-
-                    axios.get(requestTokenUrl, {
-                        params: {
-                            access_token: accessToken,
                         }
-                    }).then(response => console.log(response.data))
-                        .catch(error => console.log(error))
-
+                    ).then(response => {
+                        dispatch(showLoader())
+                        setTimeout(() => {
+                            console.log(response.data);
+                            dispatch(accessToken(response.data))
+                            dispatch(hideLoader())
+                        },2000)
+                        }
+                    )
+                    .catch(error => console.log(error))
                 }
             }}
         />

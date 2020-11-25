@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import React, {useState} from 'react'
 import {
     TextInput,
     View,
@@ -8,20 +8,36 @@ import {
     TouchableOpacity,
     Alert,
 } from "react-native";
+import { useSelector, useDispatch } from 'react-redux';
+import {hideLoader, showLoader, signIn} from "../../Redux/Form/actions";
+import {Loader} from "../../component/Loader";
+
 
 const image = { uri: "https://cdn.pixabay.com/photo/2020/10/23/12/07/beach-5678562_960_720.jpg" };
 
-function Form({navigation}) {
+const FormScreen = ({navigation}) => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
-    const [comeIn, setComeIn] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    if (loading) {
+        return (
+            <Loader/>
+        )
+    }
+
+    const dispatch = useDispatch();
 
     const ComeIn = () => {
-        if (login==="dimkazaporozhets" || password===12345) {
-            setComeIn(() => {navigation.navigate('Account')})
+        if (login==='dimka' && password==='12345') {
+            setLoading(true)
+            setTimeout( () => {
+                dispatch(signIn())
+            setLoading(false)
+            },500)
         } else if (login==="" || password==="" ) {
-            Alert.alert ('Логин или пароль не могут быть пустыми')
+            Alert.alert ('Логин и пароль не могут быть пустыми')
         } else {
             Alert.alert ('Не верно указан логин или пароль')
         }
@@ -157,4 +173,4 @@ const styles = StyleSheet.create ({
     },
 })
 
-export default Form;
+export default FormScreen;

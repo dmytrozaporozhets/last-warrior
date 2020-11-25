@@ -1,17 +1,18 @@
 import React from "react";
 import {View, Text, StyleSheet, ImageBackground,} from 'react-native'
+import {SafeAreaView} from "react-native-safe-area-context";
 
 const image = { uri: "https://cdn.pixabay.com/photo/2020/10/22/19/26/rocks-5676982_960_720.jpg" };
 
 const ProfileScreen = ({navigation}) => {
     return (
-        <View style={styles.main}>
+        <SafeAreaView style={styles.main}>
             <ImageBackground source={image} style={styles.image}>
                 <View style={styles.component}>
                     <Text style={styles.text}> Welcome, Bro! </Text>
                 </View >
             </ImageBackground>
-        </View>
+        </SafeAreaView>
     );
 };
 

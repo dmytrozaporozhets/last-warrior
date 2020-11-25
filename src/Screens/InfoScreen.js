@@ -1,11 +1,13 @@
 import React,{useState} from "react";
 import {FlatList, ImageBackground, StyleSheet, View} from "react-native";
-import Navbar from "./componentDisplay/Navnar";
-import Header from "./componentDisplay/Header";
-import AddNote from "./componentDisplay/AddNote";
-import Note from "./componentDisplay/Note";
+import Navbar from "../../component/page/Practice/Navnar";
+import Header from "../../component/page/Practice/Header";
+import AddNote from "../../component/page/Practice/AddNote";
+import Note from "../../component/page/Practice/Note";
+import {SafeAreaView} from "react-native-safe-area-context";
 
 const image = { uri: "https://cdn.pixabay.com/photo/2020/06/12/08/33/mountain-5289671_960_720.jpg" };
+
 
 
 const myFirstMobileProject = () => {
@@ -26,8 +28,8 @@ const myFirstMobileProject = () => {
     }
 
     return (
-        <View style={styles.main}>
-            <ImageBackground source={image} style={styles.image}>
+        <ImageBackground source={image} style={styles.image}>
+            <SafeAreaView style={styles.main}>
                 <View style={styles.component}>
                     <Navbar title="React Native"/>
                     <View style={styles.container}>
@@ -42,8 +44,8 @@ const myFirstMobileProject = () => {
                         />
                     </View>
                 </View>
-            </ImageBackground>
-        </View>
+            </SafeAreaView>
+        </ImageBackground>
     )
 }
 
