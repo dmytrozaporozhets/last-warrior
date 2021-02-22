@@ -1,9 +1,0 @@
-export const CHANGE_COLOR_FON = 'CHANGE_COLOR_FON'
-
-export const CHANGE_COLOR_TEXT = 'CHANGE_COLOR_TEXT'
-
-export const CHANGE_THEME = 'CHANGE_THEME'
-
-export const CHANGE_WINDOWS = 'CHANGE_WINDOWS'
-
-export const ON_RESET = 'ON_RESET'
