@@ -10,8 +10,8 @@ import {increment, decrement, asyncIncrement} from '../redax/Display/actions';
 import {useSelector, useDispatch} from 'react-redux';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-const firstFon = require('../assets/images/firstFon.jpg');
-const secondFon = require('../assets/images/secondFon.jpg');
+const firstFon = require('../../assets/images/firstFon.jpg');
+const secondFon = require('../../assets/images/secondFon.jpg');
 
 const setColor = (backgroundColor) => {
   return {

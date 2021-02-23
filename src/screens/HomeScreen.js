@@ -16,7 +16,7 @@ import {
   PROFILE_SCREEN,
 } from './index';
 
-const fon = require('../assets/images/image2.jpg');
+const fon = require('../../assets/images/image2.jpg');
 const requestUserUrl = 'https://api.github.com/user';
 
 const HomeScreen = ({navigation}) => {
@@ -99,7 +99,12 @@ const styles = StyleSheet.create({
   main: {flex: 1},
   home: {flex: 1, alignItems: 'center'},
   image: {flex: 1, resizeMode: 'cover', justifyContent: 'center'},
-  text: {fontSize: 26, fontWeight: 'bold', textAlign: 'center', paddingTop: 50},
+  text: {
+    fontSize: 26,
+    textAlign: 'center',
+    paddingTop: 50,
+    fontFamily: 'Stick-Regular',
+  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -114,6 +119,8 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginHorizontal: 13,
     backgroundColor: 'lightgrey',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   textButton: {
     textAlign: 'center',
@@ -121,7 +128,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'Snufkin',
   },
 });
 

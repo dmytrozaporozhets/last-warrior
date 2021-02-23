@@ -27,11 +27,11 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator tabBarPosition={'bottom'}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="About" component={AboutScreen} />
-      <Tab.Screen name="Display" component={DisplayScreen} />
-      <Tab.Screen name="Info" component={InfoScreen} />
+      <Tab.Screen name={HOME_SCREEN} component={HomeScreen} />
+      <Tab.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
+      <Tab.Screen name={ABOUT_SCREEN} component={AboutScreen} />
+      <Tab.Screen name={DISPLAY_SCREEN} component={DisplayScreen} />
+      <Tab.Screen name={SCREEN_STACK} component={InfoScreen} />
     </Tab.Navigator>
   );
 }
@@ -43,7 +43,7 @@ const Navigation = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Form" headerMode="none">
-          {!authentication.token || !authentication.loggedIn ? (
+          {authentication.token || authentication.loggedIn ? (
             <>
               <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />
               <Stack.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
