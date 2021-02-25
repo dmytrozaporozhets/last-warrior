@@ -3,7 +3,7 @@ import {WebView} from 'react-native-webview';
 import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {accessToken, hideLoader, showLoader} from '../../redax/Form/actions';
-import {Loader} from '../../component/Loader';
+import {Loader} from '../../components/Loader';
 
 const ComeInOAuth = () => {
   const requestURL =

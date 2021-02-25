@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {hideLoader, showLoader, signIn} from '../redax/Form/actions';
-import {Loader} from '../component/Loader';
+import {Loader} from '../components/Loader';
 
 const image = {
   uri:

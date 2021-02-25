@@ -1,11 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  ImageBackground,
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {ImageBackground, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import axios from 'axios';
 import {useSelector} from 'react-redux';
@@ -15,6 +9,11 @@ import {
   INFO_SCREEN,
   PROFILE_SCREEN,
 } from './index';
+import styleGlobal from '../styling/styleGlobal';
+import {HomeScreenStyle} from '../styling/HomeScreen';
+import {Text} from '../components/Text';
+import {menu} from '../constants';
+import {Button} from '../components/Button';
 
 const fon = require('../../assets/images/image2.jpg');
 const requestUserUrl = 'https://api.github.com/user';
@@ -48,42 +47,29 @@ const HomeScreen = ({navigation}) => {
   }, []);
 
   return (
-    <ImageBackground source={fon} style={styles.image}>
-      <SafeAreaView style={styles.main}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate(PROFILE_SCREEN);
-            }}
-            style={styles.button}>
-            <View>
-              <Text style={styles.textButton}>Profile</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+    <ImageBackground source={fon} style={HomeScreenStyle.image}>
+      <SafeAreaView style={styleGlobal.flex}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Button
+            title="Profile"
+            onPress={() => navigation.navigate(PROFILE_SCREEN)}
+          />
+          <Button
+            title="Display"
             onPress={() => navigation.navigate(DISPLAY_SCREEN)}
-            style={styles.button}>
-            <View>
-              <Text style={styles.textButton}>Display</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+          />
+          <Button
+            title="About"
             onPress={() => navigation.navigate(ABOUT_SCREEN)}
-            style={styles.button}>
-            <View>
-              <Text style={styles.textButton}>About</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+          />
+          <Button
+            title="Info"
             onPress={() => navigation.navigate(INFO_SCREEN)}
-            style={styles.button}>
-            <View>
-              <Text style={styles.textButton}>Info</Text>
-            </View>
-          </TouchableOpacity>
+          />
         </View>
-        <View style={styles.home}>
-          <Text style={styles.text}>
+
+        <View style={HomeScreenStyle.home}>
+          <Text style={HomeScreenStyle.text}>
             {`Welcome, ${user?.name}!
                                 \nemail: ${user?.email}
                                 \nlogin: ${user?.login}
@@ -94,41 +80,5 @@ const HomeScreen = ({navigation}) => {
     </ImageBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  main: {flex: 1},
-  home: {flex: 1, alignItems: 'center'},
-  image: {flex: 1, resizeMode: 'cover', justifyContent: 'center'},
-  text: {
-    fontSize: 26,
-    textAlign: 'center',
-    paddingTop: 50,
-    fontFamily: 'Stick-Regular',
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  button: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 8,
-    width: 75,
-    height: 40,
-    marginTop: 10,
-    marginHorizontal: 13,
-    backgroundColor: 'lightgrey',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textButton: {
-    textAlign: 'center',
-    fontSize: 20,
-    marginTop: 5,
-    color: 'black',
-    fontWeight: 'bold',
-  },
-});
 
 export default HomeScreen;

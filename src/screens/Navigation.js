@@ -31,6 +31,7 @@ function MyTabs() {
       <Tab.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
       <Tab.Screen name={ABOUT_SCREEN} component={AboutScreen} />
       <Tab.Screen name={DISPLAY_SCREEN} component={DisplayScreen} />
+      <Stack.Screen name={INFO_SCREEN} component={InfoScreen} />
       <Tab.Screen name={SCREEN_STACK} component={InfoScreen} />
     </Tab.Navigator>
   );
@@ -43,7 +44,7 @@ const Navigation = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Form" headerMode="none">
-          {authentication.token || authentication.loggedIn ? (
+          {!authentication.token || !authentication.loggedIn ? (
             <>
               <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />
               <Stack.Screen name={PROFILE_SCREEN} component={ProfileScreen} />

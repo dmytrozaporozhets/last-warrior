@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {FlatList, ImageBackground, StyleSheet, View} from 'react-native';
-import Navbar from '../component/Navnar';
-import Header from '../component/Header';
-import AddNote from '../component/AddNote';
-import Note from '../component/Note';
+import Navbar from '../components/Navnar';
+import Header from '../components/Header';
+import AddNote from '../components/AddNote';
+import Note from '../components/Note';
 
 const image = {
   uri:
