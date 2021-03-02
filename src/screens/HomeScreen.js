@@ -1,18 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {ImageBackground, View} from 'react-native';
+import {ImageBackground, View, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import axios from 'axios';
 import {useSelector} from 'react-redux';
 import {
   ABOUT_SCREEN,
   DISPLAY_SCREEN,
+  EXAMPLE_SCREEN,
   INFO_SCREEN,
   PROFILE_SCREEN,
 } from './index';
 import styleGlobal from '../styling/styleGlobal';
 import {HomeScreenStyle} from '../styling/HomeScreen';
-import {Text} from '../components/Text';
-import {menu} from '../constants';
 import {Button} from '../components/Button';
 
 const fon = require('../../assets/images/image2.jpg');
@@ -49,11 +48,10 @@ const HomeScreen = ({navigation}) => {
   return (
     <ImageBackground source={fon} style={HomeScreenStyle.image}>
       <SafeAreaView style={styleGlobal.flex}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={{justifyContent: 'space-between'}}>
           <Button
             title="Profile"
             onPress={() => navigation.navigate(PROFILE_SCREEN)}
-
           />
           <Button
             title="Display"
@@ -66,6 +64,10 @@ const HomeScreen = ({navigation}) => {
           <Button
             title="Info"
             onPress={() => navigation.navigate(INFO_SCREEN)}
+          />
+          <Button
+            title="Example"
+            onPress={() => navigation.navigate(EXAMPLE_SCREEN)}
           />
         </View>
 

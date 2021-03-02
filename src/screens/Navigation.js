@@ -15,11 +15,13 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {
   ABOUT_SCREEN,
   DISPLAY_SCREEN,
+  EXAMPLE_SCREEN,
   HOME_SCREEN,
   INFO_SCREEN,
   PROFILE_SCREEN,
   SCREEN_STACK,
 } from './index';
+import {Example} from './Example';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,6 +55,7 @@ const Navigation = () => {
               <Stack.Screen name={INFO_SCREEN} component={InfoScreen} />
               <Stack.Screen name="SignIn" component={SignInScreen} />
               <Stack.Screen name={SCREEN_STACK} component={MyTabs} />
+              <Stack.Screen name={EXAMPLE_SCREEN} component={Example} />
             </>
           ) : (
             <>

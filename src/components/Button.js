@@ -1,6 +1,6 @@
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import {Text} from './Text';
+import {TouchableOpacity, Text} from 'react-native';
+// import {Text} from './Text';
 import PropTypes from 'prop-types';
 
 export const Button = ({title, onPress, style, disabled}) => {
