@@ -34,6 +34,7 @@ export const Example = ({navigation}) => {
           borderColor: 'blue',
           borderWidth: 1,
         }}
+        defaultValue
       />
     </View>
   );
