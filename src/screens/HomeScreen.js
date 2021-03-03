@@ -49,20 +49,9 @@ const HomeScreen = ({navigation}) => {
   return (
     <ImageBackground source={fon} style={HomeScreenStyle.image}>
       <SafeAreaView style={styleGlobal.flex}>
-        <View style={{justifyContent: 'space-between'}}>
-          <Button title="Profile" onPress={goTo(PROFILE_SCREEN)} />
-          <Button title="Display" onPress={goTo(DISPLAY_SCREEN)} />
-          <Button title="About" onPress={goTo(ABOUT_SCREEN)} />
-          <Button title="Tab" onPress={goTo(TAB_SCREEN)} />
-          <Button title="Example" onPress={goTo(EXAMPLE_SCREEN)} />
-        </View>
-
         <View style={HomeScreenStyle.home}>
           <Text style={HomeScreenStyle.text}>
-            {`Welcome, ${user?.name}!
-                                \nemail: ${user?.email}
-                                \nlogin: ${user?.login}
-                                \nurl: ${user?.url}`}
+            {`Welcome, ${user?.name}!\nemail: ${user?.email}\nlogin: ${user?.login}\nurl: ${user?.url}`}
           </Text>
         </View>
       </SafeAreaView>

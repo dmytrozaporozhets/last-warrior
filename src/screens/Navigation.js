@@ -38,12 +38,12 @@ export const MyTabs = () => {
               return <Icon name="home" size={size} color={color} />;
             case PROFILE_SCREEN:
               return <Icon name="user" size={size} color={color} />;
-            case ABOUT_SCREEN:
-              return <Icon name="user-ci" size={size} color={color} />;
+            case EXAMPLE_SCREEN:
+              return <Icon name="flag" size={size} color={color} />;
             case DISPLAY_SCREEN:
-              return <Icon name="user-circle" size={size} color={color} />;
+              return <Icon name="television" size={size} color={color} />;
             case TAB_SCREEN:
-              return <Icon name="arrow" size={size} color={color} />;
+              return <Icon name="list" size={size} color={color} />;
             default:
               return <Icon name="home" size={size} color={color} />;
           }
@@ -56,7 +56,7 @@ export const MyTabs = () => {
       }}>
       <Tab.Screen name={HOME_SCREEN} component={HomeScreen} />
       <Tab.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
-      <Tab.Screen name={ABOUT_SCREEN} component={AboutScreen} />
+      <Tab.Screen name={EXAMPLE_SCREEN} component={Example} />
       <Tab.Screen name={DISPLAY_SCREEN} component={DisplayScreen} />
       <Stack.Screen name={TAB_SCREEN} component={TabScreen} />
     </Tab.Navigator>
