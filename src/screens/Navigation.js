@@ -6,61 +6,84 @@ import {useSelector} from 'react-redux';
 import HomeScreen from './HomeScreen';
 import ProfileScreen from './ProfileScreen';
 import DisplayScreen from './DisplayScreen';
+import SignIn from './SignIn';
 import AboutScreen from './AboutScreen';
-import InfoScreen from './InfoScreen';
-import FormScreen from './FormScreen';
-import ComeInOAuth from './form/ComeInOAuth';
-import SignInScreen from './form/SignInScreen';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import ComeInOAuth from '../services/auth/ComeInOAuth';
 import {
   ABOUT_SCREEN,
   DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
   HOME_SCREEN,
-  INFO_SCREEN,
   PROFILE_SCREEN,
   SCREEN_STACK,
-} from './index';
+  SIGN_IN,
+  TAB_SCREEN,
+  AUTH,
+} from './constants';
 import {Example} from './Example';
+import {TabScreen} from './TabScreen';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+export const MyTabs = () => {
   return (
-    <Tab.Navigator tabBarPosition={'bottom'}>
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({color, size}) => {
+          switch (route.name) {
+            case HOME_SCREEN:
+              return <Icon name="home" size={size} color={color} />;
+            case PROFILE_SCREEN:
+              return <Icon name="user" size={size} color={color} />;
+            case ABOUT_SCREEN:
+              return <Icon name="user-ci" size={size} color={color} />;
+            case DISPLAY_SCREEN:
+              return <Icon name="user-circle" size={size} color={color} />;
+            case TAB_SCREEN:
+              return <Icon name="arrow" size={size} color={color} />;
+            default:
+              return <Icon name="home" size={size} color={color} />;
+          }
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: 'white',
+        inactiveTintColor: '#B5B5B5',
+        style: {backgroundColor: 'black', paddingHorizontal: 10},
+      }}>
       <Tab.Screen name={HOME_SCREEN} component={HomeScreen} />
       <Tab.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
       <Tab.Screen name={ABOUT_SCREEN} component={AboutScreen} />
       <Tab.Screen name={DISPLAY_SCREEN} component={DisplayScreen} />
-      <Stack.Screen name={INFO_SCREEN} component={InfoScreen} />
-      <Tab.Screen name={SCREEN_STACK} component={InfoScreen} />
+      <Stack.Screen name={TAB_SCREEN} component={TabScreen} />
     </Tab.Navigator>
   );
-}
+};
 
-const Navigation = () => {
-  const authentication = useSelector((state) => state.token);
+export const MainStackScreen = () => {
+  const auth = useSelector((state) => state.token);
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Form" headerMode="none">
-          {!authentication.token || !authentication.loggedIn ? (
+        <Stack.Navigator initialRouteName={SIGN_IN} headerMode="none">
+          {!auth.token || !auth.loggedIn ? (
             <>
+              <Stack.Screen name={SCREEN_STACK} component={MyTabs} />
               <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />
               <Stack.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
               <Stack.Screen name={DISPLAY_SCREEN} component={DisplayScreen} />
               <Stack.Screen name={ABOUT_SCREEN} component={AboutScreen} />
-              <Stack.Screen name={INFO_SCREEN} component={InfoScreen} />
-              <Stack.Screen name="SignIn" component={SignInScreen} />
-              <Stack.Screen name={SCREEN_STACK} component={MyTabs} />
+              <Stack.Screen name={TAB_SCREEN} component={TabScreen} />
               <Stack.Screen name={EXAMPLE_SCREEN} component={Example} />
             </>
           ) : (
             <>
-              <Stack.Screen name="Form" component={FormScreen} />
-              <Stack.Screen name="ComeInOAuth" component={ComeInOAuth} />
+              <Stack.Screen name={SIGN_IN} component={SignIn} />
+              <Stack.Screen name={AUTH} component={ComeInOAuth} />
             </>
           )}
         </Stack.Navigator>
@@ -68,5 +91,3 @@ const Navigation = () => {
     </SafeAreaProvider>
   );
 };
-
-export default Navigation;

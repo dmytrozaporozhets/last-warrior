@@ -9,15 +9,16 @@ import {
   Alert,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {hideLoader, showLoader, signIn} from '../redax/Form/actions';
+import {signIn} from '../redax/Form/actions';
 import {Loader} from '../components/Loader';
+import {AUTH} from './constants';
 
 const image = {
   uri:
     'https://cdn.pixabay.com/photo/2020/10/23/12/07/beach-5678562_960_720.jpg',
 };
 
-const FormScreen = ({navigation}) => {
+const SignIn = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ const FormScreen = ({navigation}) => {
     }
   };
 
-  const GitHub = () => navigation.navigate('ComeInOAuth');
+  const GitHub = () => navigation.navigate(AUTH);
 
   return (
     <View style={styles.main}>
@@ -168,4 +169,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FormScreen;
+export default SignIn;

@@ -3,7 +3,7 @@ import {
   DISPLAY_SCREEN,
   INFO_SCREEN,
   PROFILE_SCREEN,
-} from '../screens';
+} from '../screens/constants';
 
 export const menu = [
   {title: 'Profile', pathway: PROFILE_SCREEN, id: 1},

@@ -28,14 +28,6 @@ export const Example = ({navigation}) => {
           }}
         />
       </View>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: 'blue',
-          borderWidth: 1,
-        }}
-        defaultValue
-      />
     </View>
   );
 };

@@ -16,6 +16,7 @@ import {
 } from '../redax/About/actionsAbout';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
+
 const image = {
   uri:
     'https://cdn.pixabay.com/photo/2020/10/20/14/49/bridge-5670640_960_720.jpg',

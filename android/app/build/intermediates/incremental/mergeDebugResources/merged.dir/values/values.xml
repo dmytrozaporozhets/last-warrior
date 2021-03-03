@@ -1857,7 +1857,7 @@
 
         <!-- Toolbar styles -->
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Index</item>
 
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>
@@ -2055,7 +2055,7 @@
 
         <!-- Toolbar styles -->
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Index</item>
 
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>
@@ -2496,7 +2496,7 @@
         <item name="android:paddingRight">8dp</item>
     </style>
     <style name="Base.Widget.AppCompat.Toolbar" parent="Base.V7.Widget.AppCompat.Toolbar"/>
-    <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget">
+    <style name="Base.Widget.AppCompat.Toolbar.Button.Index" parent="android:Widget">
         <item name="android:background">?attr/controlBackground</item>
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
@@ -3678,7 +3678,7 @@
     <style name="Widget.AppCompat.TextView" parent="Base.Widget.AppCompat.TextView"/>
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
-    <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <style name="Widget.AppCompat.Toolbar.Button.Index" parent="Base.Widget.AppCompat.Toolbar.Button.Index"/>
     <style name="Widget.Compat.NotificationActionContainer" parent=""/>
     <style name="Widget.Compat.NotificationActionText" parent=""/>
     <style name="Widget.Design.AppBarLayout" parent="android:Widget">
@@ -4421,16 +4421,16 @@
         <attr format="dimension" name="itemPadding"/>
         <!-- Set true to hide the action bar on a vertical nested scroll of content. -->
         <attr format="boolean" name="hideOnContentScroll"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetStart"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetEnd"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetLeft"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetRight"/>
         <!-- Minimum inset for content views within a bar when a navigation button

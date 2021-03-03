@@ -488,7 +488,7 @@
         <item name="android:overlapAnchor">true</item>
     </style><style name="Base.Widget.AppCompat.ProgressBar" parent="android:Widget.Material.ProgressBar">
     </style><style name="Base.Widget.AppCompat.ProgressBar.Horizontal" parent="android:Widget.Material.ProgressBar.Horizontal">
-    </style><style name="Base.Widget.AppCompat.RatingBar" parent="android:Widget.Material.RatingBar"/><style name="Base.Widget.AppCompat.SeekBar" parent="android:Widget.Material.SeekBar"/><style name="Base.Widget.AppCompat.Spinner" parent="android:Widget.Material.Spinner"/><style name="Base.Widget.AppCompat.TextView" parent="android:Widget.Material.TextView"/><style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="android:Widget.Material.TextView.SpinnerItem"/><style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget.Material.Toolbar.Button.Navigation">
+    </style><style name="Base.Widget.AppCompat.RatingBar" parent="android:Widget.Material.RatingBar"/><style name="Base.Widget.AppCompat.SeekBar" parent="android:Widget.Material.SeekBar"/><style name="Base.Widget.AppCompat.Spinner" parent="android:Widget.Material.Spinner"/><style name="Base.Widget.AppCompat.TextView" parent="android:Widget.Material.TextView"/><style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="android:Widget.Material.TextView.SpinnerItem"/><style name="Base.Widget.AppCompat.Toolbar.Button.Index" parent="android:Widget.Material.Toolbar.Button.Index">
     </style><style name="Platform.AppCompat" parent="Platform.V21.AppCompat"/><style name="Platform.AppCompat.Light" parent="Platform.V21.AppCompat.Light"/><style name="Platform.ThemeOverlay.AppCompat" parent="">
         
         <item name="android:colorPrimary">?attr/colorPrimary</item>
@@ -889,7 +889,7 @@
 
         
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Index</item>
 
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>
@@ -1084,7 +1084,7 @@
 
         
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Index</item>
 
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>
@@ -1461,7 +1461,7 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem</item>
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
-    </style><style name="Base.Widget.AppCompat.Toolbar" parent="Base.V7.Widget.AppCompat.Toolbar"/><style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget">
+    </style><style name="Base.Widget.AppCompat.Toolbar" parent="Base.V7.Widget.AppCompat.Toolbar"/><style name="Base.Widget.AppCompat.Toolbar.Button.Index" parent="android:Widget">
         <item name="android:background">?attr/controlBackground</item>
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
@@ -1701,7 +1701,7 @@
     </style><style name="Widget.AppCompat.PopupWindow" parent="Base.Widget.AppCompat.PopupWindow">
     </style><style name="Widget.AppCompat.ProgressBar" parent="Base.Widget.AppCompat.ProgressBar">
     </style><style name="Widget.AppCompat.ProgressBar.Horizontal" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
-    </style><style name="Widget.AppCompat.RatingBar" parent="Base.Widget.AppCompat.RatingBar"/><style name="Widget.AppCompat.RatingBar.Indicator" parent="Base.Widget.AppCompat.RatingBar.Indicator"/><style name="Widget.AppCompat.RatingBar.Small" parent="Base.Widget.AppCompat.RatingBar.Small"/><style name="Widget.AppCompat.SearchView" parent="Base.Widget.AppCompat.SearchView"/><style name="Widget.AppCompat.SearchView.ActionBar" parent="Base.Widget.AppCompat.SearchView.ActionBar"/><style name="Widget.AppCompat.SeekBar" parent="Base.Widget.AppCompat.SeekBar"/><style name="Widget.AppCompat.SeekBar.Discrete" parent="Base.Widget.AppCompat.SeekBar.Discrete"/><style name="Widget.AppCompat.Spinner" parent="Base.Widget.AppCompat.Spinner"/><style name="Widget.AppCompat.Spinner.DropDown"/><style name="Widget.AppCompat.Spinner.DropDown.ActionBar"/><style name="Widget.AppCompat.Spinner.Underlined" parent="Base.Widget.AppCompat.Spinner.Underlined"/><style name="Widget.AppCompat.TextView" parent="Base.Widget.AppCompat.TextView"/><style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/><style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/><style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/><declare-styleable name="ActionBar">
+    </style><style name="Widget.AppCompat.RatingBar" parent="Base.Widget.AppCompat.RatingBar"/><style name="Widget.AppCompat.RatingBar.Indicator" parent="Base.Widget.AppCompat.RatingBar.Indicator"/><style name="Widget.AppCompat.RatingBar.Small" parent="Base.Widget.AppCompat.RatingBar.Small"/><style name="Widget.AppCompat.SearchView" parent="Base.Widget.AppCompat.SearchView"/><style name="Widget.AppCompat.SearchView.ActionBar" parent="Base.Widget.AppCompat.SearchView.ActionBar"/><style name="Widget.AppCompat.SeekBar" parent="Base.Widget.AppCompat.SeekBar"/><style name="Widget.AppCompat.SeekBar.Discrete" parent="Base.Widget.AppCompat.SeekBar.Discrete"/><style name="Widget.AppCompat.Spinner" parent="Base.Widget.AppCompat.Spinner"/><style name="Widget.AppCompat.Spinner.DropDown"/><style name="Widget.AppCompat.Spinner.DropDown.ActionBar"/><style name="Widget.AppCompat.Spinner.Underlined" parent="Base.Widget.AppCompat.Spinner.Underlined"/><style name="Widget.AppCompat.TextView" parent="Base.Widget.AppCompat.TextView"/><style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/><style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/><style name="Widget.AppCompat.Toolbar.Button.Index" parent="Base.Widget.AppCompat.Toolbar.Button.Index"/><declare-styleable name="ActionBar">
         
         <attr name="navigationMode">
             

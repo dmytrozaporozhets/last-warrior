@@ -1654,7 +1654,7 @@ public final class R {
      */
     public static final int contentDescription=0x7f0300b5;
     /**
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1674,7 +1674,7 @@ public final class R {
      */
     public static final int contentInsetEndWithActions=0x7f0300b7;
     /**
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1684,7 +1684,7 @@ public final class R {
      */
     public static final int contentInsetLeft=0x7f0300b8;
     /**
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -1694,7 +1694,7 @@ public final class R {
      */
     public static final int contentInsetRight=0x7f0300b9;
     /**
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      * <p>May be a dimension value, which is a floating point number appended with a
      * unit such as "<code>14.5sp</code>".
@@ -7924,7 +7924,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7954,7 +7954,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7969,7 +7969,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -7984,7 +7984,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -22397,7 +22397,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -22427,7 +22427,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -22442,7 +22442,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -22457,7 +22457,7 @@ public final class R {
     /**
      * <p>
      * @attr description
-     * Minimum inset for content views within a bar. Navigation buttons and
+     * Minimum inset for content views within a bar. Index buttons and
      * menu views are excepted. Only valid for some themes and configurations.
      *
      * <p>May be a dimension value, which is a floating point number appended with a

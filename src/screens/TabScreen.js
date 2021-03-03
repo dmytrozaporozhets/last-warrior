@@ -1,17 +1,13 @@
 import React, {useState} from 'react';
-import {FlatList, ImageBackground, StyleSheet, View} from 'react-native';
+import {FlatList, ImageBackground, View} from 'react-native';
 import Navbar from '../components/Navnar';
-import Header from '../components/Header';
 import AddNote from '../components/AddNote';
 import Note from '../components/Note';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {TabScreenStyle} from '../styling/screens/TabScreen';
+import {tabScreen} from '../../assets/link';
 
-const image = {
-  uri:
-    'https://cdn.pixabay.com/photo/2020/06/12/08/33/mountain-5289671_960_720.jpg',
-};
-
-const myFirstMobileProject = () => {
+export const TabScreen = () => {
   const [notes, setNotes] = useState([]);
 
   const addNote = (title) => {
@@ -29,13 +25,12 @@ const myFirstMobileProject = () => {
   };
 
   return (
-    <ImageBackground source={image} style={styles.image}>
-      <SafeAreaView style={styles.main}>
-        <View style={styles.component}>
+    <ImageBackground source={tabScreen} style={TabScreenStyle.image}>
+      <SafeAreaView style={TabScreenStyle.main}>
+        <View style={TabScreenStyle.component}>
           <Navbar title="React Native" />
-          <View style={styles.container}>
-            <Header />
-            <View style={styles.container} />
+          <View style={TabScreenStyle.container}>
+            <View style={TabScreenStyle.container} />
             <AddNote onSubmit={addNote} />
             <FlatList
               keyExractor={(item) => item.id.toString()}
@@ -50,26 +45,3 @@ const myFirstMobileProject = () => {
     </ImageBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  component: {
-    flex: 1,
-    paddingTop: 50,
-  },
-  container: {
-    paddingHorizontal: 30,
-    paddingVertical: 20,
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-    margin: -10,
-  },
-});
-
-export default myFirstMobileProject;

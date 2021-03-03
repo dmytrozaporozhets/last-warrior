@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {HOME_SCREEN} from './constants';
 
 const image = {
   uri:
@@ -21,7 +22,7 @@ const ProfileScreen = ({navigation}) => {
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('SignIn');
+              navigation.navigate(HOME_SCREEN);
             }}
             style={styles.button}>
             <View>

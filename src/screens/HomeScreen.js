@@ -7,11 +7,11 @@ import {
   ABOUT_SCREEN,
   DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
-  INFO_SCREEN,
   PROFILE_SCREEN,
-} from './index';
+  TAB_SCREEN,
+} from './constants';
 import styleGlobal from '../styling/styleGlobal';
-import {HomeScreenStyle} from '../styling/HomeScreen';
+import {HomeScreenStyle} from '../styling/screens/HomeScreen';
 import {Button} from '../components/Button';
 
 const fon = require('../../assets/images/image2.jpg');
@@ -19,6 +19,7 @@ const requestUserUrl = 'https://api.github.com/user';
 
 const HomeScreen = ({navigation}) => {
   const [user, setUser] = useState(null);
+  const goTo = (route) => () => navigation.navigate(route);
 
   const userData = (user) => {
     setUser(user);
@@ -49,26 +50,11 @@ const HomeScreen = ({navigation}) => {
     <ImageBackground source={fon} style={HomeScreenStyle.image}>
       <SafeAreaView style={styleGlobal.flex}>
         <View style={{justifyContent: 'space-between'}}>
-          <Button
-            title="Profile"
-            onPress={() => navigation.navigate(PROFILE_SCREEN)}
-          />
-          <Button
-            title="Display"
-            onPress={() => navigation.navigate(DISPLAY_SCREEN)}
-          />
-          <Button
-            title="About"
-            onPress={() => navigation.navigate(ABOUT_SCREEN)}
-          />
-          <Button
-            title="Info"
-            onPress={() => navigation.navigate(INFO_SCREEN)}
-          />
-          <Button
-            title="Example"
-            onPress={() => navigation.navigate(EXAMPLE_SCREEN)}
-          />
+          <Button title="Profile" onPress={goTo(PROFILE_SCREEN)} />
+          <Button title="Display" onPress={goTo(DISPLAY_SCREEN)} />
+          <Button title="About" onPress={goTo(ABOUT_SCREEN)} />
+          <Button title="Tab" onPress={goTo(TAB_SCREEN)} />
+          <Button title="Example" onPress={goTo(EXAMPLE_SCREEN)} />
         </View>
 
         <View style={HomeScreenStyle.home}>

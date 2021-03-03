@@ -1,62 +1,58 @@
 import React from 'react';
-import {
-  ABOUT_SCREEN,
-  DISPLAY_SCREEN,
-  INFO_SCREEN,
-  PROFILE_SCREEN,
-} from '../screens';
-import {SafeAreaView, TouchableOpacity, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {View, Text, TouchableOpacity} from 'react-native';
 
-const MenuTypes = {
-  Profile: {id: 0},
-  Display: {id: 1},
-  About: {id: 2},
-  Info: {id: 3},
-};
+export const BottomBar = ({state, descriptors, navigation}) => {
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
 
-const getIconView = (icon, selected) => {
-  return <Icon name={icon} size={32} fill={selected ? '#282828' : '#959595'} />;
-};
+  if (focusedOptions.tabBarVisible === false) {
+    return null;
+  }
 
-const menuItems = [
-  {
-    id: MenuTypes.Profile,
-    routeName: PROFILE_SCREEN,
-    title: 'Profile',
-    getIcon: (icon, selected) => getIconView(icon, selected),
-  },
-];
-
-export const BottomNavigationBar = () => {
   return (
-    <SafeAreaView>
-      <View
-        style={{
-          flexDirection: 'row',
-          height: 80,
-          borderTopWidth: 1,
-          borderColor: '#C4C4C4',
-        }}>
-        {menuItems.map((item) => {
-          const selected = selectedMenu === item.routeName;
-          return (
-            <TouchableOpacity
-              key={item.id}
-              style={BottomNavigationBarStyle.buttonContainer}
-              onPress={this.navigate.bind(this, item.routeName)}>
-              {item.getIcon(selected)}
-              <Text
-                style={[
-                  BottomNavigationBarStyle.buttonText,
-                  selected ? {color: '#282828'} : {},
-                ]}>
-                {item.title}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-    </SafeAreaView>
+    <View style={{flex: 1, flexDirection: 'row', backgroundColor: 'red'}}>
+      {state.routes.map((route, index) => {
+        const {options} = descriptors[route.key];
+        const label =
+          options.tabBarLabel !== undefined
+            ? options.tabBarLabel
+            : options.title !== undefined
+            ? options.title
+            : route.name;
+
+        const isFocused = state.index === index;
+
+        const onPress = () => {
+          const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+            canPreventDefault: true,
+          });
+
+          if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate(route.name);
+          }
+        };
+
+        const onLongPress = () => {
+          navigation.emit({
+            type: 'tabLongPress',
+            target: route.key,
+          });
+        };
+
+        return (
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityState={isFocused ? {selected: true} : {}}
+            accessibilityLabel={options.tabBarAccessibilityLabel}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            style={{flex: 1}}>
+            <Text style={{color: isFocused ? '#673ab7' : '#222'}}>{label}</Text>
+          </TouchableOpacity>
+        );
+      })}
+    </View>
   );
 };

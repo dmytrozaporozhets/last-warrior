@@ -33,7 +33,6 @@ const myFirstMobileProject = () => {
         <View style={styles.component}>
           <Navbar title="React Native" />
           <View style={styles.container}>
-            <Header />
             <View style={styles.container} />
             <AddNote onSubmit={addNote} />
             <FlatList
