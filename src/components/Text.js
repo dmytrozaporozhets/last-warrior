@@ -28,10 +28,10 @@ export const Text = (props) => {
         style,
         oldFontSize && {fontSize: oldFontSize * coeficient},
         oldLineHeight && {lineHeight: oldLineHeight * coeficient},
-        // {fontFamily: 'SourceCodePro-Regular'},
-        // bold && {fontFamily: 'SourceCodePro-Bold'},
-        // semiBold && {fontFamily: 'SourceCodePro-SemiBold'},
-        // italic && {fontFamily: 'SourceCodePro-Italic'},
+        {fontFamily: 'SourceCodePro-Regular'},
+        bold && {fontFamily: 'SourceCodePro-Bold'},
+        semiBold && {fontFamily: 'SourceCodePro-SemiBold'},
+        italic && {fontFamily: 'SourceCodePro-Italic'},
         hyperlinksColor && hyperlinkColor,
       ]}
       onPress={onPress}

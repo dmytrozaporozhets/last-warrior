@@ -17,7 +17,7 @@ export const Button = ({title, onPress, style, disabled}) => {
           borderRadius: 7,
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: 'steelblue',
+          backgroundColor: 'black',
           borderColor: 'black',
         },
         style,
@@ -26,7 +26,7 @@ export const Button = ({title, onPress, style, disabled}) => {
         style={{
           textAlign: 'center',
           fontSize: 18,
-          color: 'black',
+          color: 'white',
         }}
         bold>
         {title}

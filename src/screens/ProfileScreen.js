@@ -1,68 +1,53 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
-} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text, ImageBackground} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {HOME_SCREEN} from './constants';
+import {ProfileScreenStyle} from '../styling/screens/PtofileScreen';
+import {useSelector} from 'react-redux';
+import axios from 'axios';
+import {profileScreen} from '../../assets/link/image';
+import styleGlobal from '../styling/styleGlobal';
 
-const image = {
-  uri:
-    'https://cdn.pixabay.com/photo/2020/10/22/19/26/rocks-5676982_960_720.jpg',
-};
+const requestUserUrl = 'https://api.github.com/user';
 
 const ProfileScreen = ({navigation}) => {
+  const [user, setUser] = useState(null);
+  const goTo = (route) => () => navigation.navigate(route);
+  // const user = useSelector(state => state.token.user);
+  // const dispatch = useDispatch();
+
+  const userData = (user) => {
+    setUser(user);
+  };
+  console.log(user);
+
+  useEffect(() => {
+    axios
+      .get(requestUserUrl, {
+        headers: {
+          Authorization: `token ${token}`,
+          Accept: 'application/json',
+        },
+      })
+      .then((response) => {
+        // dispatch(userDataResponse(response.data))
+        userData(response.data);
+        // console.log(response.data)
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  const token = useSelector((state) => state.token.token);
   return (
-    <ImageBackground source={image} style={styles.image}>
-      <SafeAreaView style={styles.main}>
-        <Text style={styles.text}> Welcome, Bro! </Text>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate(HOME_SCREEN);
-            }}
-            style={styles.button}>
-            <View>
-              <Text style={styles.textButton}>Sign In</Text>
-            </View>
-          </TouchableOpacity>
+    <ImageBackground source={profileScreen} style={styleGlobal.flex}>
+      <SafeAreaView style={styleGlobal.flex}>
+        <View style={ProfileScreenStyle.home}>
+          <Text style={ProfileScreenStyle.text}>
+            {`Welcome, ${user?.name}!\nemail: ${user?.email}\nlogin: ${user?.login}\nurl: ${user?.url}`}
+          </Text>
         </View>
       </SafeAreaView>
     </ImageBackground>
   );
 };
-
-const styles = StyleSheet.create({
-  main: {flex: 1},
-  component: {flex: 1, paddingTop: 50},
-  container: {paddingHorizontal: 30, paddingVertical: 20},
-  image: {flex: 1, resizeMode: 'cover', justifyContent: 'center', margin: -10},
-  text: {textAlign: 'center', fontSize: 20, fontWeight: 'bold'},
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  button: {
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 8,
-    width: 75,
-    height: 40,
-    marginTop: 10,
-    marginHorizontal: 13,
-    backgroundColor: 'sandybrown',
-  },
-  textButton: {
-    textAlign: 'center',
-    fontSize: 20,
-    marginTop: 5,
-    color: 'black',
-    fontWeight: 'bold',
-  },
-});
 
 export default ProfileScreen;

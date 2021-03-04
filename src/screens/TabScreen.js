@@ -5,7 +5,7 @@ import AddNote from '../components/AddNote';
 import Note from '../components/Note';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TabScreenStyle} from '../styling/screens/TabScreen';
-import {tabScreen} from '../../assets/link';
+import {tabScreen} from '../../assets/link/image';
 
 export const TabScreen = () => {
   const [notes, setNotes] = useState([]);
