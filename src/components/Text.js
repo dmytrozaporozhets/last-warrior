@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const standartWidth = 414;
 
-export const Text = (props) => {
+const Text = (props) => {
   const {
     children,
     bold,
@@ -41,13 +41,14 @@ export const Text = (props) => {
   );
 };
 
+export default Text;
+
 Text.defaultProps = {
   style: [],
   bold: false,
   italic: false,
   semiBold: false,
   hyperlinksColor: false,
-  onPress: () => null,
 };
 
 Text.propTypes = {

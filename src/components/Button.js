@@ -1,9 +1,9 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
-// import {Text} from './Text';
+import {TouchableOpacity} from 'react-native';
+import {Text} from '../components/index';
 import PropTypes from 'prop-types';
 
-export const Button = ({title, onPress, style, disabled}) => {
+const Button = ({title, onPress, style, disabled}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -34,6 +34,8 @@ export const Button = ({title, onPress, style, disabled}) => {
     </TouchableOpacity>
   );
 };
+
+export default Button;
 
 Button.defaultProps = {
   disabled: false,

@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {View, ImageBackground} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {ProfileScreenStyle} from '../styling/screens/PtofileScreen';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
 import {profileScreen} from '../../assets/link/image';
-import styleGlobal from '../styling/styleGlobal';
+import {UserCard} from '../components/index';
+import {sg} from '../styling';
 
 const requestUserUrl = 'https://api.github.com/user';
 
@@ -38,12 +39,16 @@ const ProfileScreen = ({navigation}) => {
 
   const token = useSelector((state) => state.token.token);
   return (
-    <ImageBackground source={profileScreen} style={styleGlobal.flex}>
-      <SafeAreaView style={styleGlobal.flex}>
+    <ImageBackground source={profileScreen} style={sg.flex}>
+      <SafeAreaView style={sg.flex}>
         <View style={ProfileScreenStyle.home}>
-          <Text style={ProfileScreenStyle.text}>
-            {`Welcome, ${user?.name}!\nemail: ${user?.email}\nlogin: ${user?.login}\nurl: ${user?.url}`}
-          </Text>
+          <UserCard
+            user={user?.name}
+            email={user?.email}
+            login={user?.login}
+            url={user?.url}
+            style={[sg.mV10, sg.mT20]}
+          />
         </View>
       </SafeAreaView>
     </ImageBackground>

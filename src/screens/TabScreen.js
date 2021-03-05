@@ -7,7 +7,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {TabScreenStyle} from '../styling/screens/TabScreen';
 import {tabScreen} from '../../assets/link/image';
 
-export const TabScreen = () => {
+const TabScreen = () => {
   const [notes, setNotes] = useState([]);
 
   const addNote = (title) => {
@@ -45,3 +45,5 @@ export const TabScreen = () => {
     </ImageBackground>
   );
 };
+
+export default TabScreen;

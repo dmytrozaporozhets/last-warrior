@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, Image, TextInput} from 'react-native';
-import {Button} from '../components/Button';
+import {View, Image} from 'react-native';
+import {Text, Button} from '../components/index';
 
-export const Example = ({navigation}) => {
+const Example = ({navigation}) => {
   const onBack = () => navigation.goBack();
   return (
     <View
@@ -31,3 +31,5 @@ export const Example = ({navigation}) => {
     </View>
   );
 };
+
+export default Example;

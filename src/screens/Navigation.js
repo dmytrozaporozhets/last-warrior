@@ -21,8 +21,7 @@ import {
   TAB_SCREEN,
   AUTH,
 } from './constants';
-import {Example} from './Example';
-import {TabScreen} from './TabScreen';
+import {Example, TabScreen} from './index';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator();
@@ -70,7 +69,7 @@ export const MainStackScreen = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName={SIGN_IN} headerMode="none">
-          {!auth.token || !auth.loggedIn ? (
+          {auth.token || auth.loggedIn ? (
             <>
               <Stack.Screen name={SCREEN_STACK} component={MyTabs} />
               <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />

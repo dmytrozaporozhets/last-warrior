@@ -3,7 +3,7 @@ import {ImageBackground, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import styleGlobal from '../styling/styleGlobal';
 import {HomeScreenStyle} from '../styling/screens/HomeScreen';
-import {Text} from '../components/Text';
+import {Text} from '../components/index';
 
 const fon = require('../../assets/images/image2.jpg');
 
