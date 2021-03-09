@@ -3,15 +3,17 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
-import HomeScreen from './HomeScreen';
-import ProfileScreen from './ProfileScreen';
-import DisplayScreen from './DisplayScreen';
-import SignIn from './SignIn';
-import AboutScreen from './AboutScreen';
+import {
+  SignIn,
+  ProfileScreen,
+  DisplayScreen,
+  HomeScreen,
+  Example,
+  TabScreen,
+} from './index';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
 import {
-  ABOUT_SCREEN,
   DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
   HOME_SCREEN,
@@ -21,7 +23,6 @@ import {
   TAB_SCREEN,
   AUTH,
 } from './constants';
-import {Example, TabScreen} from './index';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator();
@@ -69,13 +70,12 @@ export const MainStackScreen = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName={SIGN_IN} headerMode="none">
-          {auth.token || auth.loggedIn ? (
+          {!auth.token || !auth.loggedIn ? (
             <>
               <Stack.Screen name={SCREEN_STACK} component={MyTabs} />
               <Stack.Screen name={HOME_SCREEN} component={HomeScreen} />
               <Stack.Screen name={PROFILE_SCREEN} component={ProfileScreen} />
               <Stack.Screen name={DISPLAY_SCREEN} component={DisplayScreen} />
-              <Stack.Screen name={ABOUT_SCREEN} component={AboutScreen} />
               <Stack.Screen name={TAB_SCREEN} component={TabScreen} />
               <Stack.Screen name={EXAMPLE_SCREEN} component={Example} />
             </>

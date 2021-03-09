@@ -9,14 +9,10 @@ import {
   Alert,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {signIn} from '../redax/Form/actions';
-import {Loader} from '../components/Loader';
+import {signIn} from '../redax/auth/actions';
+import {Spinner} from '../components/index';
 import {AUTH} from './constants';
-
-const image = {
-  uri:
-    'https://cdn.pixabay.com/photo/2020/10/23/12/07/beach-5678562_960_720.jpg',
-};
+import {sign} from '../../assets/link/image';
 
 const SignIn = ({navigation}) => {
   const [login, setLogin] = useState('');
@@ -24,7 +20,7 @@ const SignIn = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   if (loading) {
-    return <Loader />;
+    return <Spinner visible />;
   }
 
   const dispatch = useDispatch();
@@ -47,7 +43,7 @@ const SignIn = ({navigation}) => {
 
   return (
     <View style={styles.main}>
-      <ImageBackground source={image} style={styles.image}>
+      <ImageBackground source={sign} style={styles.image}>
         <View style={styles.block}>
           <Text style={styles.textHeader}> Вход на сайт </Text>
           <View style={styles.headerGit}>

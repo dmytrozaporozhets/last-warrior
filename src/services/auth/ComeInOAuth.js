@@ -2,8 +2,8 @@ import React from 'react';
 import {WebView} from 'react-native-webview';
 import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
-import {accessToken, hideLoader, showLoader} from '../../redax/Form/actions';
-import {Loader} from '../../components/Loader';
+import {accessToken, hideLoader, showLoader} from '../../redax/auth/actions';
+import {Spinner} from '../../components';
 
 const ComeInOAuth = () => {
   const requestURL =
@@ -15,12 +15,11 @@ const ComeInOAuth = () => {
   const clientId = 'e7e0ddce3824fe141cac';
   const clientSecret = '30bc446bee1112f5730012702b82f394fa17e6e3';
 
-  const state = useSelector((state) => state);
   const loading = useSelector((state) => state.loading.loading);
   const dispatch = useDispatch();
 
   if (loading) {
-    return <Loader />;
+    return <Spinner visible />;
   }
 
   return (

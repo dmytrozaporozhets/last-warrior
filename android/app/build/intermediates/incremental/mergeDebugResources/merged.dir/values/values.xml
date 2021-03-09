@@ -7030,18 +7030,18 @@
       <enum name="screen" value="15"/>
     </attr>
 
-    <!-- Whether the layout is laid out as if the character counter will be displayed. -->
+    <!-- Whether the layout is laid out as if the character interface will be displayed. -->
     <attr format="boolean" name="counterEnabled"/>
-    <!-- The max length to display in the character counter. -->
+    <!-- The max length to display in the character interface. -->
     <attr format="integer" name="counterMaxLength"/>
-    <!-- TextAppearance of the character counter. -->
+    <!-- TextAppearance of the character interface. -->
     <attr format="reference" name="counterTextAppearance"/>
-    <!-- Text color of the character counter.
+    <!-- Text color of the character interface.
          If set, this takes precedence over counterTextAppearance. -->
     <attr format="reference" name="counterTextColor"/>
-    <!-- TextAppearance of the character counter when the text is longer than the max. -->
+    <!-- TextAppearance of the character interface when the text is longer than the max. -->
     <attr format="reference" name="counterOverflowTextAppearance"/>
-    <!-- Text color of the character counter when the text is longer than the max.
+    <!-- Text color of the character interface when the text is longer than the max.
          If set, this takes precedence over counterOverflowTextAppearance. -->
     <attr format="reference" name="counterOverflowTextColor"/>
 
