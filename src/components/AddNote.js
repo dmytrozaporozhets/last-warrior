@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {View, TextInput, Button, StyleSheet, Alert} from 'react-native';
+import {View, TextInput, StyleSheet, Alert} from 'react-native';
+import {Button} from './index';
+import {sg} from '../styling';
 
 const AddNote = ({onSubmit}) => {
   const [value, setValue] = useState('');
@@ -23,12 +25,8 @@ const AddNote = ({onSubmit}) => {
         autoCorrect={false}
         autoCapitalize="none"
       />
-      <Button
-        title="Добавить"
-        color="black"
-        onPress={pressHandler}
-        accessibilityLabel="Learn more about this purple button"
-      />
+
+      <Button title="Добавить" onPress={pressHandler} style={sg.mL10} />
     </View>
   );
 };
@@ -41,12 +39,14 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   input: {
+    height: 50,
     width: '70%',
     padding: 10,
     borderStyle: 'solid',
-    borderBottomWidth: 2,
-    borderBottomColor: 'black',
+    borderWidth: 1,
+    borderColor: 'black',
     backgroundColor: 'white',
+    borderRadius: 10,
   },
 });
 

@@ -294,6 +294,9 @@ export default {
   mR20: {
     marginRight: 20,
   },
+  mR25: {
+    marginRight: 20,
+  },
   mR30: {
     marginRight: 30,
   },

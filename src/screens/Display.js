@@ -13,7 +13,7 @@ import {sg} from '../styling';
 import {DisplayScreenStyle} from '../styling/screens/DisplayScreen';
 import {buttonCounter} from '../constants';
 
-const DisplayScreen = () => {
+const Display = () => {
   const [theme, setTheme] = useState(true);
 
   const state = useSelector((state) => state);
@@ -53,18 +53,19 @@ const DisplayScreen = () => {
             activeOpacity={0.5}
             onPress={switchTheme}
             disabled={disabled}>
-            <Text style={DisplayScreenStyle.textButtonTheme}>Сменить тему</Text>
+            <Text style={DisplayScreenStyle.textButtonTheme}>Change theme</Text>
           </TouchableOpacity>
         </View>
-        <Text style={DisplayScreenStyle.text}>Welcome to my page</Text>
+        <Text style={DisplayScreenStyle.text}>Сounter example</Text>
         <View style={DisplayScreenStyle.container}>
           <Text style={DisplayScreenStyle.textDisplay}>
-            Счётчик: {state.interface.count}
+            Сounter: {state.interface.count}
           </Text>
         </View>
         <View style={DisplayScreenStyle.buttonContainer}>
           {buttonCounter.map((it) => (
             <TouchableOpacity
+              key={it.id}
               style={[DisplayScreenStyle.button, {backgroundColor: it.color}]}
               onPress={switchOperation(it.operation)}
               disabled={disabled}>
@@ -77,4 +78,4 @@ const DisplayScreen = () => {
   );
 };
 
-export default DisplayScreen;
+export default Display;

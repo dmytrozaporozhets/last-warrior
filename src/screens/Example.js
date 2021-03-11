@@ -2,8 +2,7 @@ import React from 'react';
 import {View, Image} from 'react-native';
 import {Text, Button} from '../components/index';
 
-const Example = ({navigation}) => {
-  const onBack = () => navigation.goBack();
+const Example = () => {
   return (
     <View
       style={{
@@ -13,7 +12,6 @@ const Example = ({navigation}) => {
         marginTop: 40,
         marginBottom: 30,
       }}>
-      <Button title="Back" onPress={onBack} />
       <View style={{alignItems: 'center'}}>
         <Text>Hello, Vova!</Text>
         <Text>One more time</Text>

@@ -59,7 +59,7 @@ export const DisplayScreenStyle = StyleSheet.create({
   },
   textDisplay: {
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 36,
     marginTop: 5,
     color: 'white',
     fontWeight: 'bold',

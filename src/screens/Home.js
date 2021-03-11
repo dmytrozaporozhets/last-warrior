@@ -7,7 +7,7 @@ import {Text} from '../components/index';
 
 const fon = require('../../assets/images/image2.jpg');
 
-const HomeScreen = ({navigation}) => {
+const Home = ({navigation}) => {
   return (
     <ImageBackground source={fon} style={HomeScreenStyle.image}>
       <SafeAreaView style={styleGlobal.flex}>
@@ -21,4 +21,4 @@ const HomeScreen = ({navigation}) => {
   );
 };
 
-export default HomeScreen;
+export default Home;

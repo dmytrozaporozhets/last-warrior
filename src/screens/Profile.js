@@ -10,11 +10,10 @@ import {sg} from '../styling';
 
 const requestUserUrl = 'https://api.github.com/user';
 
-const ProfileScreen = ({navigation}) => {
+const Profile = ({navigation}) => {
   const [user, setUser] = useState(null);
   const goTo = (route) => () => navigation.navigate(route);
-  // const user = useSelector(state => state.token.user);
-  // const dispatch = useDispatch();
+  const userInfo = useSelector((state) => state.token.user);
 
   const userData = (user) => {
     setUser(user);
@@ -42,17 +41,19 @@ const ProfileScreen = ({navigation}) => {
     <ImageBackground source={profileScreen} style={sg.flex}>
       <SafeAreaView style={sg.flex}>
         <View style={ProfileScreenStyle.home}>
-          <UserCard
-            user={user?.name}
-            email={user?.email}
-            login={user?.login}
-            url={user?.url}
-            style={[sg.mV10, sg.mT20]}
-          />
+          {user ? (
+            <UserCard
+              user={user?.name}
+              email={user?.email}
+              login={user?.login}
+              url={user?.url}
+              style={[sg.mV10, sg.mT20]}
+            />
+          ) : null}
         </View>
       </SafeAreaView>
     </ImageBackground>
   );
 };
 
-export default ProfileScreen;
+export default Profile;
