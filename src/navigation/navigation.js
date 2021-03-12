@@ -85,7 +85,7 @@ export const MainStackScreen = () => {
           headerTitleAlign: 'center',
           headerTintColor: 'white',
         }}>
-        {!auth.token || !auth.loggedIn ? (
+        {auth.token || auth.loggedIn ? (
           <>
             <Stack.Screen
               name={SCREEN_STACK}

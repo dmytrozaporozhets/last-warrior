@@ -10,7 +10,7 @@ export const profileScreen = {
 
 export const sign = {
   uri:
-    'https://cdn.pixabay.com/photo/2020/10/23/12/07/beach-5678562_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2017/10/03/16/42/asylum-2813142_960_720.jpg',
 };
 
 export const firstFon = require('../../assets/images/firstFon.jpg');

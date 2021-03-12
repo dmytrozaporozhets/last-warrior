@@ -3,22 +3,22 @@ import {TouchableOpacity} from 'react-native';
 import {Text} from '../components/index';
 import PropTypes from 'prop-types';
 
-const Button = ({title, onPress, style, disabled}) => {
+const Button = ({title, onPress, style, disabled, activeOpacity}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       disabled={disabled}
-      activeOpacity={0.5}
+      activeOpacity={activeOpacity}
       style={[
         {
-          width: 100,
-          height: 50,
+          height: 40,
           borderWidth: 2,
-          borderRadius: 7,
+          borderRadius: 14,
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: 'black',
+          backgroundColor: 'yellow',
           borderColor: 'black',
+          width: '100%',
         },
         style,
       ]}>
@@ -26,7 +26,7 @@ const Button = ({title, onPress, style, disabled}) => {
         style={{
           textAlign: 'center',
           fontSize: 18,
-          color: 'white',
+          color: 'black',
         }}
         bold>
         {title}
@@ -40,12 +40,14 @@ export default Button;
 Button.defaultProps = {
   disabled: false,
   style: [],
+  activeOpacity: 0.5,
   onPress: () => null,
 };
 
 Button.propTypes = {
   style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   title: PropTypes.string,
+  activeOpacity: PropTypes.number,
   disabled: PropTypes.bool,
   onPress: PropTypes.any,
 };

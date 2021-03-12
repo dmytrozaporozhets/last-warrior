@@ -1,18 +1,13 @@
 import React, {useState} from 'react';
-import {
-  TextInput,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import {View, ImageBackground, TouchableOpacity, Alert} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {signIn} from '../redax/auth/actions';
-import {Spinner} from '../components/index';
+import {Button, Input, Spinner, Text} from '../components/index';
 import {AUTH} from './constants';
 import {sign} from '../../assets/link/image';
+import {Colors, sg} from '../styling';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import {SignInStyle} from '../styling/screens/SignIn';
 
 const SignIn = ({navigation}) => {
   const [login, setLogin] = useState('');
@@ -42,127 +37,44 @@ const SignIn = ({navigation}) => {
   const GitHub = () => navigation.navigate(AUTH);
 
   return (
-    <View style={styles.main}>
-      <ImageBackground source={sign} style={styles.image}>
-        <View style={styles.block}>
-          <Text style={styles.textHeader}> Вход на сайт </Text>
-          <View style={styles.headerGit}>
-            <Text>Войдите с помощью GitHub</Text>
-            <TouchableOpacity
-              activeOpacity={0.5}
-              style={styles.touchGitHub}
-              onPress={GitHub}>
-              <Text style={styles.textGitHub}> GitHub </Text>
-            </TouchableOpacity>
+    <View style={sg.flex}>
+      <ImageBackground source={sign} style={SignInStyle.image}>
+        <View style={SignInStyle.container}>
+          <View style={SignInStyle.box}>
+            <Text style={SignInStyle.header} bold>
+              Magic shine
+            </Text>
+            <Icon name="fire" color="yellow" size={30} />
           </View>
-          <View style={styles.form}>
-            <Text style={styles.textInput}> Введите логин: </Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Введите логин..."
-              autoCorrect={false}
-              autoCapitalize="none"
-              onChangeText={setLogin}
-              value={login}
-            />
-          </View>
-          <View style={styles.form}>
-            <Text style={styles.textInput}> Введите пароль: </Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Введите пароль..."
-              autoCorrect={false}
-              autoCapitalize="none"
-              onChangeText={setPassword}
-              value={password}
-              secureTextEntry={true}
-            />
-          </View>
+          <Text style={{color: Colors.white}}>Войдите с помощью GitHub</Text>
           <TouchableOpacity
             activeOpacity={0.5}
-            style={styles.touchable}
-            onPress={ComeIn}>
-            <Text style={styles.text}> Отправить </Text>
+            style={SignInStyle.touchGitHub}
+            onPress={GitHub}>
+            <Text style={SignInStyle.textGitHub}> GitHub </Text>
+            <Icon name="github" color="white" size={30} />
           </TouchableOpacity>
+          <Input
+            label="Введите логин:"
+            placeholder="Введите логин..."
+            onChange={setLogin}
+            value={login}
+            containerStyle={sg.mV10}
+            dark
+          />
+          <Input
+            label="Введите пароль:"
+            placeholder="Введите пароль..."
+            onChange={setPassword}
+            value={password}
+            containerStyle={sg.mV10}
+            dark
+          />
+          <Button title="Отправить" onPress={ComeIn} style={sg.mV15} />
         </View>
       </ImageBackground>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  main: {
-    flex: 1,
-  },
-  block: {
-    alignItems: 'center',
-    paddingTop: 230,
-  },
-  input: {
-    width: 300,
-    padding: 7,
-    backgroundColor: 'white',
-    marginTop: 5,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-  touchable: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderStyle: 'solid',
-    borderWidth: 1,
-    height: 30,
-    width: 300,
-    backgroundColor: '#87ceeb',
-    borderRadius: 10,
-    marginTop: 10,
-  },
-  form: {
-    paddingTop: 10,
-  },
-  textHeader: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-  },
-  textInput: {
-    fontSize: 20,
-    fontStyle: 'italic',
-    textDecorationLine: 'underline',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  image: {
-    flex: 1,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-    margin: -10,
-    paddingBottom: 340,
-  },
-  touchGitHub: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderStyle: 'solid',
-    borderWidth: 1,
-    height: 30,
-    width: 80,
-    backgroundColor: 'orange',
-    borderRadius: 10,
-    marginTop: 10,
-  },
-  textGitHub: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-  },
-  headerGit: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 10,
-  },
-});
 
 export default SignIn;
