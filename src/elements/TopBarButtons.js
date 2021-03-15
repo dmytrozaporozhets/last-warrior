@@ -1,9 +1,8 @@
 import {TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import {sg} from '../styling';
+import {Colors, sg} from '../styling';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {SignInStyle} from '../styling/screens/SignIn';
 import {Text} from '../components';
 
 export const BackButton = () => {
@@ -25,8 +24,15 @@ export const SkipButton = ({onPress}) => {
 
 export const LogoIcon = ({name}) => {
   return (
-    <View style={[sg.centeredRow]}>
-      <Text style={SignInStyle.header} bold>
+    <View style={[sg.aICenter, sg.jCCenter, sg.mB15]}>
+      <Text
+        style={{
+          fontSize: 16,
+          color: Colors.yellow,
+          textAlign: 'center',
+          marginBottom: 5,
+        }}
+        bold>
         {name}
       </Text>
       <Icon name="pied-piper-alt" color="yellow" size={40} />

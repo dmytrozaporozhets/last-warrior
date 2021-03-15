@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {ProfileScreenStyle} from '../styling/screens/PtofileScreen';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
-import {profileScreen} from '../../assets/link/image';
+import {darkMen} from '../../assets/link/image';
 import {UserCard} from '../components/index';
 import {sg} from '../styling';
 
@@ -38,7 +38,7 @@ const Profile = ({navigation}) => {
 
   const token = useSelector((state) => state.token.token);
   return (
-    <ImageBackground source={profileScreen} style={sg.flex}>
+    <ImageBackground source={darkMen} style={sg.flex}>
       <SafeAreaView style={sg.flex}>
         <View style={ProfileScreenStyle.home}>
           {user ? (
