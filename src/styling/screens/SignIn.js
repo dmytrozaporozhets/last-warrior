@@ -10,9 +10,8 @@ export const SignInStyle = StyleSheet.create({
     marginTop: 50,
   },
   box: {
-    flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 80,
+    marginTop: 50,
   },
   header: {
     fontSize: 35,
@@ -47,10 +46,5 @@ export const SignInStyle = StyleSheet.create({
     backgroundColor: 'orange',
     borderRadius: 10,
     marginTop: 10,
-  },
-  textGitHub: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
   },
 });

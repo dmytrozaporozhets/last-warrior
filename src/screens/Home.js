@@ -24,7 +24,7 @@ const Home = ({navigation}) => {
             bold>
             Welcome to home!
           </Text>
-          <Button title="Thanks" style={[sg.width150, sg.aSCenter, sg.mV40]} />
+          <Button title="Next" style={[sg.width150, sg.aSCenter, sg.mV40]} />
         </ScrollView>
       </ImageBackground>
     </ScreenView>

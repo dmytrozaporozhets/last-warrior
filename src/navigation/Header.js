@@ -15,7 +15,7 @@ import React from 'react';
 export const getHeaderOptions = (name) => {
   switch (name) {
     case SCREEN_STACK:
-      return {headerTitle: () => <LogoIcon name="Magic shine" />};
+      return {headerTitle: () => <LogoIcon name="Last Warrior" />};
     case LIBRARY:
       return {
         headerTitle: () => <Text bold>Library</Text>,

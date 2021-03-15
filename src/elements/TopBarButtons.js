@@ -29,7 +29,7 @@ export const LogoIcon = ({name}) => {
       <Text style={SignInStyle.header} bold>
         {name}
       </Text>
-      <Icon name="dragon" color="yellow" size={30} />
+      <Icon name="pied-piper-alt" color="yellow" size={40} />
     </View>
   );
 };

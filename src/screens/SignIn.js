@@ -42,18 +42,22 @@ const SignIn = ({navigation}) => {
         <View style={SignInStyle.container}>
           <View style={SignInStyle.box}>
             <Text style={SignInStyle.header} bold>
-              Magic shine
+              Last Warrior
             </Text>
-            <Icon name="dragon" color="yellow" size={30} />
+            <Icon name="pied-piper-alt" color="yellow" size={45} />
           </View>
-          <Text style={{color: Colors.white}}>Войдите с помощью GitHub</Text>
-          <TouchableOpacity
-            activeOpacity={0.5}
-            style={SignInStyle.touchGitHub}
-            onPress={GitHub}>
-            <Text style={SignInStyle.textGitHub}> GitHub </Text>
-            <Icon name="github" color="white" size={30} />
-          </TouchableOpacity>
+          <View style={[sg.aICenter, sg.mT60]}>
+            <Text style={{color: Colors.white}}>Войдите с помощью GitHub</Text>
+            <TouchableOpacity
+              activeOpacity={0.5}
+              style={SignInStyle.touchGitHub}
+              onPress={GitHub}>
+              <Text style={sg.fS16} bold>
+                GitHub
+              </Text>
+              <Icon name="github" color="white" size={30} />
+            </TouchableOpacity>
+          </View>
           <Input
             label="Введите логин:"
             placeholder="Введите логин..."
