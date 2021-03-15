@@ -7,18 +7,18 @@ export const SignInStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 40,
-    marginTop: 30,
+    marginTop: 50,
   },
   box: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 70,
+    marginVertical: 80,
   },
   header: {
     fontSize: 35,
     color: Colors.yellow,
     textAlign: 'center',
-    marginRight: 10,
+    marginRight: 20,
   },
   textInput: {
     fontSize: 20,

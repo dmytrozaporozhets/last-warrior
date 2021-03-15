@@ -1,8 +1,10 @@
 import {TouchableOpacity, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {sg} from '../styling';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
+import {SignInStyle} from '../styling/screens/SignIn';
+import {Text} from '../components';
 
 export const BackButton = () => {
   const navigation = useNavigation();
@@ -21,12 +23,13 @@ export const SkipButton = ({onPress}) => {
   );
 };
 
-export const LogoIcon = () => {
+export const LogoIcon = ({name}) => {
   return (
-    <View style={[sg.row, sg.aICenter, sg.height50]}>
-      <Icon name="hand-scissors-o" size={40} color="white" style={sg.pR5} />
-      <Icon name="tripadvisor" size={40} color="white" />
-      <Icon name="hand-peace-o" size={40} color="white" style={sg.pB15} />
+    <View style={[sg.centeredRow]}>
+      <Text style={SignInStyle.header} bold>
+        {name}
+      </Text>
+      <Icon name="dragon" color="yellow" size={30} />
     </View>
   );
 };

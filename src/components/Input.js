@@ -23,6 +23,7 @@ const Input = ({
   isCardNumber,
   isExpiryDate,
   placeholder,
+  light,
 }) => {
   const multiline = numberOfLines && numberOfLines > 1;
   const [isPasswordVisible, setPassVisibility] = useState(!!securedEntry);
@@ -72,7 +73,9 @@ const Input = ({
   const txtColor = dark ? 'white' : '#282828';
   return (
     <View style={[InputStyle.container, containerStyle]}>
-      <Text style={[InputStyle.label, {color: txtColor}]}>{label}</Text>
+      <Text style={[InputStyle.label, {color: light ? 'white' : txtColor}]}>
+        {label}
+      </Text>
       <View>
         <TextInput
           autoCapitalize="none"
@@ -96,7 +99,7 @@ const Input = ({
           <TouchableOpacity style={InputStyle.eye} onPress={switchVisibility}>
             <Icon
               name={isPasswordVisible ? 'eye' : 'eye-slash'}
-              style={[sg.fS16, {color: txtColor}]}
+              style={[sg.fS16, {color: light ? 'black' : txtColor}]}
             />
           </TouchableOpacity>
         )}
@@ -125,6 +128,7 @@ Input.defaultProps = {
   containerStyle: [],
   editable: true,
   dark: false,
+  light: false,
   verification: false,
   info: false,
   isCardNumber: false,

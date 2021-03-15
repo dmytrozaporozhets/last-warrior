@@ -1,23 +1,33 @@
 import React from 'react';
-import {ImageBackground, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import styleGlobal from '../styling/styleGlobal';
+import {ImageBackground, View, ScrollView} from 'react-native';
 import {HomeScreenStyle} from '../styling/screens/HomeScreen';
-import {Text} from '../components/index';
-
-const fon = require('../../assets/images/image2.jpg');
+import {Button, ScreenView, Text} from '../components/index';
+import {Colors, sg} from '../styling';
+import {moon} from '../../assets/link/image';
 
 const Home = ({navigation}) => {
   return (
-    <ImageBackground source={fon} style={HomeScreenStyle.image}>
-      <SafeAreaView style={styleGlobal.flex}>
-        <View style={{alignItems: 'center', marginTop: 50}}>
-          <Text style={{fontSize: 26}} bold>
+    <ScreenView>
+      <ImageBackground source={moon} style={HomeScreenStyle.image}>
+        <ScrollView
+          contentContainerStyle={[
+            sg.flex,
+            {alignItems: 'center', justifyContent: 'space-between'},
+          ]}>
+          <Text
+            style={{
+              fontSize: 46,
+              color: Colors.white,
+              textAlign: 'center',
+              marginTop: 100,
+            }}
+            bold>
             Welcome to home!
           </Text>
-        </View>
-      </SafeAreaView>
-    </ImageBackground>
+          <Button title="Thanks" style={[sg.width150, sg.aSCenter, sg.mV40]} />
+        </ScrollView>
+      </ImageBackground>
+    </ScreenView>
   );
 };
 

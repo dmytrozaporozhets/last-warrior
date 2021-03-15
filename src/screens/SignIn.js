@@ -44,7 +44,7 @@ const SignIn = ({navigation}) => {
             <Text style={SignInStyle.header} bold>
               Magic shine
             </Text>
-            <Icon name="fire" color="yellow" size={30} />
+            <Icon name="dragon" color="yellow" size={30} />
           </View>
           <Text style={{color: Colors.white}}>Войдите с помощью GitHub</Text>
           <TouchableOpacity
@@ -60,7 +60,7 @@ const SignIn = ({navigation}) => {
             onChange={setLogin}
             value={login}
             containerStyle={sg.mV10}
-            dark
+            light
           />
           <Input
             label="Введите пароль:"
@@ -68,7 +68,8 @@ const SignIn = ({navigation}) => {
             onChange={setPassword}
             value={password}
             containerStyle={sg.mV10}
-            dark
+            securedEntry
+            light
           />
           <Button title="Отправить" onPress={ComeIn} style={sg.mV15} />
         </View>

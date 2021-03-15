@@ -13,5 +13,10 @@ export const sign = {
     'https://cdn.pixabay.com/photo/2017/10/03/16/42/asylum-2813142_960_720.jpg',
 };
 
+export const moon = {
+  uri:
+    'https://cdn.pixabay.com/photo/2015/12/21/10/12/moon-1102268_960_720.jpg',
+};
+
 export const firstFon = require('../../assets/images/firstFon.jpg');
 export const secondFon = require('../../assets/images/secondFon.jpg');
