@@ -1,18 +1,23 @@
 import React from 'react';
 import {ScreenView, Text} from '../components/index';
 import {View, ScrollView} from 'react-native';
-import {fetchRequest} from '../services/NetworkRequest';
-import {requestTodosURL} from '../../assets/link/request';
+// import firebase from '@react-native-firebase/app';
+import dynamicLinks from '@react-native-firebase/dynamic-links';
+
+// function DynamicLinks() {
+//   React.useEffect(() => {
+//     dynamicLinks()
+//       .getInitialLink()
+//       .then((link) => {
+//         console.log(link);
+//         console.log(link.url);
+//       });
+//   }, []);
+//
+//   return null;
+// }
 
 const Network = () => {
-  const body = {
-    name: 'Dimon',
-    age: 26,
-  };
-
-  fetchRequest(requestTodosURL, 'GET', null)
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err));
   return (
     <ScreenView>
       <ScrollView>

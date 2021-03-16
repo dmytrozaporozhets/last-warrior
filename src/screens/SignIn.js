@@ -41,41 +41,41 @@ const SignIn = ({navigation}) => {
       <ImageBackground source={sign} style={SignInStyle.image}>
         <View style={SignInStyle.container}>
           <View style={SignInStyle.box}>
+            <Icon name="pied-piper-alt" color="yellow" size={45} />
             <Text style={SignInStyle.header} bold>
               Last Warrior
             </Text>
-            <Icon name="pied-piper-alt" color="yellow" size={45} />
           </View>
           <View style={[sg.aICenter, sg.mT60]}>
-            <Text style={{color: Colors.white}}>Войдите с помощью GitHub</Text>
+            <Text style={{color: Colors.white}}>Login with:</Text>
             <TouchableOpacity
               activeOpacity={0.5}
               style={SignInStyle.touchGitHub}
               onPress={GitHub}>
-              <Text style={sg.fS16} bold>
+              <Text style={[sg.fS16, sg.mR5]} bold>
                 GitHub
               </Text>
               <Icon name="github" color="white" size={30} />
             </TouchableOpacity>
           </View>
           <Input
-            label="Введите логин:"
-            placeholder="Введите логин..."
+            label="Login:"
+            placeholder="Enter login..."
             onChange={setLogin}
             value={login}
             containerStyle={sg.mV10}
             light
           />
           <Input
-            label="Введите пароль:"
-            placeholder="Введите пароль..."
+            label="Password:"
+            placeholder="Enter password..."
             onChange={setPassword}
             value={password}
             containerStyle={sg.mV10}
             securedEntry
             light
           />
-          <Button title="Отправить" onPress={ComeIn} style={sg.mV15} />
+          <Button title="Send" onPress={ComeIn} style={sg.mV15} />
         </View>
       </ImageBackground>
     </View>

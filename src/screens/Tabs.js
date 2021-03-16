@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import {FlatList, ImageBackground, View} from 'react-native';
 import AddNote from '../components/AddNote';
 import Note from '../components/Note';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {TabScreenStyle} from '../styling/screens/TabScreen';
-import {tabScreen} from '../../assets/link/image';
+import {smoke} from '../../assets/link/image';
+import {ScreenView} from '../components';
+import {Colors, sg} from "../styling";
 
 const Tabs = () => {
   const [notes, setNotes] = useState([]);
@@ -24,8 +25,8 @@ const Tabs = () => {
   };
 
   return (
-    <ImageBackground source={tabScreen} style={TabScreenStyle.image}>
-      <SafeAreaView style={TabScreenStyle.main}>
+    <ScreenView statusBarColor={Colors.black}>
+      <ImageBackground source={smoke} style={TabScreenStyle.image}>
         <View style={TabScreenStyle.component}>
           <View style={TabScreenStyle.container}>
             <View style={TabScreenStyle.container} />
@@ -39,8 +40,8 @@ const Tabs = () => {
             />
           </View>
         </View>
-      </SafeAreaView>
-    </ImageBackground>
+      </ImageBackground>
+    </ScreenView>
   );
 };
 

@@ -14,10 +14,10 @@ export const SignInStyle = StyleSheet.create({
     marginTop: 50,
   },
   header: {
-    fontSize: 35,
+    fontSize: 18,
     color: Colors.yellow,
     textAlign: 'center',
-    marginRight: 20,
+    marginTop: 10,
   },
   textInput: {
     fontSize: 20,

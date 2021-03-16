@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageBackground, View, ScrollView} from 'react-native';
+import {ImageBackground, View} from 'react-native';
 import {HomeScreenStyle} from '../styling/screens/HomeScreen';
 import {Button, ScreenView, Text} from '../components/index';
 import {Colors, sg} from '../styling';
@@ -9,8 +9,8 @@ const Home = ({navigation}) => {
   return (
     <ScreenView>
       <ImageBackground source={moon} style={HomeScreenStyle.image}>
-        <ScrollView
-          contentContainerStyle={[
+        <View
+          style={[
             sg.flex,
             {alignItems: 'center', justifyContent: 'space-between'},
           ]}>
@@ -24,8 +24,8 @@ const Home = ({navigation}) => {
             bold>
             Welcome to home!
           </Text>
-          <Button title="Next" style={[sg.width150, sg.aSCenter, sg.mV40]} />
-        </ScrollView>
+          <Button title="Next" size="medium" style={[sg.aSCenter, sg.mV40]} />
+        </View>
       </ImageBackground>
     </ScreenView>
   );

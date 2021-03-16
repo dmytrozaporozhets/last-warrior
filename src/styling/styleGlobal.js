@@ -469,6 +469,12 @@ export default {
   pV30: {
     paddingVertical: 30,
   },
+  width50p: {
+    width: '50%',
+  },
+  width70p: {
+    width: '70%',
+  },
   width100p: {
     width: '100%',
   },

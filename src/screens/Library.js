@@ -23,7 +23,7 @@ const Library = ({navigation}) => {
             Application Guide
           </Text>
           {libraryScreen.map((it) => (
-            <View style={{marginHorizontal: 20, marginTop: 10}} key={it.id}>
+            <View style={{marginHorizontal: 20, marginTop: 20}} key={it.id}>
               <Text
                 style={[sg.fS24, {color: Colors.white}]}
                 bold

@@ -1,7 +1,7 @@
 import {
   DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
-  NETWORK_REQUEST,
+  NETWORK_REQUEST, REACT_HOOKS,
   TAB_SCREEN,
 } from '../screens/constants';
 
@@ -17,4 +17,5 @@ export const libraryScreen = [
   {title: 'Tabs', pathway: TAB_SCREEN, id: 2},
   {title: 'Network requests', pathway: NETWORK_REQUEST, id: 3},
   {title: 'Practice', pathway: EXAMPLE_SCREEN, id: 4},
+  {title: 'React Hooks', pathway: REACT_HOOKS, id: 5},
 ];

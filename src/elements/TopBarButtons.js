@@ -9,7 +9,7 @@ export const BackButton = () => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity onPress={() => navigation.goBack()} style={sg.mL25}>
-      <Icon name="caret-left" size={24} color="white" />
+      <Icon name="caret-left" size={24} color="yellow" />
     </TouchableOpacity>
   );
 };
@@ -17,7 +17,7 @@ export const BackButton = () => {
 export const SkipButton = ({onPress}) => {
   return (
     <TouchableOpacity onPress={onPress} style={sg.mR25}>
-      <Icon name="caret-right" size={24} color="white" />
+      <Icon name="caret-right" size={24} color="yellow" />
     </TouchableOpacity>
   );
 };
@@ -25,17 +25,17 @@ export const SkipButton = ({onPress}) => {
 export const LogoIcon = ({name}) => {
   return (
     <View style={[sg.aICenter, sg.jCCenter, sg.mB15]}>
+      <Icon name="pied-piper-alt" color="yellow" size={40} />
       <Text
         style={{
           fontSize: 16,
           color: Colors.yellow,
           textAlign: 'center',
-          marginBottom: 5,
+          marginTop: 5,
         }}
         bold>
         {name}
       </Text>
-      <Icon name="pied-piper-alt" color="yellow" size={40} />
     </View>
   );
 };

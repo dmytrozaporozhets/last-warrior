@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {View, TextInput, StyleSheet, Alert} from 'react-native';
-import {Button} from './index';
+import {View, StyleSheet, Alert} from 'react-native';
+import {Button, Input} from './index';
 import {sg} from '../styling';
 
 const AddNote = ({onSubmit}) => {
@@ -17,36 +17,28 @@ const AddNote = ({onSubmit}) => {
 
   return (
     <View style={styles.block}>
-      <TextInput
-        style={styles.input}
-        onChangeText={setValue}
+      <Input
+        onChange={setValue}
         value={value}
         placeholder="Введите заметку..."
-        autoCorrect={false}
-        autoCapitalize="none"
+        containerStyle={sg.width70p}
       />
-
-      <Button title="Добавить" onPress={pressHandler} style={sg.mL10} />
+      <Button
+        title="Добавить"
+        onPress={pressHandler}
+        style={[sg.mL10, sg.mT25, sg.width100]}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   block: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 15,
-  },
-  input: {
-    height: 50,
-    width: '70%',
-    padding: 10,
-    borderStyle: 'solid',
-    borderWidth: 1,
-    borderColor: 'black',
-    backgroundColor: 'white',
-    borderRadius: 10,
+    paddingBottom: 50,
   },
 });
 

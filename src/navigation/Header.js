@@ -4,6 +4,7 @@ import {
   LIBRARY,
   NETWORK_REQUEST,
   PROFILE_SCREEN,
+  REACT_HOOKS,
   SCREEN_STACK,
   TAB_SCREEN,
 } from '../screens/constants';
@@ -28,7 +29,7 @@ export const getHeaderOptions = (name) => {
       return {
         headerLeft: () => <BackButton style={sg.mL25} />,
         headerTitle: () => (
-          <Text style={{color: 'white', fontSize: 28}} bold>
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
             Counter
           </Text>
         ),
@@ -37,7 +38,7 @@ export const getHeaderOptions = (name) => {
       return {
         headerLeft: () => <BackButton style={sg.mL25} />,
         headerTitle: () => (
-          <Text style={{color: 'white', fontSize: 28}} bold>
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
             Network
           </Text>
         ),
@@ -46,7 +47,7 @@ export const getHeaderOptions = (name) => {
       return {
         headerLeft: () => <BackButton style={sg.mL25} />,
         headerTitle: () => (
-          <Text style={{color: 'white', fontSize: 28}} bold>
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
             Tab
           </Text>
         ),
@@ -55,8 +56,17 @@ export const getHeaderOptions = (name) => {
       return {
         headerLeft: () => <BackButton style={sg.mL25} />,
         headerTitle: () => (
-          <Text style={{color: 'white', fontSize: 28}} bold>
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
             Practice
+          </Text>
+        ),
+      };
+    case REACT_HOOKS:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            React Hooks
           </Text>
         ),
       };

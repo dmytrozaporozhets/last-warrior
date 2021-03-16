@@ -8,3 +8,7 @@ export const LIBRARY = 'Library';
 export const SIGN_IN = 'Sign In';
 export const AUTH = 'Auth';
 export const NETWORK_REQUEST = 'Network Request';
+export const ABOUT = 'About';
+export const INFO = 'Info';
+export const SETTINGS = 'Settings';
+export const REACT_HOOKS = 'React Hooks';

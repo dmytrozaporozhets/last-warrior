@@ -7,11 +7,11 @@ import {
   resetCounter,
 } from '../redax/interface';
 import {useSelector, useDispatch} from 'react-redux';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import {firstFon, secondFon} from '../../assets/link/image';
-import {sg} from '../styling';
+import {astroSky, darkSky} from '../../assets/link/image';
+import {Colors, sg} from '../styling';
 import {DisplayScreenStyle} from '../styling/screens/DisplayScreen';
 import {buttonCounter} from '../constants';
+import {ScreenView} from '../components';
 
 const Display = () => {
   const [theme, setTheme] = useState(true);
@@ -43,38 +43,41 @@ const Display = () => {
     }
   };
   return (
-    <ImageBackground
-      source={theme ? firstFon : secondFon}
-      style={DisplayScreenStyle.image}>
-      <SafeAreaView style={sg.flex}>
-        <View style={DisplayScreenStyle.containerTheme}>
-          <TouchableOpacity
-            style={DisplayScreenStyle.buttonTheme}
-            activeOpacity={0.5}
-            onPress={switchTheme}
-            disabled={disabled}>
-            <Text style={DisplayScreenStyle.textButtonTheme}>Change theme</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={DisplayScreenStyle.text}>Сounter example</Text>
-        <View style={DisplayScreenStyle.container}>
-          <Text style={DisplayScreenStyle.textDisplay}>
-            Сounter: {state.interface.count}
-          </Text>
-        </View>
-        <View style={DisplayScreenStyle.buttonContainer}>
-          {buttonCounter.map((it) => (
+    <ScreenView statusBarColor={Colors.black}>
+      <ImageBackground
+        source={theme ? darkSky : astroSky}
+        style={DisplayScreenStyle.image}>
+        <View style={sg.flex}>
+          <View style={DisplayScreenStyle.containerTheme}>
             <TouchableOpacity
-              key={it.id}
-              style={[DisplayScreenStyle.button, {backgroundColor: it.color}]}
-              onPress={switchOperation(it.operation)}
+              style={DisplayScreenStyle.buttonTheme}
+              activeOpacity={0.5}
+              onPress={switchTheme}
               disabled={disabled}>
-              <Text style={DisplayScreenStyle.textButton}>{it.title}</Text>
+              <Text style={DisplayScreenStyle.textButtonTheme}>
+                Change theme
+              </Text>
             </TouchableOpacity>
-          ))}
+          </View>
+          <View style={DisplayScreenStyle.container}>
+            <Text style={DisplayScreenStyle.textDisplay}>
+              Сounter: {state.interface.count}
+            </Text>
+          </View>
+          <View style={DisplayScreenStyle.buttonContainer}>
+            {buttonCounter.map((it) => (
+              <TouchableOpacity
+                key={it.id}
+                style={[DisplayScreenStyle.button, {backgroundColor: it.color}]}
+                onPress={switchOperation(it.operation)}
+                disabled={disabled}>
+                <Text style={DisplayScreenStyle.textButton}>{it.title}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
-      </SafeAreaView>
-    </ImageBackground>
+      </ImageBackground>
+    </ScreenView>
   );
 };
 

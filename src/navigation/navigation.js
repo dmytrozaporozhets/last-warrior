@@ -12,6 +12,9 @@ import {
   Tabs,
   Library,
   Network,
+  Info,
+  About,
+  ReactHooks,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -26,6 +29,9 @@ import {
   AUTH,
   LIBRARY,
   NETWORK_REQUEST,
+  INFO,
+  ABOUT,
+  REACT_HOOKS,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -46,18 +52,24 @@ export const MyTabs = () => {
               return <Icon name="book" size={size} color={color} />;
             case PROFILE_SCREEN:
               return <Icon name="user" size={size} color={color} />;
+            case INFO:
+              return <Icon name="info" size={size} color={color} />;
+            case ABOUT:
+              return <Icon name="server" size={size} color={color} />;
             default:
-              return <Icon name="home" size={size} color={color} />;
+              return <Icon name="folder" size={size} color={color} />;
           }
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'white',
+        activeTintColor: 'yellow',
         inactiveTintColor: '#B5B5B5',
         style: {backgroundColor: 'black', paddingHorizontal: 10},
       }}>
       <Tab.Screen name={HOME_SCREEN} component={Home} />
       <Tab.Screen name={LIBRARY} component={Library} />
+      <Tab.Screen name={INFO} component={Info} />
+      <Tab.Screen name={ABOUT} component={About} />
       <Tab.Screen name={PROFILE_SCREEN} component={Profile} />
     </Tab.Navigator>
   );
@@ -118,6 +130,13 @@ export const MainStackScreen = () => {
               name={NETWORK_REQUEST}
               component={Network}
               options={{...getHeaderOptions(NETWORK_REQUEST)}}
+            />
+            <Stack.Screen name={ABOUT} component={About} />
+            <Stack.Screen name={INFO} component={Info} />
+            <Stack.Screen
+              name={REACT_HOOKS}
+              component={ReactHooks}
+              options={{...getHeaderOptions(REACT_HOOKS)}}
             />
           </>
         ) : (

@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {View} from 'react-native';
 import {Provider} from 'react-redux';
 import {rootReducer} from './src/redax/rootReducer';
 import {applyMiddleware, createStore} from 'redux';

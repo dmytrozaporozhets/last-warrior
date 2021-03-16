@@ -24,6 +24,7 @@ const colors = {
   blue: '#0A8DCA',
   blue2: '#34A6EB',
   blue3: '#3e2dac',
+  black:'#000000',
   red: 'red',
   red2: '#FFC061',
   modalOverlay: 'rgba(245, 244, 244, 0.65)',
