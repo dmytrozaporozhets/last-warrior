@@ -526,6 +526,9 @@ export default {
   width150: {
     width: 150,
   },
+  width200: {
+    width: 200,
+  },
   width290: {
     width: 290,
   },

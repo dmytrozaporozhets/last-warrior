@@ -55,8 +55,15 @@ Button.defaultProps = {
 
 Button.propTypes = {
   style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
-  btnType: PropTypes.oneOf(['yellow', 'orange']),
-  size: PropTypes.oneOf(['large', 'medium']),
+  btnType: PropTypes.oneOf([
+    'yellow',
+    'orange',
+    'green',
+    'blue',
+    'primary',
+    'red',
+  ]),
+  size: PropTypes.oneOf(['large', 'medium', 'small']),
   title: PropTypes.string,
   activeOpacity: PropTypes.number,
   disabled: PropTypes.bool,

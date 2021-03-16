@@ -4,17 +4,20 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {
-  SignIn,
-  Profile,
-  Display,
-  Home,
-  Example,
-  Tabs,
-  Library,
-  Network,
-  Info,
-  About,
-  ReactHooks,
+    SignIn,
+    Profile,
+    Display,
+    Home,
+    Example,
+    Tabs,
+    Library,
+    Network,
+    Info,
+    About,
+    ReactHooks,
+    UseEffectHook,
+    UseRefHook,
+    UseStateHook, UseMemoHook,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -32,6 +35,10 @@ import {
   INFO,
   ABOUT,
   REACT_HOOKS,
+  REACT_HOOKS_EFFECT,
+  REACT_HOOKS_REF,
+  REACT_HOOKS_STATE,
+  REACT_HOOKS_MEMO,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -137,6 +144,26 @@ export const MainStackScreen = () => {
               name={REACT_HOOKS}
               component={ReactHooks}
               options={{...getHeaderOptions(REACT_HOOKS)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_EFFECT}
+              component={UseEffectHook}
+              options={{...getHeaderOptions(REACT_HOOKS_EFFECT)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_REF}
+              component={UseRefHook}
+              options={{...getHeaderOptions(REACT_HOOKS_REF)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_STATE}
+              component={UseStateHook}
+              options={{...getHeaderOptions(REACT_HOOKS_STATE)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_MEMO}
+              component={UseMemoHook}
+              options={{...getHeaderOptions(REACT_HOOKS_MEMO)}}
             />
           </>
         ) : (

@@ -5,6 +5,10 @@ import {
   NETWORK_REQUEST,
   PROFILE_SCREEN,
   REACT_HOOKS,
+  REACT_HOOKS_EFFECT,
+  REACT_HOOKS_MEMO,
+  REACT_HOOKS_REF,
+  REACT_HOOKS_STATE,
   SCREEN_STACK,
   TAB_SCREEN,
 } from '../screens/constants';
@@ -67,6 +71,42 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             React Hooks
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_EFFECT:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use Effect
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_STATE:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use State
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_REF:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use Ref
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_MEMO:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use Memo
           </Text>
         ),
       };
