@@ -1,28 +1,19 @@
-import React, {useState, useMemo, useEffect} from 'react';
+import React, {useState, useCallback} from 'react';
 import {Button, ScreenView, Text} from '../../components/index';
 import {View, ScrollView} from 'react-native';
 import {sg} from '../../styling';
 import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
-import {numberData} from '../../constants';
+import {elementState} from '../../constants';
+import ItemsList from '../../components/ItemsList';
 
-const complexComputed = (num) => {
-  // let i = 0;
-  // while (i < 1000000000) {
-  //   i++;
-  // }
-  return num * 2;
-};
-
-const UseMemoHook = () => {
-  const [number, setNumber] = useState(42);
+const UseCallbackHook = () => {
   const [colored, setColored] = useState(false);
+  const [count, setCount] = useState(1);
 
-  const switchNumber = (operation) => () => {
-    switch (operation) {
+  const switchElements = (func) => () => {
+    switch (func) {
       case 'add':
-        return setNumber(number + 1);
-      case 'sub':
-        return setNumber(number - 1);
+        return setCount((prev) => prev + 1);
       case 'change':
         return setColored((prev) => !prev);
       default:
@@ -30,18 +21,11 @@ const UseMemoHook = () => {
     }
   };
 
-  const styles = useMemo(
-    () => ({
-      color: colored ? 'pink' : 'black',
-    }),
-    [colored],
-  );
+  const styles = {color: colored ? 'red' : 'black'};
 
-  const computed = useMemo(() => {
-    return complexComputed(number);
-  }, [number]);
-
-  useEffect(() => console.log('Styles changed'), [styles]);
+  const generateItemsFromAPI = useCallback(() => {
+    return new Array(count).fill('').map((_, i) => `Element ${i + 1}`);
+  }, [count]);
 
   return (
     <ScreenView>
@@ -49,20 +33,21 @@ const UseMemoHook = () => {
         <View style={ReactHooksStyle.container}>
           <View style={sg.mT20}>
             <Text style={[ReactHooksStyle.title, styles]}>
-              Computed property: {computed}
+              Amount of elements: {count}
             </Text>
             <View style={[sg.centeredRow, sg.mT10, sg.jCCenter]}>
-              {numberData.map((it, index) => (
+              {elementState.map((it, index) => (
                 <Button
                   title={it.title}
                   size={it.size}
                   btnType={it.btnType}
-                  onPress={switchNumber(it.operation)}
                   style={index !== 0 && sg.mL10}
+                  onPress={switchElements(it.func)}
                   key={it.id}
                 />
               ))}
             </View>
+            <ItemsList getItems={generateItemsFromAPI} style={sg.mT20} />
           </View>
         </View>
       </ScrollView>
@@ -70,4 +55,4 @@ const UseMemoHook = () => {
   );
 };
 
-export default UseMemoHook;
+export default UseCallbackHook;

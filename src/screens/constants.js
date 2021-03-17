@@ -16,3 +16,6 @@ export const REACT_HOOKS_STATE = 'React Hooks State';
 export const REACT_HOOKS_EFFECT = 'React Hooks Effect';
 export const REACT_HOOKS_REF = 'React Hooks Ref';
 export const REACT_HOOKS_MEMO = 'React Hooks Memo';
+export const REACT_HOOKS_CALLBACK = 'React Hooks Callback';
+export const REACT_HOOKS_CONTEXT = 'React Hooks Context';
+export const REACT_HOOKS_REDUCER = 'React Hooks Reducer';

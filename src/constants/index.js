@@ -3,7 +3,11 @@ import {
   EXAMPLE_SCREEN,
   NETWORK_REQUEST,
   REACT_HOOKS,
-  REACT_HOOKS_EFFECT, REACT_HOOKS_MEMO,
+  REACT_HOOKS_CALLBACK,
+  REACT_HOOKS_CONTEXT,
+  REACT_HOOKS_EFFECT,
+  REACT_HOOKS_MEMO,
+  REACT_HOOKS_REDUCER,
   REACT_HOOKS_REF,
   REACT_HOOKS_STATE,
   TAB_SCREEN,
@@ -42,6 +46,11 @@ export const numberData = [
   },
 ];
 
+export const elementState = [
+  {title: 'Add', size: 'small', btnType: 'green', func: 'add', id: 1},
+  {title: 'Change', size: 'small', btnType: 'red', func: 'change', id: 2},
+];
+
 export const resourceJSON = [
   {title: 'Users', size: 'small', btnType: 'green', resource: 'users', id: 1},
   {title: 'Todos', size: 'small', btnType: 'green', resource: 'todos', id: 2},
@@ -53,4 +62,7 @@ export const reactHooks = [
   {title: 'useEffect', id: 2, pathway: REACT_HOOKS_EFFECT},
   {title: 'useRef', id: 3, pathway: REACT_HOOKS_REF},
   {title: 'useMemo', id: 4, pathway: REACT_HOOKS_MEMO},
+  {title: 'useCallback', id: 5, pathway: REACT_HOOKS_CALLBACK},
+  {title: 'useContext', id: 6, pathway: REACT_HOOKS_CONTEXT},
+  {title: 'useReducer', id: 7, pathway: REACT_HOOKS_REDUCER},
 ];

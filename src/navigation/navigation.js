@@ -4,20 +4,24 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {
-    SignIn,
-    Profile,
-    Display,
-    Home,
-    Example,
-    Tabs,
-    Library,
-    Network,
-    Info,
-    About,
-    ReactHooks,
-    UseEffectHook,
-    UseRefHook,
-    UseStateHook, UseMemoHook,
+  SignIn,
+  Profile,
+  Display,
+  Home,
+  Example,
+  Tabs,
+  Library,
+  Network,
+  Info,
+  About,
+  ReactHooks,
+  UseEffectHook,
+  UseRefHook,
+  UseStateHook,
+  UseMemoHook,
+  UseReducerHook,
+  UseContextHook,
+  UseCallbackHook,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -39,6 +43,9 @@ import {
   REACT_HOOKS_REF,
   REACT_HOOKS_STATE,
   REACT_HOOKS_MEMO,
+  REACT_HOOKS_REDUCER,
+  REACT_HOOKS_CONTEXT,
+  REACT_HOOKS_CALLBACK,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -164,6 +171,21 @@ export const MainStackScreen = () => {
               name={REACT_HOOKS_MEMO}
               component={UseMemoHook}
               options={{...getHeaderOptions(REACT_HOOKS_MEMO)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_REDUCER}
+              component={UseReducerHook}
+              options={{...getHeaderOptions(REACT_HOOKS_REDUCER)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_CONTEXT}
+              component={UseContextHook}
+              options={{...getHeaderOptions(REACT_HOOKS_CONTEXT)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_CALLBACK}
+              component={UseCallbackHook}
+              options={{...getHeaderOptions(REACT_HOOKS_CALLBACK)}}
             />
           </>
         ) : (

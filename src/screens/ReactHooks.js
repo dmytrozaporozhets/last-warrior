@@ -1,30 +1,24 @@
-import React, {useState, useMemo} from 'react';
-import {Button, ScreenView, Text} from '../components/index';
+import React from 'react';
+import {Button, ScreenView} from '../components/index';
 import {View, ScrollView} from 'react-native';
-import {sg} from '../styling';
+import {Colors, sg} from '../styling';
 import {ReactHooksStyle} from '../styling/screens/ReactHooks';
-import {numberData, reactHooks} from '../constants';
-
-const complexComputed = (num) => {
-  // let i = 0;
-  // while (i < 10000000000) {
-  //   i++;
-  // }
-  return num * 2;
-};
+import {reactHooks} from '../constants';
 
 const ReactHooks = ({navigation}) => {
   const goTo = (route) => () => navigation.navigate(route);
   return (
-    <ScreenView>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={ReactHooksStyle.container}>
-          {reactHooks.map((it) => (
-            <View style={[sg.mT20, sg.width100p]}>
-              <Button {...it} onPress={goTo(it.pathway)} key={it.id} />
-            </View>
-          ))}
-        </View>
+    <ScreenView
+      childrenStyle={{backgroundColor: Colors.black}}
+      statusBarColor={Colors.black}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[ReactHooksStyle.container, sg.mT30]}>
+        {reactHooks.map((it) => (
+          <View style={[sg.mT20, sg.width100p]} key={it.id}>
+            <Button {...it} onPress={goTo(it.pathway)} />
+          </View>
+        ))}
       </ScrollView>
     </ScreenView>
   );

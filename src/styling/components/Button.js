@@ -71,7 +71,7 @@ export const ButtonStyleType = {
   },
   primary: {
     backColor: {backgroundColor: Colors.btnPrimaryBG},
-    txt: {color: 'black'},
+    txt: {color: 'white'},
     border: {borderColor: 'black'},
   },
   red: {

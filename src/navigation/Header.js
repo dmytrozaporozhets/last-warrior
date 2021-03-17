@@ -5,8 +5,11 @@ import {
   NETWORK_REQUEST,
   PROFILE_SCREEN,
   REACT_HOOKS,
+  REACT_HOOKS_CALLBACK,
+  REACT_HOOKS_CONTEXT,
   REACT_HOOKS_EFFECT,
   REACT_HOOKS_MEMO,
+  REACT_HOOKS_REDUCER,
   REACT_HOOKS_REF,
   REACT_HOOKS_STATE,
   SCREEN_STACK,
@@ -107,6 +110,33 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Memo
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_REDUCER:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use Reducer
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_CONTEXT:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use Context
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_CALLBACK:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use Callback
           </Text>
         ),
       };
