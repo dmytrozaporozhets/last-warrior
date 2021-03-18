@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button, ScreenView} from '../components/index';
+import {Button, ScreenView} from '../../components';
 import {View, ScrollView} from 'react-native';
-import {Colors, sg} from '../styling';
-import {ReactHooksStyle} from '../styling/screens/ReactHooks';
-import {reactHooks} from '../constants';
+import {Colors, sg} from '../../styling';
+import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
+import {reactHooks} from '../../constants';
 
 const ReactHooks = ({navigation}) => {
   const goTo = (route) => () => navigation.navigate(route);

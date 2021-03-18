@@ -472,6 +472,9 @@ export default {
   width50p: {
     width: '50%',
   },
+  width60p: {
+    width: '60%',
+  },
   width70p: {
     width: '70%',
   },

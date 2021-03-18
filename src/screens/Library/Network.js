@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScreenView, Text} from '../components/index';
+import {ScreenView, Text} from '../../components';
 import {View, ScrollView} from 'react-native';
 // import firebase from '@react-native-firebase/app';
 import dynamicLinks from '@react-native-firebase/dynamic-links';

@@ -1,10 +1,10 @@
 import React from 'react';
-import {Alert, ExampleComponent, ScreenView} from '../../components/index';
+import {Alert, ExampleComponent, ScreenView} from '../../../components';
 import {View, ScrollView} from 'react-native';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
-import {AlertProvider} from '../../components/Alert/AlertContext';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
+import {AlertProvider} from '../../../components/Alert/AlertContext';
 
-const UseContextHook = () => {
+const UseContext = () => {
   return (
     <AlertProvider>
       <ScreenView>
@@ -19,4 +19,4 @@ const UseContextHook = () => {
   );
 };
 
-export default UseContextHook;
+export default UseContext;

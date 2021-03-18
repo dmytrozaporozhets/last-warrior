@@ -12,8 +12,11 @@ import {
   REACT_HOOKS_REDUCER,
   REACT_HOOKS_REF,
   REACT_HOOKS_STATE,
+  REDUX_COUNTER,
   SCREEN_STACK,
   TAB_SCREEN,
+  REDUX,
+  REDUX_TODOS,
 } from '../screens/constants';
 import {BackButton, LogoIcon} from '../elements/TopBarButtons';
 import {Text} from '../components';
@@ -32,7 +35,7 @@ export const getHeaderOptions = (name) => {
       return {
         headerTitle: () => <Text bold>Profile</Text>,
       };
-    case DISPLAY_SCREEN:
+    case REDUX_COUNTER:
       return {
         headerLeft: () => <BackButton style={sg.mL25} />,
         headerTitle: () => (
@@ -137,6 +140,24 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Callback
+          </Text>
+        ),
+      };
+    case REDUX:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            Redux
+          </Text>
+        ),
+      };
+    case REDUX_TODOS:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            Todos
           </Text>
         ),
       };

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Button, ScreenView, Text} from '../../components';
+import {Button, ScreenView, Text} from '../../../components';
 import {View, ScrollView} from 'react-native';
-import {resourceJSON} from '../../constants';
-import {sg} from '../../styling';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
+import {resourceJSON} from '../../../constants';
+import {sg} from '../../../styling';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
 
-const UseEffectHook = () => {
+const UseEffect = () => {
   const [type, setType] = useState('users');
   const [data, setData] = useState([]);
 
@@ -41,7 +41,7 @@ const UseEffectHook = () => {
                   size={it.size}
                   btnType={it.btnType}
                   onPress={switchResource(it.resource)}
-                  style={index !== 0 && sg.mL10}
+                  style={[index !== 0 && sg.mL10]}
                   key={it.id}
                 />
               ))}
@@ -54,4 +54,4 @@ const UseEffectHook = () => {
   );
 };
 
-export default UseEffectHook;
+export default UseEffect;

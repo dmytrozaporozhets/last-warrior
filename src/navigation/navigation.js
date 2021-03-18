@@ -6,7 +6,7 @@ import {useSelector} from 'react-redux';
 import {
   SignIn,
   Profile,
-  Display,
+  Counter,
   Home,
   Example,
   Tabs,
@@ -15,18 +15,19 @@ import {
   Info,
   About,
   ReactHooks,
-  UseEffectHook,
-  UseRefHook,
-  UseStateHook,
-  UseMemoHook,
-  UseReducerHook,
-  UseContextHook,
-  UseCallbackHook,
+  UseEffect,
+  UseRef,
+  UseState,
+  UseMemo,
+  UseReducer,
+  UseContext,
+  UseCallback,
+  Redux,
+  Todos,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
 import {
-  DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
   HOME_SCREEN,
   PROFILE_SCREEN,
@@ -46,6 +47,9 @@ import {
   REACT_HOOKS_REDUCER,
   REACT_HOOKS_CONTEXT,
   REACT_HOOKS_CALLBACK,
+  REDUX,
+  REDUX_COUNTER,
+  REDUX_TODOS,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -82,8 +86,8 @@ export const MyTabs = () => {
       }}>
       <Tab.Screen name={HOME_SCREEN} component={Home} />
       <Tab.Screen name={LIBRARY} component={Library} />
-      <Tab.Screen name={INFO} component={Info} />
       <Tab.Screen name={ABOUT} component={About} />
+      <Tab.Screen name={INFO} component={Info} />
       <Tab.Screen name={PROFILE_SCREEN} component={Profile} />
     </Tab.Navigator>
   );
@@ -111,7 +115,7 @@ export const MainStackScreen = () => {
           headerTitleAlign: 'center',
           headerTintColor: 'white',
         }}>
-        {auth.token || auth.loggedIn ? (
+        {!auth.token || !auth.loggedIn ? (
           <>
             <Stack.Screen
               name={SCREEN_STACK}
@@ -126,9 +130,9 @@ export const MainStackScreen = () => {
               options={{...getHeaderOptions(LIBRARY)}}
             />
             <Stack.Screen
-              name={DISPLAY_SCREEN}
-              component={Display}
-              options={{...getHeaderOptions(DISPLAY_SCREEN)}}
+              name={REDUX_COUNTER}
+              component={Counter}
+              options={{...getHeaderOptions(REDUX_COUNTER)}}
             />
             <Stack.Screen
               name={TAB_SCREEN}
@@ -154,38 +158,48 @@ export const MainStackScreen = () => {
             />
             <Stack.Screen
               name={REACT_HOOKS_EFFECT}
-              component={UseEffectHook}
+              component={UseEffect}
               options={{...getHeaderOptions(REACT_HOOKS_EFFECT)}}
             />
             <Stack.Screen
               name={REACT_HOOKS_REF}
-              component={UseRefHook}
+              component={UseRef}
               options={{...getHeaderOptions(REACT_HOOKS_REF)}}
             />
             <Stack.Screen
               name={REACT_HOOKS_STATE}
-              component={UseStateHook}
+              component={UseState}
               options={{...getHeaderOptions(REACT_HOOKS_STATE)}}
             />
             <Stack.Screen
               name={REACT_HOOKS_MEMO}
-              component={UseMemoHook}
+              component={UseMemo}
               options={{...getHeaderOptions(REACT_HOOKS_MEMO)}}
             />
             <Stack.Screen
               name={REACT_HOOKS_REDUCER}
-              component={UseReducerHook}
+              component={UseReducer}
               options={{...getHeaderOptions(REACT_HOOKS_REDUCER)}}
             />
             <Stack.Screen
               name={REACT_HOOKS_CONTEXT}
-              component={UseContextHook}
+              component={UseContext}
               options={{...getHeaderOptions(REACT_HOOKS_CONTEXT)}}
             />
             <Stack.Screen
               name={REACT_HOOKS_CALLBACK}
-              component={UseCallbackHook}
+              component={UseCallback}
               options={{...getHeaderOptions(REACT_HOOKS_CALLBACK)}}
+            />
+            <Stack.Screen
+              name={REDUX}
+              component={Redux}
+              options={{...getHeaderOptions(REDUX)}}
+            />
+            <Stack.Screen
+              name={REDUX_TODOS}
+              component={Todos}
+              options={{...getHeaderOptions(REDUX_TODOS)}}
             />
           </>
         ) : (

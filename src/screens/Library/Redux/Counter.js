@@ -5,15 +5,15 @@ import {
   incrementCounter,
   decrementCounter,
   resetCounter,
-} from '../redax/interface';
+} from '../../../redax/interface';
 import {useSelector, useDispatch} from 'react-redux';
-import {astroSky, darkSky} from '../../assets/link/image';
-import {Colors, sg} from '../styling';
-import {DisplayScreenStyle} from '../styling/screens/DisplayScreen';
-import {buttonCounter} from '../constants';
-import {ScreenView} from '../components';
+import {astroSky, darkSky} from '../../../../assets/link/image';
+import {Colors, sg} from '../../../styling';
+import {DisplayScreenStyle} from '../../../styling/screens/DisplayScreen';
+import {buttonCounter} from '../../../constants';
+import {ScreenView} from '../../../components';
 
-const Display = () => {
+const Counter = () => {
   const [theme, setTheme] = useState(true);
 
   const state = useSelector((state) => state);
@@ -81,4 +81,4 @@ const Display = () => {
   );
 };
 
-export default Display;
+export default Counter;

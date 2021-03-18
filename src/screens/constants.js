@@ -1,7 +1,6 @@
 export const SCREEN_STACK = 'Screen Stack';
 export const HOME_SCREEN = 'Home';
 export const PROFILE_SCREEN = 'Profile';
-export const DISPLAY_SCREEN = 'Display';
 export const TAB_SCREEN = 'Tab';
 export const EXAMPLE_SCREEN = 'Example';
 export const LIBRARY = 'Library';
@@ -19,3 +18,6 @@ export const REACT_HOOKS_MEMO = 'React Hooks Memo';
 export const REACT_HOOKS_CALLBACK = 'React Hooks Callback';
 export const REACT_HOOKS_CONTEXT = 'React Hooks Context';
 export const REACT_HOOKS_REDUCER = 'React Hooks Reducer';
+export const REDUX = 'Redux';
+export const REDUX_COUNTER = 'Redux Counter';
+export const REDUX_TODOS = 'Redux Todos';

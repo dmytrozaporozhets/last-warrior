@@ -1,9 +1,9 @@
 import React, {useState, useMemo, useEffect} from 'react';
-import {Button, ScreenView, Text} from '../../components/index';
+import {Button, ScreenView, Text} from '../../../components';
 import {View, ScrollView} from 'react-native';
-import {sg} from '../../styling';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
-import {numberData} from '../../constants';
+import {sg} from '../../../styling';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
+import {numberData} from '../../../constants';
 
 const complexComputed = (num) => {
   // let i = 0;
@@ -13,7 +13,7 @@ const complexComputed = (num) => {
   return num * 2;
 };
 
-const UseMemoHook = () => {
+const UseMemo = () => {
   const [number, setNumber] = useState(42);
   const [colored, setColored] = useState(false);
 
@@ -58,7 +58,7 @@ const UseMemoHook = () => {
                   size={it.size}
                   btnType={it.btnType}
                   onPress={switchNumber(it.operation)}
-                  style={index !== 0 && sg.mL10}
+                  style={[index !== 0 && sg.mL10]}
                   key={it.id}
                 />
               ))}
@@ -70,4 +70,4 @@ const UseMemoHook = () => {
   );
 };
 
-export default UseMemoHook;
+export default UseMemo;

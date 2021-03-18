@@ -1,5 +1,4 @@
 import {
-  DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
   NETWORK_REQUEST,
   REACT_HOOKS,
@@ -10,6 +9,9 @@ import {
   REACT_HOOKS_REDUCER,
   REACT_HOOKS_REF,
   REACT_HOOKS_STATE,
+  REDUX,
+  REDUX_COUNTER,
+  REDUX_TODOS,
   TAB_SCREEN,
 } from '../screens/constants';
 import React from 'react';
@@ -22,11 +24,11 @@ export const buttonCounter = [
 ];
 
 export const libraryScreen = [
-  {title: 'Counter', pathway: DISPLAY_SCREEN, id: 1},
-  {title: 'Tabs', pathway: TAB_SCREEN, id: 2},
-  {title: 'Network requests', pathway: NETWORK_REQUEST, id: 3},
-  {title: 'Practice', pathway: EXAMPLE_SCREEN, id: 4},
-  {title: 'React Hooks', pathway: REACT_HOOKS, id: 5},
+  {title: 'React Hooks', pathway: REACT_HOOKS, id: 1},
+  {title: 'Redux', pathway: REDUX, id: 2},
+  {title: 'Tabs', pathway: TAB_SCREEN, id: 3},
+  {title: 'Network requests', pathway: NETWORK_REQUEST, id: 4},
+  {title: 'Practice', pathway: EXAMPLE_SCREEN, id: 5},
 ];
 
 export const counterData = [
@@ -65,4 +67,9 @@ export const reactHooks = [
   {title: 'useCallback', id: 5, pathway: REACT_HOOKS_CALLBACK},
   {title: 'useContext', id: 6, pathway: REACT_HOOKS_CONTEXT},
   {title: 'useReducer', id: 7, pathway: REACT_HOOKS_REDUCER},
+];
+
+export const reduxPractice = [
+  {title: 'Counter', id: 1, pathway: REDUX_COUNTER},
+  {title: 'Todos', id: 2, pathway: REDUX_TODOS},
 ];

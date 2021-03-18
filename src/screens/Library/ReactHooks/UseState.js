@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Button, ScreenView, Text} from '../../components/index';
+import {Button, ScreenView, Text} from '../../../components';
 import {View, ScrollView} from 'react-native';
-import {sg} from '../../styling';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
-import {counterData} from '../../constants';
+import {sg} from '../../../styling';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
+import {counterData} from '../../../constants';
 
-const UseStateHook = () => {
+const UseState = () => {
   const [counter, setCounter] = useState(0);
   const [card, setCard] = useState({title: 'Counter', date: Date.now()});
 
@@ -39,7 +39,7 @@ const UseStateHook = () => {
                   size={it.size}
                   btnType={it.btnType}
                   onPress={switchCounter(it.operation)}
-                  style={index !== 0 && sg.mL10}
+                  style={[index !== 0 && sg.mL10]}
                   key={it.id}
                 />
               ))}
@@ -61,4 +61,4 @@ const UseStateHook = () => {
   );
 };
 
-export default UseStateHook;
+export default UseState;

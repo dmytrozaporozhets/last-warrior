@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Button, ScreenView, Text} from '../../components/index';
+import {Button, ScreenView, Text} from '../../../components';
 import {View, ScrollView} from 'react-native';
-import {sg} from '../../styling';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
+import {sg} from '../../../styling';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
 
-const UseReducerHook = () => {
+const UseReducer = () => {
   return (
     <ScreenView>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -18,4 +18,4 @@ const UseReducerHook = () => {
   );
 };
 
-export default UseReducerHook;
+export default UseReducer;

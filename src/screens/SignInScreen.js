@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, Text, ImageBackground, StyleSheet, TextInput} from 'react-native';
-import TodoList from '../components/TodoList';
+import TodoList from '../components/Todo/TodoList';
 
 const image = {
   uri:

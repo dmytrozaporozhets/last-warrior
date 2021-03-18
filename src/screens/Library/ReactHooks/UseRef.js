@@ -1,10 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {View, ScrollView, TextInput} from 'react-native';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
-import {Text, Button, ScreenView} from '../../components';
-import {sg} from '../../styling';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
+import {Text, Button, ScreenView} from '../../../components';
+import {sg} from '../../../styling';
 
-const UseRefHook = () => {
+const UseRef = () => {
   const [value, setValue] = useState('initial');
   const renderCount = useRef(1);
   const inputRef = useRef(null);
@@ -60,4 +60,4 @@ const UseRefHook = () => {
   );
 };
 
-export default UseRefHook;
+export default UseRef;

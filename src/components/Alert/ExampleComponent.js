@@ -1,8 +1,8 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Button, Text} from './index';
-import {sg} from '../styling';
-import {useAlert} from './Alert/AlertContext';
+import {Button, Text} from '../index';
+import {sg} from '../../styling';
+import {useAlert} from './AlertContext';
 
 const ExampleComponent = () => {
   const {onToggle} = useAlert();

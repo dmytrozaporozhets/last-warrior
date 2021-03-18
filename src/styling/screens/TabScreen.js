@@ -6,6 +6,7 @@ export const TabScreenStyle = StyleSheet.create({
     paddingTop: 50,
   },
   container: {
+    flex: 1,
     paddingHorizontal: 30,
   },
   image: {flex: 1, resizeMode: 'cover', justifyContent: 'center', margin: 0},

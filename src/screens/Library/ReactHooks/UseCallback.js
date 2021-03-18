@@ -1,12 +1,12 @@
 import React, {useState, useCallback} from 'react';
-import {Button, ScreenView, Text} from '../../components/index';
+import {Button, ScreenView, Text} from '../../../components';
 import {View, ScrollView} from 'react-native';
-import {sg} from '../../styling';
-import {ReactHooksStyle} from '../../styling/screens/ReactHooks';
-import {elementState} from '../../constants';
-import ItemsList from '../../components/ItemsList';
+import {sg} from '../../../styling';
+import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
+import {elementState} from '../../../constants';
+import ItemsList from '../../../components/ItemsList';
 
-const UseCallbackHook = () => {
+const UseCallback = () => {
   const [colored, setColored] = useState(false);
   const [count, setCount] = useState(1);
 
@@ -41,7 +41,7 @@ const UseCallbackHook = () => {
                   title={it.title}
                   size={it.size}
                   btnType={it.btnType}
-                  style={index !== 0 && sg.mL10}
+                  style={[index !== 0 && sg.mL10]}
                   onPress={switchElements(it.func)}
                   key={it.id}
                 />
@@ -55,4 +55,4 @@ const UseCallbackHook = () => {
   );
 };
 
-export default UseCallbackHook;
+export default UseCallback;
