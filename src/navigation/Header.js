@@ -17,6 +17,7 @@ import {
   TAB_SCREEN,
   REDUX,
   REDUX_TODOS,
+  REACT_HOOKS_USER,
 } from '../screens/constants';
 import {BackButton, LogoIcon} from '../elements/TopBarButtons';
 import {Text} from '../components';
@@ -140,6 +141,15 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Callback
+          </Text>
+        ),
+      };
+    case REACT_HOOKS_USER:
+      return {
+        headerLeft: () => <BackButton style={sg.mL25} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            use User
           </Text>
         ),
       };

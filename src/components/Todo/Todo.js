@@ -31,12 +31,12 @@ const Todo = ({onLongPress, text, style, activeOpacity}) => {
 Todo.defaultTypes = {
   activeOpacity: 1,
   style: [],
-  onPress: () => null,
+  // onPress: () => null,
   onLongPress: () => null,
 };
 
 Todo.propTypes = {
-  onPress: PropTypes.func.isRequired,
+  // onPress: PropTypes.func.isRequired,
   onLongPress: PropTypes.func.isRequired,
   text: PropTypes.object.isRequired,
 };

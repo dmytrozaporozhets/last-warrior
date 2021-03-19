@@ -24,6 +24,7 @@ import {
   UseCallback,
   Redux,
   Todos,
+  UseUser,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -50,6 +51,7 @@ import {
   REDUX,
   REDUX_COUNTER,
   REDUX_TODOS,
+  REACT_HOOKS_USER,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -200,6 +202,11 @@ export const MainStackScreen = () => {
               name={REDUX_TODOS}
               component={Todos}
               options={{...getHeaderOptions(REDUX_TODOS)}}
+            />
+            <Stack.Screen
+              name={REACT_HOOKS_USER}
+              component={UseUser}
+              options={{...getHeaderOptions(REACT_HOOKS_USER)}}
             />
           </>
         ) : (

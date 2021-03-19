@@ -21,3 +21,4 @@ export const REACT_HOOKS_REDUCER = 'React Hooks Reducer';
 export const REDUX = 'Redux';
 export const REDUX_COUNTER = 'Redux Counter';
 export const REDUX_TODOS = 'Redux Todos';
+export const REACT_HOOKS_USER = 'React Hooks User';

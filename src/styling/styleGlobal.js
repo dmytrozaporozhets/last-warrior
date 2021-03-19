@@ -568,6 +568,9 @@ export default {
   height60: {
     height: 60,
   },
+  height100: {
+    height: 100,
+  },
   border: {
     borderWidth: 1,
   },

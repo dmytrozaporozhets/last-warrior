@@ -10,9 +10,8 @@ const AddTodo = ({onSubmit}) => {
     if (value.trim()) {
       onSubmit(value);
       setValue('');
-      console.log('check');
     } else {
-      Alert.alert('Заметка не может быть пустой');
+      Alert.alert('Note cannot be empty');
     }
   };
 

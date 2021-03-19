@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Button, ScreenView, Text} from '../../../components';
+import React from 'react';
+import {ScreenView, Text} from '../../../components';
 import {View, ScrollView} from 'react-native';
 import {sg} from '../../../styling';
 import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';

@@ -13,6 +13,7 @@ import {
   REDUX_COUNTER,
   REDUX_TODOS,
   TAB_SCREEN,
+  REACT_HOOKS_USER,
 } from '../screens/constants';
 import React from 'react';
 
@@ -67,6 +68,7 @@ export const reactHooks = [
   {title: 'useCallback', id: 5, pathway: REACT_HOOKS_CALLBACK},
   {title: 'useContext', id: 6, pathway: REACT_HOOKS_CONTEXT},
   {title: 'useReducer', id: 7, pathway: REACT_HOOKS_REDUCER},
+  {title: 'useUser', id: 8, pathway: REACT_HOOKS_USER},
 ];
 
 export const reduxPractice = [
