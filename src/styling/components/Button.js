@@ -5,7 +5,7 @@ export const ButtonStyleSize = {
   large: StyleSheet.create({
     container: {
       height: 40,
-      borderWidth: 2,
+      borderWidth: 1,
       borderRadius: 14,
       alignItems: 'center',
       justifyContent: 'center',
@@ -20,7 +20,7 @@ export const ButtonStyleSize = {
   medium: StyleSheet.create({
     container: {
       height: 40,
-      borderWidth: 2,
+      borderWidth: 1,
       borderRadius: 11,
       alignItems: 'center',
       justifyContent: 'center',

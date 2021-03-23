@@ -1,4 +1,4 @@
-import * as types from '../albums/actionTypes';
+import * as types from '../photos/actionTypes';
 
 const initialState = {
   data: [],
@@ -6,17 +6,17 @@ const initialState = {
 };
 
 const ACTION_HANDLERS = {
-  [types.ALBUMS_NETWORK_REQUEST]: (state) => ({...state, isLoading: true}),
-  [types.GET_ALBUMS_SUCCESS]: (state, action) => ({
+  [types.PHOTOS_NETWORK_REQUEST]: (state) => ({...state, isLoading: true}),
+  [types.GET_PHOTOS_SUCCESS]: (state, action) => ({
     data: action.payload,
     isLoading: false,
   }),
   [types.ON_ERROR]: (state) => ({...state, isLoading: false}),
 };
 
-const AlbumReducer = (state = initialState, action) => {
+const PhotoReducer = (state = initialState, action) => {
   const handler = ACTION_HANDLERS[action.type];
   return handler ? handler(state, action) : state;
 };
 
-export default AlbumReducer;
+export default PhotoReducer;

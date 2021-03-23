@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FlatList, ImageBackground, View, ScrollView} from 'react-native';
-import AddTodo from '../../components/Todo/AddTodo';
+import InputForm from '../../components/InputForm';
 import {TabScreenStyle} from '../../styling/screens/TabScreen';
 import {smoke} from '../../../assets/link/image';
 import {ScreenView, Todo} from '../../components';
@@ -35,13 +35,13 @@ const Tabs = () => {
   const renderItem = ({item}) => (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={sg.mT5}>
-        <Todo text={item} onLongPress={removeNote} />
+        <Todo title={item} onLongPress={removeNote} />
       </View>
     </ScrollView>
   );
 
   const keyExtractor = (item) => {
-    return item.id.toString();
+    return item.id;
   };
 
   return (
@@ -49,7 +49,11 @@ const Tabs = () => {
       <ImageBackground source={smoke} style={TabScreenStyle.image}>
         <View style={TabScreenStyle.component}>
           <View style={TabScreenStyle.container}>
-            <AddTodo onSubmit={addNote} />
+            <InputForm
+              onSubmit={addNote}
+              placeholder="Add todo..."
+              titleBtn="Add Todo"
+            />
             <FlatList
               keyExractor={keyExtractor}
               data={notes}

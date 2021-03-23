@@ -15,7 +15,6 @@ import {
   TAB_SCREEN,
   REACT_HOOKS_USER,
 } from '../screens/constants';
-import React from 'react';
 
 export const buttonCounter = [
   {title: '+', color: 'blue', operation: 'add', id: 1},
@@ -73,5 +72,29 @@ export const reactHooks = [
 
 export const reduxPractice = [
   {title: 'Counter', id: 1, pathway: REDUX_COUNTER},
-  {title: 'Todos', id: 2, pathway: REDUX_TODOS},
+  {title: 'Posts', id: 2, pathway: REDUX_TODOS},
+];
+
+export const fakePhotosData = [
+  {
+    albumId: 100,
+    id: 1,
+    thumbnailUrl: 'https://via.placeholder.com/150/315aa6',
+    title: 'qui quo cumque distinctio aut voluptas',
+    url: 'https://via.placeholder.com/600/315aa6',
+  },
+  {
+    albumId: 100,
+    id: 2,
+    thumbnailUrl: 'https://via.placeholder.com/150/1b9d08',
+    title: 'in voluptate sit officia non nesciunt quis',
+    url: 'https://via.placeholder.com/600/1b9d08',
+  },
+  {
+    albumId: 100,
+    id: 3,
+    thumbnailUrl: 'https://via.placeholder.com/150/6dd9cb',
+    title: 'error quasi sunt cupiditate voluptate ea odit beatae',
+    url: 'https://via.placeholder.com/600/6dd9cb',
+  },
 ];

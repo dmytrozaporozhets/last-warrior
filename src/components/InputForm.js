@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Alert} from 'react-native';
-import {Button, Input} from '../index';
-import {sg} from '../../styling';
+import {Button, Input} from './index';
+import {sg} from '../styling';
 
-const AddTodo = ({onSubmit}) => {
+const InputForm = ({
+  onSubmit,
+  inputStyle,
+  buttonStyle,
+  placeholder,
+  titleBtn,
+}) => {
   const [value, setValue] = useState('');
 
   const pressHandler = () => {
@@ -11,7 +17,7 @@ const AddTodo = ({onSubmit}) => {
       onSubmit(value);
       setValue('');
     } else {
-      Alert.alert('Note cannot be empty');
+      Alert.alert('Field cannot be empty');
     }
   };
 
@@ -20,13 +26,15 @@ const AddTodo = ({onSubmit}) => {
       <Input
         onChange={setValue}
         value={value}
-        placeholder="Enter a todo..."
-        containerStyle={sg.width60p}
+        placeholder={placeholder}
+        containerStyle={[sg.width200, inputStyle]}
       />
       <Button
-        title="Add Todo"
+        title={titleBtn}
+        size="small"
+        btnType="green"
         onPress={pressHandler}
-        style={[sg.mL10, sg.mT25, sg.width120]}
+        style={[sg.mL10, sg.mT25, buttonStyle]}
       />
     </View>
   );
@@ -41,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddTodo;
+export default InputForm;

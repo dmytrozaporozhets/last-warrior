@@ -1,4 +1,3 @@
-import React from 'react';
 import {ACCESS_TOKEN, LOGIN_SIGN_IN} from './types';
 import {SHOW_LOADER, HIDE_LOADER} from './types';
 import {GET_USER_DATA} from './types';

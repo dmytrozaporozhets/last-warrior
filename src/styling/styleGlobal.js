@@ -216,6 +216,9 @@ export default {
   mT30: {
     marginTop: 30,
   },
+  mT35: {
+    marginTop: 35,
+  },
   mT40: {
     marginTop: 40,
   },
@@ -454,6 +457,9 @@ export default {
   pH20: {
     paddingHorizontal: 20,
   },
+  pH25: {
+    paddingHorizontal: 25,
+  },
   pH30: {
     paddingHorizontal: 30,
   },
@@ -477,6 +483,12 @@ export default {
   },
   width70p: {
     width: '70%',
+  },
+  width80p: {
+    width: '80%',
+  },
+  width90p: {
+    width: '90%',
   },
   width100p: {
     width: '100%',

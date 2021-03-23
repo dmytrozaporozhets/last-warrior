@@ -17,3 +17,6 @@ export const asyncIncrement = () => {
     }, 2000);
   };
 };
+
+export const showAlert = createAction(types.SHOW_ALERT);
+export const hideAlert = createAction(types.HIDE_ALERT);

@@ -1,5 +1,4 @@
 import {
-  DISPLAY_SCREEN,
   EXAMPLE_SCREEN,
   LIBRARY,
   NETWORK_REQUEST,
@@ -18,6 +17,7 @@ import {
   REDUX,
   REDUX_TODOS,
   REACT_HOOKS_USER,
+  NETWORK_FETCH,
 } from '../screens/constants';
 import {BackButton, LogoIcon} from '../elements/TopBarButtons';
 import {Text} from '../components';
@@ -25,6 +25,9 @@ import {sg} from '../styling';
 import React from 'react';
 
 export const getHeaderOptions = (name) => {
+  const defaultHeader = {
+    headerLeft: () => <BackButton style={sg.mL25} />,
+  };
   switch (name) {
     case SCREEN_STACK:
       return {headerTitle: () => <LogoIcon name="Last Warrior" />};
@@ -38,7 +41,7 @@ export const getHeaderOptions = (name) => {
       };
     case REDUX_COUNTER:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Counter
@@ -47,7 +50,7 @@ export const getHeaderOptions = (name) => {
       };
     case NETWORK_REQUEST:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Network
@@ -56,7 +59,7 @@ export const getHeaderOptions = (name) => {
       };
     case TAB_SCREEN:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Tab
@@ -65,7 +68,7 @@ export const getHeaderOptions = (name) => {
       };
     case EXAMPLE_SCREEN:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Practice
@@ -74,7 +77,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             React Hooks
@@ -92,7 +95,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_STATE:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use State
@@ -101,7 +104,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_REF:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Ref
@@ -110,7 +113,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_MEMO:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Memo
@@ -119,7 +122,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_REDUCER:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Reducer
@@ -128,7 +131,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_CONTEXT:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Context
@@ -137,7 +140,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_CALLBACK:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use Callback
@@ -146,7 +149,7 @@ export const getHeaderOptions = (name) => {
       };
     case REACT_HOOKS_USER:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             use User
@@ -155,7 +158,7 @@ export const getHeaderOptions = (name) => {
       };
     case REDUX:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Redux
@@ -164,10 +167,19 @@ export const getHeaderOptions = (name) => {
       };
     case REDUX_TODOS:
       return {
-        headerLeft: () => <BackButton style={sg.mL25} />,
+        ...defaultHeader,
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
-            Todos
+            Posts
+          </Text>
+        ),
+      };
+    case NETWORK_FETCH:
+      return {
+        ...defaultHeader,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            Fetch
           </Text>
         ),
       };

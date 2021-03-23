@@ -20,5 +20,6 @@ export const REACT_HOOKS_CONTEXT = 'React Hooks Context';
 export const REACT_HOOKS_REDUCER = 'React Hooks Reducer';
 export const REDUX = 'Redux';
 export const REDUX_COUNTER = 'Redux Counter';
-export const REDUX_TODOS = 'Redux Todos';
+export const REDUX_TODOS = 'Redux Posts';
 export const REACT_HOOKS_USER = 'React Hooks User';
+export const NETWORK_FETCH = 'Network Fetch';

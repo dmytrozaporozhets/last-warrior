@@ -50,7 +50,10 @@ const Counter = () => {
         <View style={sg.flex}>
           <View style={DisplayScreenStyle.containerTheme}>
             <TouchableOpacity
-              style={DisplayScreenStyle.buttonTheme}
+              style={[
+                DisplayScreenStyle.buttonTheme,
+                {backgroundColor: disabled ? 'lightgrey' : 'pink'},
+              ]}
               activeOpacity={0.5}
               onPress={switchTheme}
               disabled={disabled}>
@@ -68,7 +71,10 @@ const Counter = () => {
             {buttonCounter.map((it) => (
               <TouchableOpacity
                 key={it.id}
-                style={[DisplayScreenStyle.button, {backgroundColor: it.color}]}
+                style={[
+                  DisplayScreenStyle.button,
+                  {backgroundColor: disabled ? 'lightgrey' : it.color},
+                ]}
                 onPress={switchOperation(it.operation)}
                 disabled={disabled}>
                 <Text style={DisplayScreenStyle.textButton}>{it.title}</Text>

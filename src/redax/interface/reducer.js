@@ -3,6 +3,7 @@ import * as types from './actionTypes';
 const initialState = {
   disabled: false,
   count: 0,
+  alert: null,
 };
 
 const ACTION_HANDLERS = {
@@ -25,6 +26,14 @@ const ACTION_HANDLERS = {
   [types.ENABLE_BUTTONS]: (state) => ({
     ...state,
     disabled: false,
+  }),
+  [types.SHOW_ALERT]: (state) => ({
+    ...state,
+    alert: true,
+  }),
+  [types.HIDE_ALERT]: (state) => ({
+    ...state,
+    alert: false,
   }),
 };
 

@@ -10,7 +10,7 @@ const UseContext = () => {
       <ScreenView>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={ReactHooksStyle.container}>
-            <Alert />
+            <Alert text="Very important message" />
             <ExampleComponent />
           </View>
         </ScrollView>

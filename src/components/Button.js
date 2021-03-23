@@ -50,7 +50,7 @@ Button.defaultProps = {
   disabled: false,
   style: {},
   activeOpacity: 0.5,
-  onPress: () => console.log('Hello'),
+  onPress: () => null,
 };
 
 Button.propTypes = {

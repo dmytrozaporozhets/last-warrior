@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import {Text} from '../index';
 import {TodoStyle} from '../../styling/components/Todo';
 
-const Todo = ({onLongPress, text, style, activeOpacity}) => {
+const Todo = ({onLongPress, title, style, activeOpacity}) => {
   const [check, setCheck] = useState(false);
   const switchCheck = () => setCheck(!check);
   return (
     <TouchableOpacity
-      activeOpacity={activeOpacity}
+      activeOpacity={1}
       onPress={switchCheck}
-      onLongPress={() => onLongPress(text.id)}
+      onLongPress={() => onLongPress(title.id)}
       style={style}>
       <View style={TodoStyle.container}>
         <Text
@@ -21,7 +21,7 @@ const Todo = ({onLongPress, text, style, activeOpacity}) => {
               textDecorationLine: check ? 'line-through' : 'none',
             },
           ]}>
-          {text.title}
+          {title.title}
         </Text>
       </View>
     </TouchableOpacity>
@@ -38,7 +38,7 @@ Todo.defaultTypes = {
 Todo.propTypes = {
   // onPress: PropTypes.func.isRequired,
   onLongPress: PropTypes.func.isRequired,
-  text: PropTypes.object.isRequired,
+  title: PropTypes.object.isRequired,
 };
 
 export default Todo;

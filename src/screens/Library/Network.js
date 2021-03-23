@@ -1,8 +1,10 @@
-import React, {useEffect} from 'react';
-import {ScreenView, Text} from '../../components';
+import React from 'react';
+import {Button, ScreenView} from '../../components';
 import {View, ScrollView} from 'react-native';
+import {Colors, sg} from '../../styling';
 // import firebase from '@react-native-firebase/app';
 // import dynamicLinks from '@react-native-firebase/dynamic-links';
+import {NETWORK_FETCH} from '../constants';
 
 // function DynamicLinks() {
 //   useEffect(() => {
@@ -17,13 +19,22 @@ import {View, ScrollView} from 'react-native';
 //   return null;
 // }
 
-const Network = () => {
+const Network = ({navigation}) => {
+  const goTo = (route) => () => navigation.navigate(route);
   return (
-    <ScreenView>
+    <ScreenView
+      childrenStyle={{backgroundColor: Colors.black}}
+      statusBarColor={Colors.black}>
       <ScrollView>
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginHorizontal: 20,
+          }}>
           {/*<DynamicLinks />*/}
-          <Text>Network request</Text>
+          <Button title="Fetch" style={sg.mT30} onPress={goTo(NETWORK_FETCH)} />
         </View>
       </ScrollView>
     </ScreenView>
