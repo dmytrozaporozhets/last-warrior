@@ -29,6 +29,7 @@ import {
   CounterView,
   WelcomeHome,
   LibraryGuide,
+  Settings,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -60,6 +61,7 @@ import {
   COUNTER,
   WELCOME_HOME,
   LIBRARY_GUIDE,
+  SETTINGS_SCREEN,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -98,7 +100,6 @@ export const MyTabs = () => {
       <Tab.Screen name={LIBRARY} component={Library} />
       <Tab.Screen name={ABOUT} component={About} />
       <Tab.Screen name={INFO} component={Info} />
-      <Tab.Screen name={PROFILE_SCREEN} component={Profile} />
     </Tab.Navigator>
   );
 };
@@ -126,7 +127,7 @@ export const MainStackScreen = () => {
           headerTintColor: 'white',
           headerLeft: () => null,
         }}>
-        {!auth.token || !auth.loggedIn ? (
+        {auth.token || auth.loggedIn ? (
           <>
             <Stack.Screen
               name={WELCOME_HOME}
@@ -143,7 +144,16 @@ export const MainStackScreen = () => {
               component={Home}
               options={{...getHeaderOptions(HOME_SCREEN)}}
             />
-            <Stack.Screen name={PROFILE_SCREEN} component={Profile} />
+            <Stack.Screen
+              name={PROFILE_SCREEN}
+              component={Profile}
+              options={{...getHeaderOptions(PROFILE_SCREEN)}}
+            />
+            <Stack.Screen
+              name={SETTINGS_SCREEN}
+              component={Settings}
+              options={{...getHeaderOptions(SETTINGS_SCREEN)}}
+            />
             <Stack.Screen
               name={LIBRARY}
               component={Library}

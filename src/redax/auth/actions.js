@@ -1,33 +1,10 @@
-import {ACCESS_TOKEN, LOGIN_SIGN_IN} from './types';
-import {SHOW_LOADER, HIDE_LOADER} from './types';
+import {SHOW_LOADER, HIDE_LOADER, LOGIN_SIGN_IN, ACCESS_TOKEN} from './types';
 import {GET_USER_DATA} from './types';
+import {createAction} from '../../utils';
 
-export const accessToken = (data) => {
-  return {
-    type: ACCESS_TOKEN,
-    payload: data,
-  };
-};
+export const accessToken = createAction(ACCESS_TOKEN);
+export const signIn = createAction(LOGIN_SIGN_IN);
+export const userDataResponse = createAction(GET_USER_DATA);
 
-export const signIn = () => {
-  return {
-    type: LOGIN_SIGN_IN,
-  };
-};
-
-export const showLoader = () => {
-  return {
-    type: SHOW_LOADER,
-  };
-};
-
-export const hideLoader = () => {
-  return {
-    type: HIDE_LOADER,
-  };
-};
-
-export const userDataResponse = (data) => ({
-  type: GET_USER_DATA,
-  payload: data,
-});
+export const showLoader = createAction(SHOW_LOADER);
+export const hideLoader = createAction(HIDE_LOADER);

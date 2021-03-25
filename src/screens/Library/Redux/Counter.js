@@ -43,7 +43,7 @@ const Counter = () => {
     }
   };
   return (
-    <ScreenView statusBarColor={Colors.black}>
+    <ScreenView statusBarColor={Colors.black} >
       <ImageBackground
         source={theme ? darkSky : astroSky}
         style={DisplayScreenStyle.image}>

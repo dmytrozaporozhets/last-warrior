@@ -1,24 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {View, ImageBackground} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {ProfileScreenStyle} from '../styling/screens/PtofileScreen';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
-import {darkMen} from '../../assets/link/image';
-import {UserCard} from '../components/index';
-import {sg} from '../styling';
+import {highBuild4} from '../../assets/link/image';
+import {ScreenView, UserCard} from '../components/index';
+import {Colors, sg} from '../styling';
+import {userDataResponse} from '../redax/auth/actions';
+import {requestUserUrl} from '../../assets/link/request';
 
-const requestUserUrl = 'https://api.github.com/user';
-
-const Profile = ({navigation}) => {
-  const [user, setUser] = useState(null);
-  const goTo = (route) => () => navigation.navigate(route);
-  const userInfo = useSelector((state) => state.token.user);
-
-  const userData = (user) => {
-    setUser(user);
-  };
-  console.log(user);
+const Profile = () => {
+  const dispatch = useDispatch();
+  const token = useSelector((state) => state.token.token);
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     axios
@@ -29,17 +23,15 @@ const Profile = ({navigation}) => {
         },
       })
       .then((response) => {
-        // dispatch(userDataResponse(response.data))
-        userData(response.data);
-        // console.log(response.data)
+        dispatch(userDataResponse(response.data));
+        console.log(response.data);
       })
       .catch((error) => console.log(error));
   }, []);
 
-  const token = useSelector((state) => state.token.token);
   return (
-    <ImageBackground source={darkMen} style={sg.flex}>
-      <SafeAreaView style={sg.flex}>
+    <ScreenView statusBarColor={Colors.black}>
+      <ImageBackground source={highBuild4} style={sg.flex}>
         <View style={ProfileScreenStyle.home}>
           {user ? (
             <UserCard
@@ -51,8 +43,8 @@ const Profile = ({navigation}) => {
             />
           ) : null}
         </View>
-      </SafeAreaView>
-    </ImageBackground>
+      </ImageBackground>
+    </ScreenView>
   );
 };
 

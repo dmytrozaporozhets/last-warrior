@@ -78,5 +78,53 @@ export const wall = {
 
 export const highBuild = {
   uri:
-    'https://images.pexels.com/photos/6331040/pexels-photo-6331040.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    'https://images.pexels.com/photos/6766628/pexels-photo-6766628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild2 = {
+  uri:
+    'https://images.pexels.com/photos/6786941/pexels-photo-6786941.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild3 = {
+  uri:
+    'https://images.pexels.com/photos/6325606/pexels-photo-6325606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild4 = {
+  uri:
+    'https://images.pexels.com/photos/6735046/pexels-photo-6735046.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild5 = {
+  uri:
+    'https://images.pexels.com/photos/6192064/pexels-photo-6192064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild6 = {
+  uri:
+    'https://images.pexels.com/photos/5847574/pexels-photo-5847574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild7 = {
+  uri:
+    'https://images.pexels.com/photos/5825579/pexels-photo-5825579.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+};
+export const highBuild8 = {
+  uri:
+    'https://images.pexels.com/photos/5647295/pexels-photo-5647295.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild9 = {
+  uri:
+    'https://images.pexels.com/photos/6165877/pexels-photo-6165877.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild10 = {
+  uri:
+    'https://images.pexels.com/photos/4850559/pexels-photo-4850559.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+};
+export const highBuild11 = {
+  uri:
+    'https://images.pexels.com/photos/6154807/pexels-photo-6154807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild12 = {
+  uri:
+    'https://images.pexels.com/photos/6094854/pexels-photo-6094854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+export const highBuild13 = {
+  uri:
+    'https://images.pexels.com/photos/6192054/pexels-photo-6192054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
 };

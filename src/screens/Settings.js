@@ -1,12 +1,13 @@
 import React from 'react';
-import {ScreenView, Text} from '../components/index';
-import {View, ScrollView, ImageBackground} from 'react-native';
-import {Colors, sg} from '../styling';
-import {highBuild3} from '../../assets/link/image';
+import {ImageBackground, ScrollView, View} from 'react-native';
 
-const About = () => {
+import {ScreenView, Text} from '../components/index';
+import {highBuild3} from '../../assets/link/image';
+import {Colors, sg} from '../styling';
+
+const Settings = ({navigation}) => {
   return (
-    <ScreenView>
+    <ScreenView statusBarColor={Colors.black}>
       <ImageBackground source={highBuild3} style={sg.flex}>
         <ScrollView
           contentContainerStyle={{
@@ -16,7 +17,7 @@ const About = () => {
           }}>
           <View>
             <Text style={{color: Colors.white, fontSize: 24}} bold>
-              About screen
+              Settings screen
             </Text>
           </View>
         </ScrollView>
@@ -25,4 +26,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Settings;

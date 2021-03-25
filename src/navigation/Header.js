@@ -1,8 +1,6 @@
 import {
   EXAMPLE_SCREEN,
-  LIBRARY,
   NETWORK_REQUEST,
-  PROFILE_SCREEN,
   REACT_HOOKS,
   REACT_HOOKS_CALLBACK,
   REACT_HOOKS_CONTEXT,
@@ -19,10 +17,17 @@ import {
   REACT_HOOKS_USER,
   NETWORK_FETCH,
   COUNTER,
-  HOME_SCREEN,
   LIBRARY_GUIDE,
+  PROFILE_SCREEN,
+  SETTINGS_SCREEN,
 } from '../screens/constants';
-import {BackButton, LogoIcon} from '../elements/TopBarButtons';
+import {
+  BackButton,
+  LogoIcon,
+  ProfileButton,
+  RightButtonsContainer,
+  SettingsButton,
+} from './TopBarButtons';
 import {Text} from '../components';
 import {sg} from '../styling';
 import React from 'react';
@@ -34,19 +39,11 @@ export const getHeaderOptions = (name) => {
   switch (name) {
     case SCREEN_STACK:
       return {
+        headerLeft: () => <ProfileButton style={sg.mL25} />,
         headerTitle: () => <LogoIcon name="Last Warrior" />,
-      };
-    case LIBRARY:
-      return {
-        headerTitle: () => <Text bold>Library</Text>,
-      };
-    case HOME_SCREEN:
-      return {
-        headerTitle: () => <LogoIcon name="Last Warrior" />,
-      };
-    case PROFILE_SCREEN:
-      return {
-        headerTitle: () => <Text bold>Profile</Text>,
+        headerRight: () => (
+          <RightButtonsContainer secondLeftButton={<SettingsButton />} />
+        ),
       };
     case REDUX_COUNTER:
       return {
@@ -55,6 +52,29 @@ export const getHeaderOptions = (name) => {
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Counter
           </Text>
+        ),
+      };
+    case PROFILE_SCREEN:
+      return {
+        headerLeft: () => <ProfileButton style={sg.mL25} isSelected={true} />,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            Profile
+          </Text>
+        ),
+        headerRight: () => null,
+      };
+    case SETTINGS_SCREEN:
+      return {
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            Settings
+          </Text>
+        ),
+        headerRight: () => (
+          <RightButtonsContainer
+            secondLeftButton={<SettingsButton isSelected={true} />}
+          />
         ),
       };
     case NETWORK_REQUEST:

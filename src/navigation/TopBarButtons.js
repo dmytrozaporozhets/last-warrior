@@ -4,6 +4,7 @@ import {Colors, sg} from '../styling';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Text} from '../components';
+import {PROFILE_SCREEN, SETTINGS_SCREEN} from '../screens/constants';
 
 export const BackButton = () => {
   const navigation = useNavigation();
@@ -37,6 +38,33 @@ export const LogoIcon = ({name}) => {
         {name}
       </Text>
     </View>
+  );
+};
+
+export const ProfileButton = ({isSelected = false}) => {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity
+      onPress={() =>
+        isSelected ? navigation.goBack() : navigation.navigate(PROFILE_SCREEN)
+      }
+      style={sg.mL25}>
+      <Icon name="user" size={24} color={isSelected ? 'yellow' : '#B5B5B5'} />
+    </TouchableOpacity>
+  );
+};
+
+export const SettingsButton = ({isSelected = false}) => {
+  const navigation = useNavigation();
+  const isFocused = navigation.name === SETTINGS_SCREEN;
+  return (
+    <TouchableOpacity
+      onPress={() =>
+        isSelected ? navigation.goBack() : navigation.navigate(SETTINGS_SCREEN)
+      }
+      style={sg.mL25}>
+      <Icon name="cog" size={24} color={isSelected ? 'yellow' : '#B5B5B5'} />
+    </TouchableOpacity>
   );
 };
 
