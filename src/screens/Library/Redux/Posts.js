@@ -5,7 +5,7 @@ import {Colors, sg} from '../../../styling';
 import {DisplayScreenStyle} from '../../../styling/screens/DisplayScreen';
 import {ScreenView, PostsList, PostForm, Spinner} from '../../../components';
 import {useDispatch, useSelector} from 'react-redux';
-import {onCreateFetchPost} from '../../../redax/posts';
+import {onCreateFetchPost, onReset} from '../../../redax/posts';
 
 const Posts = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const Posts = () => {
   const asyncPosts = useSelector((state) => state.post.fetchPosts);
   const loading = useSelector((state) => state.post.isLoading);
   const onDownload = () => dispatch(onCreateFetchPost());
+  const onRemove = () => dispatch(onReset());
   return (
     <ScreenView statusBarColor={Colors.black}>
       <ImageBackground source={darkSky} style={DisplayScreenStyle.image}>
@@ -35,6 +36,7 @@ const Posts = () => {
               title="Asynchronous posts"
               text="Number of async posts"
               onPress={onDownload}
+              onRemove={onRemove}
               warning="No async posts yet"
               async
             />

@@ -8,25 +8,27 @@ import {onCreatePost} from '../../redax/posts';
 const PostForm = ({inputStyle, buttonStyle, placeholder, titleBtn}) => {
   const [value, setValue] = useState('');
   const [post, setPost] = useState('');
+  // const alert = useSelector((state) => state.interface.alert);
+  // console.log(alert);
 
   const dispatch = useDispatch();
 
-  const newPost = (title) => {
-    setPost((prev) => [
-      ...prev,
-      {
-        id: Date.now().toString(),
-        title: title,
-      },
-    ]);
+  const newPost = {
+    id: Date.now().toString(),
+    title: value,
+  };
+
+  const postList = () => {
+    setPost((prev) => [...prev, newPost]);
   };
 
   const onSubmit = () => {
     if (value.trim()) {
-      newPost(value);
-      setValue('');
       dispatch(onCreatePost(post));
+      postList();
+      setValue('');
     } else {
+      // dispatch(showAlert(alert));
       Alert.alert('Field cannot be empty');
     }
   };
@@ -46,6 +48,7 @@ const PostForm = ({inputStyle, buttonStyle, placeholder, titleBtn}) => {
         onPress={onSubmit}
         style={[sg.mL10, sg.mT25, buttonStyle]}
       />
+      {/*{alert && <Alert text="Field cannot be empty" />}*/}
     </View>
   );
 };

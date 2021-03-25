@@ -18,6 +18,9 @@ import {
   REDUX_TODOS,
   REACT_HOOKS_USER,
   NETWORK_FETCH,
+  COUNTER,
+  HOME_SCREEN,
+  LIBRARY_GUIDE,
 } from '../screens/constants';
 import {BackButton, LogoIcon} from '../elements/TopBarButtons';
 import {Text} from '../components';
@@ -30,10 +33,16 @@ export const getHeaderOptions = (name) => {
   };
   switch (name) {
     case SCREEN_STACK:
-      return {headerTitle: () => <LogoIcon name="Last Warrior" />};
+      return {
+        headerTitle: () => <LogoIcon name="Last Warrior" />,
+      };
     case LIBRARY:
       return {
         headerTitle: () => <Text bold>Library</Text>,
+      };
+    case HOME_SCREEN:
+      return {
+        headerTitle: () => <LogoIcon name="Last Warrior" />,
       };
     case PROFILE_SCREEN:
       return {
@@ -54,6 +63,15 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Network
+          </Text>
+        ),
+      };
+    case LIBRARY_GUIDE:
+      return {
+        ...defaultHeader,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 24}} bold>
+            Application Guide
           </Text>
         ),
       };
@@ -180,6 +198,15 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={{color: 'yellow', fontSize: 28}} bold>
             Fetch
+          </Text>
+        ),
+      };
+    case COUNTER:
+      return {
+        ...defaultHeader,
+        headerTitle: () => (
+          <Text style={{color: 'yellow', fontSize: 28}} bold>
+            Counter
           </Text>
         ),
       };

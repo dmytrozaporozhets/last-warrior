@@ -13,6 +13,13 @@ const PostsList = ({item, title, text, async, onPress, warning, onRemove}) => {
       <>
         {item.length !== 0 ? (
           <>
+            <Button
+              title="Reset"
+              size="small"
+              btnType="red"
+              style={[sg.aSCenter, sg.mB10]}
+              onPress={onRemove}
+            />
             <View>
               <Text style={PostListStyle.text}>
                 {text}: {item.length}
@@ -20,7 +27,7 @@ const PostsList = ({item, title, text, async, onPress, warning, onRemove}) => {
             </View>
             {item.map((it) => (
               <View style={PostListStyle.box} key={it.id}>
-                <Post {...it} onRemove={onRemove} />
+                <Post {...it} />
               </View>
             ))}
           </>

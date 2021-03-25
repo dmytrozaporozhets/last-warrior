@@ -14,6 +14,7 @@ import {
   REDUX_TODOS,
   TAB_SCREEN,
   REACT_HOOKS_USER,
+  COUNTER,
 } from '../screens/constants';
 
 export const buttonCounter = [
@@ -28,7 +29,8 @@ export const libraryScreen = [
   {title: 'Redux', pathway: REDUX, id: 2},
   {title: 'Tabs', pathway: TAB_SCREEN, id: 3},
   {title: 'Network requests', pathway: NETWORK_REQUEST, id: 4},
-  {title: 'Practice', pathway: EXAMPLE_SCREEN, id: 5},
+  {title: 'Counter', pathway: COUNTER, id: 5},
+  {title: 'Practice', pathway: EXAMPLE_SCREEN, id: 6},
 ];
 
 export const counterData = [
@@ -98,3 +100,5 @@ export const fakePhotosData = [
     url: 'https://via.placeholder.com/600/6dd9cb',
   },
 ];
+
+export const forbidden = ['fuck', 'spam', 'php'];

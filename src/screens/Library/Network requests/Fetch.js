@@ -4,18 +4,12 @@ import {ScrollView, View} from 'react-native';
 import {sg} from '../../../styling';
 import {useDispatch, useSelector} from 'react-redux';
 import {onCreateRequest} from '../../../redax/network';
-import {fetchGetRequest} from '../../../services/NetworkRequest';
-import {requestPhotosURL} from '../../../../assets/link/request';
 
 const Fetch = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const request = useSelector((state) => state.network.fetchRequest);
   const loading = useSelector((state) => state.network.isLoading);
   const onRequest = () => dispatch(onCreateRequest());
-
-  // fetchGetRequest(requestPhotosURL)
-  //   .then((response) => console.log(response))
-  //   .catch((e) => console.log(e));
 
   return (
     <ScreenView>

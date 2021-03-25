@@ -750,6 +750,9 @@ export default {
   lH22: {
     lineHeight: 22,
   },
+  lH32: {
+    lineHeight: 32,
+  },
   resizeModeContain: {
     resizeMode: 'contain',
   },

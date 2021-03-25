@@ -23,6 +23,10 @@ const ACTION_HANDLERS = {
     ...state,
     isLoading: false,
   }),
+  [types.RESET]: (state) => ({
+    ...state,
+    fetchPosts: [],
+  }),
 };
 
 const PostReducer = (state = initialState, action) => {

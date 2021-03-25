@@ -3,7 +3,7 @@ import * as types from './actionTypes';
 const initialState = {
   disabled: false,
   count: 0,
-  alert: null,
+  alert: false,
 };
 
 const ACTION_HANDLERS = {

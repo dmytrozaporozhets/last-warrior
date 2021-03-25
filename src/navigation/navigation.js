@@ -26,6 +26,9 @@ import {
   Posts,
   UseUser,
   Fetch,
+  CounterView,
+  WelcomeHome,
+  LibraryGuide,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -54,6 +57,9 @@ import {
   REDUX_TODOS,
   REACT_HOOKS_USER,
   NETWORK_FETCH,
+  COUNTER,
+  WELCOME_HOME,
+  LIBRARY_GUIDE,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -118,15 +124,25 @@ export const MainStackScreen = () => {
           },
           headerTitleAlign: 'center',
           headerTintColor: 'white',
+          headerLeft: () => null,
         }}>
         {!auth.token || !auth.loggedIn ? (
           <>
+            <Stack.Screen
+              name={WELCOME_HOME}
+              component={WelcomeHome}
+              options={{headerShown: false}}
+            />
             <Stack.Screen
               name={SCREEN_STACK}
               component={MyTabs}
               options={{...getHeaderOptions(SCREEN_STACK)}}
             />
-            <Stack.Screen name={HOME_SCREEN} component={Home} />
+            <Stack.Screen
+              name={HOME_SCREEN}
+              component={Home}
+              options={{...getHeaderOptions(HOME_SCREEN)}}
+            />
             <Stack.Screen name={PROFILE_SCREEN} component={Profile} />
             <Stack.Screen
               name={LIBRARY}
@@ -214,6 +230,16 @@ export const MainStackScreen = () => {
               name={NETWORK_FETCH}
               component={Fetch}
               options={{...getHeaderOptions(NETWORK_FETCH)}}
+            />
+            <Stack.Screen
+              name={COUNTER}
+              component={CounterView}
+              options={{...getHeaderOptions(COUNTER)}}
+            />
+            <Stack.Screen
+              name={LIBRARY_GUIDE}
+              component={LibraryGuide}
+              options={{...getHeaderOptions(LIBRARY_GUIDE)}}
             />
           </>
         ) : (

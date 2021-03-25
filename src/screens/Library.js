@@ -1,37 +1,49 @@
-import React from 'react';
-import {Text, ScreenView} from '../components';
-import {View, ScrollView, ImageBackground} from 'react-native';
-import {Colors, sg} from '../styling';
-import {libraryScreen} from '../constants';
-import {bookingPages} from '../../assets/link/image';
-import {HomeScreenStyle} from '../styling/screens/HomeScreen';
+import React, {useRef} from 'react';
+import {ScreenView, Text} from '../components';
+import {
+  TouchableOpacity,
+  ScrollView,
+  ImageBackground,
+  Animated,
+} from 'react-native';
+import {work} from '../../assets/link/image';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import {Colors} from '../styling';
+import {LIBRARY_GUIDE} from './constants';
+import {LibraryStyle} from '../styling/screens/Library';
 
 const Library = ({navigation}) => {
   const goTo = (route) => () => navigation.navigate(route);
+
+  const animatedGuide = useRef(new Animated.Value(0)).current;
+
+  const onShow = () => {
+    Animated.timing(animatedGuide, {
+      toValue: 1,
+      duration: 5000,
+      useNativeDriver: true,
+    }).start();
+  };
+
   return (
     <ScreenView>
-      <ImageBackground source={bookingPages} style={HomeScreenStyle.image}>
-        <ScrollView style={sg.flex}>
-          <Text
+      <ImageBackground source={work} style={LibraryStyle.image}>
+        <ScrollView
+          contentContainerStyle={LibraryStyle.container}
+          onScrollBeginDrag={onShow}>
+          <Animated.View
             style={{
-              fontSize: 32,
-              textAlign: 'center',
-              marginTop: 20,
-              color: Colors.white,
-            }}
-            bold>
-            Application Guide
-          </Text>
-          {libraryScreen.map((it) => (
-            <View style={{marginHorizontal: 20, marginTop: 20}} key={it.id}>
-              <Text
-                style={[sg.fS24, {color: Colors.white}]}
-                bold
-                onPress={goTo(it.pathway)}>
-                {it.id}. {it.title}
+              opacity: animatedGuide,
+            }}>
+            <TouchableOpacity
+              style={LibraryStyle.button}
+              onPress={goTo(LIBRARY_GUIDE)}>
+              <Text style={LibraryStyle.text} bold>
+                GUIDE
               </Text>
-            </View>
-          ))}
+              <Icon name="arrow-right" size={24} color={Colors.black} solid />
+            </TouchableOpacity>
+          </Animated.View>
         </ScrollView>
       </ImageBackground>
     </ScreenView>

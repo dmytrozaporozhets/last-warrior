@@ -1,3 +1,7 @@
+export const firstFon = require('../../assets/images/firstFon.jpg');
+export const secondFon = require('../../assets/images/secondFon.jpg');
+export const work = require('../images/work.jpeg');
+
 export const smoke = {
   uri:
     'https://cdn.pixabay.com/photo/2017/12/07/11/10/smoke-3003615_960_720.jpg',
@@ -52,5 +56,27 @@ export const astroSky = {
     'https://cdn.pixabay.com/photo/2018/07/13/15/55/astro-3536009_960_720.jpg',
 };
 
-export const firstFon = require('../../assets/images/firstFon.jpg');
-export const secondFon = require('../../assets/images/secondFon.jpg');
+export const tunnel = {
+  uri:
+    'https://images.pexels.com/photos/3810141/pexels-photo-3810141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+
+export const bench = {
+  uri:
+    'https://images.pexels.com/photos/5835006/pexels-photo-5835006.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+
+export const lamp = {
+  uri:
+    'https://images.pexels.com/photos/5542628/pexels-photo-5542628.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+
+export const wall = {
+  uri:
+    'https://images.pexels.com/photos/6331040/pexels-photo-6331040.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};
+
+export const highBuild = {
+  uri:
+    'https://images.pexels.com/photos/6331040/pexels-photo-6331040.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+};

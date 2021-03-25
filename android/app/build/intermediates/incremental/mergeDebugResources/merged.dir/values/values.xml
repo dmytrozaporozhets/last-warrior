@@ -3120,8 +3120,8 @@
     <style name="TextAppearance.Design.CollapsingToolbar.Expanded" parent="TextAppearance.AppCompat.Display1">
     <item name="android:textColor">?android:attr/textColorPrimary</item>
   </style>
-    <style name="TextAppearance.Design.Counter" parent="TextAppearance.AppCompat.Caption"/>
-    <style name="TextAppearance.Design.Counter.Overflow" parent="TextAppearance.AppCompat.Caption">
+    <style name="TextAppearance.Design.HandlerCounter" parent="TextAppearance.AppCompat.Caption"/>
+    <style name="TextAppearance.Design.HandlerCounter.Overflow" parent="TextAppearance.AppCompat.Caption">
     <item name="android:textColor">@color/design_error</item>
   </style>
     <style name="TextAppearance.Design.Error" parent="TextAppearance.AppCompat.Caption">
@@ -3771,8 +3771,8 @@
     <item name="endIconTint">@color/design_icon_tint</item>
     <item name="startIconTint">@color/design_icon_tint</item>
 
-    <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
-    <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
+    <item name="counterTextAppearance">@style/TextAppearance.Design.HandlerCounter</item>
+    <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.HandlerCounter.Overflow</item>
     <item name="errorTextAppearance">@style/TextAppearance.Design.Error</item>
     <item name="helperTextTextAppearance">@style/TextAppearance.Design.HelperText</item>
     <item name="hintTextAppearance">@style/TextAppearance.Design.Hint</item>

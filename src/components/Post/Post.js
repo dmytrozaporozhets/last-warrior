@@ -3,12 +3,11 @@ import {Text} from '../index';
 import {TouchableOpacity} from 'react-native';
 import {Colors} from '../../styling';
 
-const Post = ({title, id, onRemove}) => {
+const Post = ({title, id}) => {
   return (
     <TouchableOpacity
       key={id}
       activeOpacity={1}
-      onPress={onRemove}
       style={{
         height: 50,
         width: '100%',

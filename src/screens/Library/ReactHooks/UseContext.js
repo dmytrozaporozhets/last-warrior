@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert, ExampleComponent, ScreenView} from '../../../components';
+import {AlertHook, ExampleComponent, ScreenView} from '../../../components';
 import {View, ScrollView} from 'react-native';
 import {ReactHooksStyle} from '../../../styling/screens/ReactHooks';
 import {AlertProvider} from '../../../components/Alert/AlertContext';
@@ -10,7 +10,7 @@ const UseContext = () => {
       <ScreenView>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={ReactHooksStyle.container}>
-            <Alert text="Very important message" />
+            <AlertHook text="Press Alert" />
             <ExampleComponent />
           </View>
         </ScrollView>
