@@ -1,9 +1,9 @@
 export const SCREEN_STACK = 'Screen Stack';
 export const HOME_SCREEN = 'Home';
 export const PROFILE_SCREEN = 'Profile';
-export const TAB_SCREEN = 'Tab';
+export const TAB_SCREEN = 'Tabs';
 export const SETTINGS_SCREEN = 'Settings';
-export const EXAMPLE_SCREEN = 'Example';
+export const PRACTICE_SCREEN = 'Practice';
 export const LIBRARY = 'Library';
 export const LIBRARY_GUIDE = 'Library Guide';
 export const SIGN_IN = 'Sign In';
@@ -26,3 +26,5 @@ export const REACT_HOOKS_USER = 'React Hooks User';
 export const NETWORK_FETCH = 'Network Fetch';
 export const COUNTER = 'Counter';
 export const WELCOME_HOME = 'Welcome Home';
+export const CLASS_ROOM = 'Class Room';
+export const SELECT_CARD = 'Select Card';

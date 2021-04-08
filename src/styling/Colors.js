@@ -31,9 +31,11 @@ const colors = {
   red2: '#FFC061',
   modalOverlay: 'rgba(245, 244, 244, 0.65)',
   inputBgLight: 'rgba(64,64,64,0.05)',
-
   header: '#22232b',
   link: '#35d6e5',
+  darkBlue: 'darkblue',
+  aqua: 'aqua',
+  aquamarine: 'aquamarine',
 };
 
 export default colors;

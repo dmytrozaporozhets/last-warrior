@@ -733,7 +733,7 @@
     <string description="Placeholder for a single date [CHAR_LIMIT=60]" name="mtrl_picker_date_header_unselected">Selected date</string>
     <string description="a11y string to indicate this is a header for a column of days for one day of the week (e.g., Monday) [CHAR_LIMIT=NONE]" name="mtrl_picker_day_of_week_column_header">Column of days: %1$s</string>
     <string description="Indicates that the user entered date cannot be parsed because its format is wrong. [CHAR_LIMIT=36]" name="mtrl_picker_invalid_format">Invalid format.</string>
-    <string description="Tells a user what an example valid entry looks like. [CHAR_LIMIT=18]" name="mtrl_picker_invalid_format_example">Example: %1$s</string>
+    <string description="Tells a user what an example valid entry looks like. [CHAR_LIMIT=18]" name="mtrl_picker_invalid_format_example">Practice: %1$s</string>
     <string description="Tells a user what format is expected for their date entry. [CHAR_LIMIT=18]" name="mtrl_picker_invalid_format_use">Use: %1$s</string>
     <string description="Notifies the user that the two entered dates do not represent a valid range of dates [CHAR_LIMIT=36]" name="mtrl_picker_invalid_range">Invalid range.</string>
     <string description="a11y string that informs the user that tapping this button will switch the year [CHAR_LIMIT=NONE]" name="mtrl_picker_navigate_to_year_description">Navigate to year %1$s</string>

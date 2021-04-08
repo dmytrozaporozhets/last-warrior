@@ -13,11 +13,7 @@ const SignIn = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-
-  if (loading) {
-    return <Spinner visible />;
-  }
-
+  const GitHub = () => navigation.navigate(AUTH);
   const dispatch = useDispatch();
 
   const ComeIn = () => {
@@ -28,13 +24,11 @@ const SignIn = ({navigation}) => {
         setLoading(false);
       }, 500);
     } else if (login === '' || password === '') {
-      Alert.alert('Логин и пароль не могут быть пустыми');
+      Alert.alert('Login and password cannot be empty');
     } else {
-      Alert.alert('Не верно указан логин или пароль');
+      Alert.alert('Login or password is incorrect');
     }
   };
-
-  const GitHub = () => navigation.navigate(AUTH);
 
   return (
     <View style={sg.flex}>
@@ -76,6 +70,7 @@ const SignIn = ({navigation}) => {
             light
           />
           <Button title="Send" onPress={ComeIn} style={sg.mV15} />
+          {loading && <Spinner visible />}
         </View>
       </ImageBackground>
     </View>

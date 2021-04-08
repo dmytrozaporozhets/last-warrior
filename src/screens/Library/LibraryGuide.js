@@ -16,7 +16,7 @@ const LibraryGuide = ({navigation}) => {
           {libraryScreen.map((it) => (
             <View style={{marginHorizontal: 20, marginTop: 20}} key={it.id}>
               <Text
-                style={[sg.fS24, {color: Colors.black}]}
+                style={[sg.fS24, {color: Colors.yellow}]}
                 bold
                 onPress={goTo(it.pathway)}>
                 {it.id}. {it.title}

@@ -8,7 +8,7 @@ import {
   Profile,
   Counter,
   Home,
-  Example,
+  Practice,
   Tabs,
   Library,
   Network,
@@ -30,11 +30,13 @@ import {
   WelcomeHome,
   LibraryGuide,
   Settings,
+  ClassRoom,
+  SelectCard,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
 import {
-  EXAMPLE_SCREEN,
+  PRACTICE_SCREEN,
   HOME_SCREEN,
   PROFILE_SCREEN,
   SCREEN_STACK,
@@ -62,6 +64,8 @@ import {
   WELCOME_HOME,
   LIBRARY_GUIDE,
   SETTINGS_SCREEN,
+  CLASS_ROOM,
+  SELECT_CARD,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -127,7 +131,7 @@ export const MainStackScreen = () => {
           headerTintColor: 'white',
           headerLeft: () => null,
         }}>
-        {auth.token || auth.loggedIn ? (
+        {!auth.token || !auth.loggedIn ? (
           <>
             <Stack.Screen
               name={WELCOME_HOME}
@@ -170,9 +174,9 @@ export const MainStackScreen = () => {
               options={{...getHeaderOptions(TAB_SCREEN)}}
             />
             <Stack.Screen
-              name={EXAMPLE_SCREEN}
-              component={Example}
-              options={{...getHeaderOptions(EXAMPLE_SCREEN)}}
+              name={PRACTICE_SCREEN}
+              component={Practice}
+              options={{...getHeaderOptions(PRACTICE_SCREEN)}}
             />
             <Stack.Screen
               name={NETWORK_REQUEST}
@@ -250,6 +254,16 @@ export const MainStackScreen = () => {
               name={LIBRARY_GUIDE}
               component={LibraryGuide}
               options={{...getHeaderOptions(LIBRARY_GUIDE)}}
+            />
+            <Stack.Screen
+              name={CLASS_ROOM}
+              component={ClassRoom}
+              options={{...getHeaderOptions(CLASS_ROOM)}}
+            />
+            <Stack.Screen
+              name={SELECT_CARD}
+              component={SelectCard}
+              options={{...getHeaderOptions(SELECT_CARD)}}
             />
           </>
         ) : (

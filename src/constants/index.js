@@ -1,5 +1,5 @@
 import {
-  EXAMPLE_SCREEN,
+  PRACTICE_SCREEN,
   NETWORK_REQUEST,
   REACT_HOOKS,
   REACT_HOOKS_CALLBACK,
@@ -15,6 +15,8 @@ import {
   TAB_SCREEN,
   REACT_HOOKS_USER,
   COUNTER,
+  CLASS_ROOM,
+  SELECT_CARD,
 } from '../screens/constants';
 
 export const buttonCounter = [
@@ -25,12 +27,14 @@ export const buttonCounter = [
 ];
 
 export const libraryScreen = [
-  {title: 'React Hooks', pathway: REACT_HOOKS, id: 1},
-  {title: 'Redux', pathway: REDUX, id: 2},
-  {title: 'Tabs', pathway: TAB_SCREEN, id: 3},
-  {title: 'Network requests', pathway: NETWORK_REQUEST, id: 4},
-  {title: 'Counter', pathway: COUNTER, id: 5},
-  {title: 'Practice', pathway: EXAMPLE_SCREEN, id: 6},
+  {title: REACT_HOOKS, pathway: REACT_HOOKS, id: 1},
+  {title: REDUX, pathway: REDUX, id: 2},
+  {title: TAB_SCREEN, pathway: TAB_SCREEN, id: 3},
+  {title: NETWORK_REQUEST, pathway: NETWORK_REQUEST, id: 4},
+  {title: COUNTER, pathway: COUNTER, id: 5},
+  {title: CLASS_ROOM, pathway: CLASS_ROOM, id: 6},
+  {title: PRACTICE_SCREEN, pathway: PRACTICE_SCREEN, id: 7},
+  {title: SELECT_CARD, pathway: SELECT_CARD, id: 8},
 ];
 
 export const counterData = [
@@ -102,3 +106,53 @@ export const fakePhotosData = [
 ];
 
 export const forbidden = ['fuck', 'spam', 'php'];
+
+export const weekends = [
+  {title: 'пн', color: 'black', id: 1},
+  {title: 'вт', color: 'black', id: 2},
+  {title: 'ср', color: 'black', id: 3},
+  {title: 'чт', color: 'black', id: 4},
+  {title: 'пт', color: 'black', id: 5},
+  {title: 'сб', color: 'red', id: 6},
+  {title: 'вс', color: 'red', id: 7},
+];
+export const days = [
+  {title: '1', color: 'black', select: false, id: 1},
+  {title: '2', color: 'black', select: false, id: 2},
+  {title: '3', color: 'black', select: false, id: 3},
+  {title: '4', color: 'black', select: false, id: 4},
+  {title: '5', color: 'black', select: false, id: 5},
+  {title: '6', color: 'red', select: false, id: 6},
+  {title: '7', color: 'red', select: false, id: 7},
+  {title: '8', color: 'black', select: false, id: 8},
+  {title: '9', color: 'black', select: false, id: 9},
+  {title: '10', color: 'black', select: false, id: 10},
+  {title: '11', color: 'black', select: false, id: 11},
+  {title: '12', color: 'black', select: false, id: 12},
+  {title: '13', color: 'red', select: false, id: 13},
+  {title: '14', color: 'red', select: false, id: 14},
+  {title: '15', color: 'black', select: false, id: 15},
+  {title: '16', color: 'black', select: false, id: 16},
+  {title: '17', color: 'black', select: false, id: 17},
+  {title: '18', color: 'black', select: false, id: 18},
+  {title: '19', color: 'black', select: false, id: 19},
+  {title: '20', color: 'red', select: false, id: 20},
+  {title: '21', color: 'red', select: false, id: 21},
+  {title: '22', color: 'black', select: false, id: 22},
+  {title: '23', color: 'black', select: false, id: 23},
+  {title: '24', color: 'black', select: true, id: 24},
+  {title: '25', color: 'black', select: false, id: 25},
+  {title: '26', color: 'black', select: false, id: 26},
+  {title: '27', color: 'red', select: false, id: 27},
+  {title: '28', color: 'red', select: false, id: 28},
+  {title: '29', color: 'black', select: false, id: 29},
+  {title: '30', color: 'black', select: false, id: 30},
+];
+
+export const fakeCities = [
+  {town: 'Kiev', country: 'Ukraine', population: 2.967, id: 1},
+  {town: 'Kharkov', country: 'Ukraine', population: 1.443, id: 2},
+  {town: 'Odessa', country: 'Ukraine', population: 1.017, id: 3},
+  {town: 'Dnepropetrovsk', country: 'Ukraine', population: 0.99, id: 4},
+  {town: 'Lvov', country: 'Ukraine', population: 0.724, id: 5},
+];

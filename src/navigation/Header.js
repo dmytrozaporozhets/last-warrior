@@ -1,5 +1,4 @@
 import {
-  EXAMPLE_SCREEN,
   NETWORK_REQUEST,
   REACT_HOOKS,
   REACT_HOOKS_CALLBACK,
@@ -20,6 +19,9 @@ import {
   LIBRARY_GUIDE,
   PROFILE_SCREEN,
   SETTINGS_SCREEN,
+  PRACTICE_SCREEN,
+  CLASS_ROOM,
+  SELECT_CARD,
 } from '../screens/constants';
 import {
   BackButton,
@@ -31,6 +33,7 @@ import {
 import {Text} from '../components';
 import {sg} from '../styling';
 import React from 'react';
+import {HeaderStyle} from '../styling/components/Header';
 
 export const getHeaderOptions = (name) => {
   const defaultHeader = {
@@ -49,7 +52,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Counter
           </Text>
         ),
@@ -58,7 +61,7 @@ export const getHeaderOptions = (name) => {
       return {
         headerLeft: () => <ProfileButton style={sg.mL25} isSelected={true} />,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Profile
           </Text>
         ),
@@ -67,7 +70,7 @@ export const getHeaderOptions = (name) => {
     case SETTINGS_SCREEN:
       return {
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Settings
           </Text>
         ),
@@ -81,7 +84,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Network
           </Text>
         ),
@@ -90,7 +93,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 24}} bold>
+          <Text style={HeaderStyle.txt} bold>
             Application Guide
           </Text>
         ),
@@ -99,16 +102,16 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Tab
           </Text>
         ),
       };
-    case EXAMPLE_SCREEN:
+    case PRACTICE_SCREEN:
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Practice
           </Text>
         ),
@@ -117,7 +120,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             React Hooks
           </Text>
         ),
@@ -126,7 +129,7 @@ export const getHeaderOptions = (name) => {
       return {
         headerLeft: () => <BackButton style={sg.mL25} />,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use Effect
           </Text>
         ),
@@ -135,7 +138,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use State
           </Text>
         ),
@@ -144,7 +147,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use Ref
           </Text>
         ),
@@ -153,7 +156,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use Memo
           </Text>
         ),
@@ -162,7 +165,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use Reducer
           </Text>
         ),
@@ -171,7 +174,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use Context
           </Text>
         ),
@@ -180,7 +183,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use Callback
           </Text>
         ),
@@ -189,7 +192,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             use User
           </Text>
         ),
@@ -198,7 +201,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Redux
           </Text>
         ),
@@ -207,7 +210,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Posts
           </Text>
         ),
@@ -216,7 +219,7 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Fetch
           </Text>
         ),
@@ -225,8 +228,26 @@ export const getHeaderOptions = (name) => {
       return {
         ...defaultHeader,
         headerTitle: () => (
-          <Text style={{color: 'yellow', fontSize: 28}} bold>
+          <Text style={HeaderStyle.text} bold>
             Counter
+          </Text>
+        ),
+      };
+    case CLASS_ROOM:
+      return {
+        ...defaultHeader,
+        headerTitle: () => (
+          <Text style={HeaderStyle.text} bold>
+            Class Room
+          </Text>
+        ),
+      };
+    case SELECT_CARD:
+      return {
+        ...defaultHeader,
+        headerTitle: () => (
+          <Text style={HeaderStyle.text} bold>
+            Select Card
           </Text>
         ),
       };
