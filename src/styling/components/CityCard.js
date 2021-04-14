@@ -19,7 +19,7 @@ export const CityCardStyle = StyleSheet.create({
   },
   box: {
     flexDirection: 'row',
-    width: '60%',
+    width: '50%',
     justifyContent: 'space-between',
   },
   text: {

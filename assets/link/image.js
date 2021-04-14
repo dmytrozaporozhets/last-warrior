@@ -128,3 +128,55 @@ export const highBuild13 = {
   uri:
     'https://images.pexels.com/photos/6192054/pexels-photo-6192054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
 };
+export const Ukraine = {
+  uri:
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/250px-Flag_of_Ukraine.svg.png',
+};
+export const USA = {
+  uri:
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Flag_of_the_United_States_%28Pantone%29.svg/250px-Flag_of_the_United_States_%28Pantone%29.svg.png',
+};
+export const England = {
+  uri:
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAKlBMVEX///+9FiDAFCW8AAy7AAjXlJHak5X//v+4AAC7AA7akpT8///+/Pv++/zLdrLsAAABsklEQVR4nO3bSWoEMRQFQdnlocf7X9delsELQS6khogTPBIt9cfYx+PyNuHyWL1zU/Il8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfI1c/lWr/zjcyPXmXzX1SvPxrGPqXq//VbvPBnvG5nLt3rl2ZibzP/kS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvkS+RL5EvGxz6OucnH6p0n42sft7mf9bfVO0/GfRvjPnfXcd9p80Ze8aroexvjOZfvudPmjbzi69uIfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfIl8iXyJfMkL5vsB++p3/W75E4IAAAAASUVORK5CYII=',
+};
+export const NewYork = {
+  uri: 'https://wantsee.world/wp-content/uploads/2019/06/New-York-City-USA.jpg',
+};
+
+export const London = {
+  uri: 'https://www.ilm.ru/sites/default/files/inline-images/london_0.png',
+};
+export const Lvov = {
+  uri:
+    'http://d2me0fuzw8a1c5.cloudfront.net/sites/default/files/styles/large/public/images/22922/motto.net_.ua-70456.jpg',
+};
+
+export const LosAngeles = {
+  uri:
+    'https://img5.goodfon.ru/wallpaper/nbig/5/12/ssha-kaliforniia-los-andzheles-los-angeles-panorama-peizazh.jpg',
+};
+
+export const Liverpool = {
+  uri:
+    'http://www.awaytravel.ru/sites/default/files/imagecache/big/img/4/Liverpool.jpg',
+};
+
+export const winter = {
+  uri:
+    'https://cdn.icon-icons.com/icons2/487/PNG/512/snowflake_snow_winter_c_47534.png',
+};
+
+export const spring = {
+  uri:
+    'https://cdn.icon-icons.com/icons2/624/PNG/512/Spring-80_icon-icons.com_57269.png',
+};
+
+export const summer = {
+  uri: 'https://cdn.icon-icons.com/icons2/1469/PNG/512/icon11_101144.png',
+};
+
+export const autumn = {
+  uri:
+    'https://cdn.icon-icons.com/icons2/1715/PNG/512/2730383-fall-inkcontober-leaf-orange-season_112685.png',
+};

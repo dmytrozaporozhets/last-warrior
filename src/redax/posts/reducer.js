@@ -7,10 +7,12 @@ const initialState = {
 };
 
 const ACTION_HANDLERS = {
-  [types.CREATE_POST]: (state, action) => ({
-    ...state,
-    posts: action.payload,
-  }),
+  [types.CREATE_POST]: (state, action) => {
+    return {
+      ...state,
+      posts: [action.payload, ...state.posts],
+    };
+  },
   [types.FETCH_POST]: (state, action) => ({
     ...state,
     fetchPosts: action.payload,
@@ -23,7 +25,11 @@ const ACTION_HANDLERS = {
     ...state,
     isLoading: false,
   }),
-  [types.RESET]: (state) => ({
+  [types.RESET_POST]: (state) => ({
+    ...state,
+    posts: [],
+  }),
+  [types.RESET_FETCH_POST]: (state) => ({
     ...state,
     fetchPosts: [],
   }),

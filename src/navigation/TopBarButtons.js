@@ -56,7 +56,6 @@ export const ProfileButton = ({isSelected = false}) => {
 
 export const SettingsButton = ({isSelected = false}) => {
   const navigation = useNavigation();
-  const isFocused = navigation.name === SETTINGS_SCREEN;
   return (
     <TouchableOpacity
       onPress={() =>

@@ -16,8 +16,23 @@ import {
   REACT_HOOKS_USER,
   COUNTER,
   CLASS_ROOM,
-  SELECT_CARD,
+  CHOOSE_CITIES,
+  SELECT_ITEM,
 } from '../screens/constants';
+import {
+  autumn,
+  England,
+  Liverpool,
+  London,
+  LosAngeles,
+  Lvov,
+  NewYork,
+  spring,
+  summer,
+  Ukraine,
+  USA,
+  winter,
+} from '../../assets/link/image';
 
 export const buttonCounter = [
   {title: '+', color: 'blue', operation: 'add', id: 1},
@@ -34,7 +49,8 @@ export const libraryScreen = [
   {title: COUNTER, pathway: COUNTER, id: 5},
   {title: CLASS_ROOM, pathway: CLASS_ROOM, id: 6},
   {title: PRACTICE_SCREEN, pathway: PRACTICE_SCREEN, id: 7},
-  {title: SELECT_CARD, pathway: SELECT_CARD, id: 8},
+  {title: CHOOSE_CITIES, pathway: CHOOSE_CITIES, id: 8},
+  {title: SELECT_ITEM, pathway: SELECT_ITEM, id: 9},
 ];
 
 export const counterData = [
@@ -150,9 +166,55 @@ export const days = [
 ];
 
 export const fakeCities = [
-  {town: 'Kiev', country: 'Ukraine', population: 2.967, id: 1},
-  {town: 'Kharkov', country: 'Ukraine', population: 1.443, id: 2},
-  {town: 'Odessa', country: 'Ukraine', population: 1.017, id: 3},
-  {town: 'Dnepropetrovsk', country: 'Ukraine', population: 0.99, id: 4},
-  {town: 'Lvov', country: 'Ukraine', population: 0.724, id: 5},
+  {city: 'Kiev', country: 'Ukraine', population: 2.967, id: 1},
+  {city: 'Kharkov', country: 'Ukraine', population: 1.443, id: 2},
+  {city: 'Odessa', country: 'Ukraine', population: 1.017, id: 3},
+  {city: 'Dnepropetrovsk', country: 'Ukraine', population: 0.99, id: 4},
+  {city: 'Lvov', country: 'Ukraine', population: 0.724, image: Lvov, id: 5},
+  {city: 'London', country: 'England', population: 8.982, image: London, id: 6},
+  {city: 'Manchester', country: 'England', population: 0.553, id: 7},
+  {
+    city: 'Liverpool',
+    country: 'England',
+    population: 0.496,
+    image: Liverpool,
+    id: 8,
+  },
+  {city: 'New York', country: 'USA', population: 8.419, image: NewYork, id: 9},
+  {
+    city: 'Los Angeles',
+    country: 'USA',
+    population: 3.967,
+    image: LosAngeles,
+    id: 10,
+  },
+  {city: 'Chicago', country: 'USA', population: 2.71, id: 11},
+  {city: 'Houston', country: 'USA', population: 2.31, id: 12},
+];
+export const fakeCountries = [
+  {name: 'England', image: England, id: 1},
+  {name: 'Ukraine', image: Ukraine, id: 2},
+  {name: 'USA', image: USA, id: 3},
+];
+
+export const monthsOfTheYear = [
+  {title: 'January', season: 'winter', image: winter, id: 1},
+  {title: 'February', season: 'winter', image: winter, id: 2},
+  {title: 'March', season: 'spring', image: spring, id: 3},
+  {title: 'April', season: 'spring', image: spring, id: 4},
+  {title: 'May', season: 'spring', image: spring, id: 5},
+  {title: 'June', season: 'summer', image: summer, id: 6},
+  {title: 'July', season: 'summer', image: summer, id: 7},
+  {title: 'August', season: 'summer', image: summer, id: 8},
+  {title: 'September', season: 'autumn', image: autumn, id: 9},
+  {title: 'October', season: 'autumn', image: autumn, id: 10},
+  {title: 'November', season: 'autumn', image: autumn, id: 11},
+  {title: 'December', season: 'winter', image: winter, id: 12},
+];
+
+export const seasonOfTheYear = [
+  {title: 'Winter', image: winter, id: 1},
+  {title: 'Spring', image: spring, id: 2},
+  {title: 'Summer', image: summer, id: 3},
+  {title: 'Autumn', image: autumn, id: 4},
 ];

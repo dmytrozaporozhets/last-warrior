@@ -1,13 +1,26 @@
 import React from 'react';
-import {View} from 'react-native';
-import {Text} from '../../components';
+import {View, ScrollView} from 'react-native';
+import {ScreenView, SmallCard, Text} from '../../components';
+import {Colors, sg} from '../../styling';
 
-const ClassRoom = () => {
-  return (
-    <View>
-      <Text>Class Room</Text>
-    </View>
-  );
-};
+class ClassRoom extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <ScreenView statusBarColor={Colors.black}>
+        <ScrollView>
+          <View
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{color: Colors.white, fontSize: 24}} bold>
+              Class Room
+            </Text>
+          </View>
+        </ScrollView>
+      </ScreenView>
+    );
+  }
+}
 
 export default ClassRoom;

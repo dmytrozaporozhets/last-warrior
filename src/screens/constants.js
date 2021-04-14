@@ -27,4 +27,6 @@ export const NETWORK_FETCH = 'Network Fetch';
 export const COUNTER = 'Counter';
 export const WELCOME_HOME = 'Welcome Home';
 export const CLASS_ROOM = 'Class Room';
-export const SELECT_CARD = 'Select Card';
+export const CHOOSE_CITIES = 'Choose Cities';
+export const CITY_INFO_MODAL = 'City Info Modal';
+export const SELECT_ITEM = 'Select Item';

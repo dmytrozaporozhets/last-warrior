@@ -31,7 +31,9 @@ import {
   LibraryGuide,
   Settings,
   ClassRoom,
-  SelectCard,
+  ChooseCities,
+  CityInfoModal,
+  SelectItem,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -65,11 +67,14 @@ import {
   LIBRARY_GUIDE,
   SETTINGS_SCREEN,
   CLASS_ROOM,
-  SELECT_CARD,
+  CHOOSE_CITIES,
+  CITY_INFO_MODAL,
+  SELECT_ITEM,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
 import {getHeaderOptions} from './Header';
+import {Colors} from '../styling';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -111,10 +116,10 @@ export const MyTabs = () => {
 export const MainStackScreen = () => {
   const auth = useSelector((state) => state.token);
   const insets = useSafeAreaInsets();
-  // const defaultModalScreenOptions = {
-  //   headerShown: false,
-  //   cardStyle: {opacity: 1, backgroundColor: 'rgba(196, 196, 196, 0.7)'},
-  // };
+  const defaultModalScreenOptions = {
+    headerShown: false,
+    cardStyle: {opacity: 0.8, backgroundColor: Colors.white},
+  };
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -261,9 +266,19 @@ export const MainStackScreen = () => {
               options={{...getHeaderOptions(CLASS_ROOM)}}
             />
             <Stack.Screen
-              name={SELECT_CARD}
-              component={SelectCard}
-              options={{...getHeaderOptions(SELECT_CARD)}}
+              name={CHOOSE_CITIES}
+              component={ChooseCities}
+              options={{...getHeaderOptions(CHOOSE_CITIES)}}
+            />
+            <Stack.Screen
+              name={CITY_INFO_MODAL}
+              component={CityInfoModal}
+              options={defaultModalScreenOptions}
+            />
+            <Stack.Screen
+              name={SELECT_ITEM}
+              component={SelectItem}
+              options={{...getHeaderOptions(SELECT_ITEM)}}
             />
           </>
         ) : (

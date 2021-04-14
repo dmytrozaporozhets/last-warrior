@@ -7,7 +7,7 @@ const Post = ({title, id}) => {
   return (
     <TouchableOpacity
       key={id}
-      activeOpacity={1}
+      activeOpacity={0.5}
       style={{
         height: 50,
         width: '100%',

@@ -21,7 +21,8 @@ import {
   SETTINGS_SCREEN,
   PRACTICE_SCREEN,
   CLASS_ROOM,
-  SELECT_CARD,
+  CHOOSE_CITIES,
+  SELECT_ITEM,
 } from '../screens/constants';
 import {
   BackButton,
@@ -242,12 +243,21 @@ export const getHeaderOptions = (name) => {
           </Text>
         ),
       };
-    case SELECT_CARD:
+    case CHOOSE_CITIES:
       return {
         ...defaultHeader,
         headerTitle: () => (
           <Text style={HeaderStyle.text} bold>
-            Select Card
+            Cities
+          </Text>
+        ),
+      };
+    case SELECT_ITEM:
+      return {
+        ...defaultHeader,
+        headerTitle: () => (
+          <Text style={HeaderStyle.text} bold>
+            Select Item
           </Text>
         ),
       };

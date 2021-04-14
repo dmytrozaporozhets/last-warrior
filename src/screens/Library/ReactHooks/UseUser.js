@@ -30,7 +30,9 @@ const UseUser = () => {
 
   return (
     <ScreenView>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled">
         <View style={{flex: 1, marginHorizontal: 30}}>
           <View
             style={[

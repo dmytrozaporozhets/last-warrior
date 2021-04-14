@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 import UserCard from './UserCard';
 
-const CityCard = ({town, country, population, onView, onChange, style}) => {
+const CityCard = ({city, country, population, onView, onChange, style}) => {
   return (
     <TouchableOpacity
       style={[CityCardStyle.container, style]}
@@ -17,7 +17,7 @@ const CityCard = ({town, country, population, onView, onChange, style}) => {
       <View style={CityCardStyle.box}>
         <View style={CityCardStyle.categories}>
           <Text style={CityCardStyle.text} semiBold>
-            Town:
+            City:
           </Text>
           <Text style={CityCardStyle.text} semiBold>
             Country:
@@ -28,7 +28,7 @@ const CityCard = ({town, country, population, onView, onChange, style}) => {
         </View>
         <View style={sg.jCSpaceBetween}>
           <Text style={CityCardStyle.text} semiBold>
-            {town}
+            {city}
           </Text>
           <Text style={CityCardStyle.text} semiBold>
             {country}
