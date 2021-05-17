@@ -70,6 +70,7 @@
 		289F7ABB25F21A2A00A62C12 /* SourceCodePro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Italic.ttf"; sourceTree = "<group>"; };
 		289F7AC125F21A2C00A62C12 /* SourceCodePro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceCodePro-Regular.ttf"; sourceTree = "<group>"; };
 		289F7AC725F21A3200A62C12 /* SourceCodePro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SourceCodePro-SemiBold.ttf"; path = "../assets/fonts/SourceCodePro-SemiBold.ttf"; sourceTree = "<group>"; };
+		28EB76612629CF320022F2AC /* rnProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = rnProject.entitlements; path = rnProject/rnProject.entitlements; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* rnProject-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rnProject-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* rnProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rnProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BE026AD5E84440911FBD36 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		13B07FAE1A68108700A75B9A /* rnProject */ = {
 			isa = PBXGroup;
 			children = (
+				28EB76612629CF320022F2AC /* rnProject.entitlements */,
 				2801046425F0E757005B2E84 /* fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -805,6 +807,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = rnProject/rnProject.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = rnProject/Info.plist;
@@ -828,6 +831,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = rnProject/rnProject.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = rnProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

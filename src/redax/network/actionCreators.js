@@ -20,3 +20,4 @@ export const onCreateRequest = () => {
   };
 };
 
+export const onReset = createAction(types.RESET);

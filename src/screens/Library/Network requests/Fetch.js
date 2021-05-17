@@ -3,25 +3,37 @@ import {Button, PhotosCard, ScreenView, Spinner} from '../../../components';
 import {ScrollView, View} from 'react-native';
 import {sg} from '../../../styling';
 import {useDispatch, useSelector} from 'react-redux';
-import {onCreateRequest} from '../../../redax/network';
+import {onCreateRequest, onReset} from '../../../redax/network';
 
 const Fetch = () => {
   const dispatch = useDispatch();
   const request = useSelector((state) => state.network.fetchRequest);
   const loading = useSelector((state) => state.network.isLoading);
   const onRequest = () => dispatch(onCreateRequest());
+  const resetFetchPost = () => dispatch(onReset());
 
   return (
     <ScreenView>
       <ScrollView>
         <View style={[sg.flex, sg.mH20]}>
-          <Button
-            title="Send request"
-            btnType="primary"
-            size="medium"
-            style={[sg.aSCenter, sg.mT30, sg.mB10]}
-            onPress={onRequest}
-          />
+          <View style={[sg.row, sg.mT30, sg.mB10]}>
+            <Button
+              title="Send request"
+              btnType="primary"
+              size="medium"
+              style={[sg.mR10]}
+              onPress={onRequest}
+            />
+            {request.length !== 0 && (
+              <Button
+                title="Reset"
+                btnType="red"
+                size="small"
+                style={{}}
+                onPress={resetFetchPost}
+              />
+            )}
+          </View>
           <View>
             {request.map((it) => (
               <View key={it.id}>

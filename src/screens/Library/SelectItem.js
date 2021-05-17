@@ -28,10 +28,7 @@ const SelectItem = () => {
   return (
     <ScreenView statusBarColor={Colors.black}>
       <ScrollView>
-        <View
-          style={{
-            flex: 1,
-          }}>
+        <View style={sg.flex}>
           <Text style={SelectItemStyle.text}>Select up to 3 months</Text>
           <View style={SelectItemStyle.box}>
             {monthsOfTheYear.map((month, index) => (

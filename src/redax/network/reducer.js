@@ -18,6 +18,10 @@ const ACTION_HANDLERS = {
     ...state,
     isLoading: false,
   }),
+  [types.RESET]: (state) => ({
+    ...state,
+    fetchRequest: [],
+  }),
 };
 
 const NetworkReducer = (state = initialState, action) => {

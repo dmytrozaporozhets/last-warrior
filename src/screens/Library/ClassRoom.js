@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ScrollView} from 'react-native';
-import {ScreenView, SmallCard, Text} from '../../components';
-import {Colors, sg} from '../../styling';
+import {ScreenView, Text} from '../../components';
+import {Colors} from '../../styling';
 
 class ClassRoom extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class ClassRoom extends React.Component {
           <View
             style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{color: Colors.white, fontSize: 24}} bold>
-              Class Room
+              Welcome
             </Text>
           </View>
         </ScrollView>

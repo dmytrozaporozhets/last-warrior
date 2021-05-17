@@ -218,3 +218,24 @@ export const seasonOfTheYear = [
   {title: 'Summer', image: summer, id: 3},
   {title: 'Autumn', image: autumn, id: 4},
 ];
+
+export const footballChampionships = [
+  {label: 'Serie A', value: 'Serie A', id: 1},
+  {label: 'LaLiga', value: 'LaLiga', id: 2},
+  {label: 'Ligue 1', value: 'Ligue 1', id: 3},
+  {label: 'Premier League', value: 'Premier League', id: 4},
+];
+
+export const footballClub = [
+  {title: 'Milan', championship: 'Serie A', id: 1},
+  {title: 'Everton', championship: 'Premier League', id: 2},
+  {title: 'Arsenal', championship: 'Premier League', id: 3},
+  {title: 'Real Madrid', championship: 'LaLiga', id: 4},
+  {title: 'FC Barcelona', championship: 'LaLiga', id: 5},
+  {title: 'PSG', championship: 'Ligue 1', id: 6},
+  {title: 'Leicester', championship: 'Premier League', id: 7},
+  {title: 'Liverpool', championship: 'Premier League', id: 8},
+  {title: 'Inter', championship: 'Serie A', id: 9},
+  {title: 'Napoli', championship: 'Serie A', id: 10},
+  {title: 'Roma', championship: 'Serie A', id: 11},
+];
