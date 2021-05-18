@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {FlatList, ImageBackground, View, ScrollView} from 'react-native';
+import {FlatList, View, ScrollView} from 'react-native';
 import InputForm from '../../components/InputForm';
 import {TabScreenStyle} from '../../styling/screens/TabScreen';
-import {smoke} from '../../../assets/link/image';
-import {ScreenView, Todo} from '../../components';
+import {Header, ScreenView, Todo} from '../../components';
 import {Colors, sg} from '../../styling';
 
-const Tabs = () => {
+const Tabs = ({navigation}) => {
+  const goBack = () => navigation.goBack();
   const [notes, setNotes] = useState([
     {
       id: '1',
@@ -46,23 +46,20 @@ const Tabs = () => {
 
   return (
     <ScreenView statusBarColor={Colors.black}>
-      <ImageBackground source={smoke} style={TabScreenStyle.image}>
-        <View style={TabScreenStyle.component}>
-          <View style={TabScreenStyle.container}>
-            <InputForm
-              onSubmit={addNote}
-              placeholder="Add todo..."
-              titleBtn="Add Todo"
-            />
-            <FlatList
-              keyExractor={keyExtractor}
-              data={notes}
-              renderItem={renderItem}
-              showsVerticalScrollIndicator={false}
-            />
-          </View>
-        </View>
-      </ImageBackground>
+      <Header title="Add Todo" onBack={goBack} />
+      <View style={TabScreenStyle.container}>
+        <InputForm
+          onSubmit={addNote}
+          placeholder="Add todo..."
+          titleBtn="Add"
+        />
+        <FlatList
+          keyExractor={keyExtractor}
+          data={notes}
+          renderItem={renderItem}
+          showsVerticalScrollIndicator={false}
+        />
+      </View>
     </ScreenView>
   );
 };

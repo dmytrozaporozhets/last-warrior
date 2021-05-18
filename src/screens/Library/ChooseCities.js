@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {ScrollView, View} from 'react-native';
-import {CategoriesTab, CityCard, ScreenView} from '../../components';
+import {CategoriesTab, CityCard, Header, ScreenView} from '../../components';
 import {Colors, sg} from '../../styling';
 import {fakeCities, fakeCountries} from '../../constants';
 import {CITY_INFO_MODAL} from '../constants';
 
 const ChooseCities = ({navigation}) => {
+  const goBack = () => navigation.goBack();
   const [selectedTab, setSelectedTab] = useState('England');
   const [selectedCard, setSelectedCard] = useState(null);
   const switchTabs = (value) => () => setSelectedTab(value);
@@ -19,6 +20,7 @@ const ChooseCities = ({navigation}) => {
   };
   return (
     <ScreenView statusBarColor={Colors.black}>
+      <Header title="Choose cities" onBack={goBack} />
       <ScrollView>
         <View style={{flex: 1, margin: 30, alignItems: 'center'}}>
           <View style={{flexDirection: 'row', marginBottom: 20}}>

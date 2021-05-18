@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import {ScreenView, SmallCard, Text} from '../../components';
+import {Header, ScreenView, SmallCard, Text} from '../../components';
 import {View, ScrollView} from 'react-native';
 import {Colors, sg} from '../../styling';
 import {monthsOfTheYear, seasonOfTheYear} from '../../constants';
 import {SelectItemStyle} from '../../styling/screens/SelectItem';
 
-const SelectItem = () => {
+const SelectItem = ({navigation}) => {
+  const goBack = () => navigation.goBack();
   const [selectedMonths, setSelectedMonths] = useState([]);
   const [selectedSeason, setSelectedSeason] = useState(null);
   const onSelectMonth = (card) => () => {
@@ -27,6 +28,7 @@ const SelectItem = () => {
 
   return (
     <ScreenView statusBarColor={Colors.black}>
+      <Header title="Select Item" onBack={goBack} />
       <ScrollView>
         <View style={sg.flex}>
           <Text style={SelectItemStyle.text}>Select up to 3 months</Text>

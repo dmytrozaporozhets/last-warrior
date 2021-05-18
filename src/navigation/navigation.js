@@ -28,12 +28,12 @@ import {
   Fetch,
   CounterView,
   WelcomeHome,
-  LibraryGuide,
   Settings,
   ClassRoom,
   ChooseCities,
   CityInfoModal,
   SelectItem,
+  SortItem,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -64,12 +64,12 @@ import {
   NETWORK_FETCH,
   COUNTER,
   WELCOME_HOME,
-  LIBRARY_GUIDE,
   SETTINGS_SCREEN,
   CLASS_ROOM,
   CHOOSE_CITIES,
   CITY_INFO_MODAL,
   SELECT_ITEM,
+  SORT_ITEM,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -136,7 +136,7 @@ export const MainStackScreen = () => {
           headerTintColor: 'white',
           headerLeft: () => null,
         }}>
-        {auth.token || auth.loggedIn ? (
+        {!auth.token || !auth.loggedIn ? (
           <>
             <Stack.Screen
               name={WELCOME_HOME}
@@ -176,12 +176,12 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={TAB_SCREEN}
               component={Tabs}
-              options={{...getHeaderOptions(TAB_SCREEN)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={PRACTICE_SCREEN}
               component={Practice}
-              options={{...getHeaderOptions(PRACTICE_SCREEN)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={NETWORK_REQUEST}
@@ -256,11 +256,6 @@ export const MainStackScreen = () => {
               options={{...getHeaderOptions(COUNTER)}}
             />
             <Stack.Screen
-              name={LIBRARY_GUIDE}
-              component={LibraryGuide}
-              options={{...getHeaderOptions(LIBRARY_GUIDE)}}
-            />
-            <Stack.Screen
               name={CLASS_ROOM}
               component={ClassRoom}
               options={{...getHeaderOptions(CLASS_ROOM)}}
@@ -268,7 +263,7 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={CHOOSE_CITIES}
               component={ChooseCities}
-              options={{...getHeaderOptions(CHOOSE_CITIES)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={CITY_INFO_MODAL}
@@ -278,7 +273,12 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={SELECT_ITEM}
               component={SelectItem}
-              options={{...getHeaderOptions(SELECT_ITEM)}}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={SORT_ITEM}
+              component={SortItem}
+              options={{headerShown: false}}
             />
           </>
         ) : (

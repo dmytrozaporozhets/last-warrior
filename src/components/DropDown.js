@@ -23,6 +23,7 @@ const DropDown = ({
   error,
   light,
   disabled,
+  placeholderStyle,
 }) => {
   const getColor = () => {
     if (error) {
@@ -58,6 +59,7 @@ const DropDown = ({
       isVisible={isVisible}
       error={error}
       disabled={disabled}
+      placeholderStyle={placeholderStyle}
     />
   );
 };
@@ -68,6 +70,7 @@ DropDown.defaultProps = {
   labelStyle: [],
   style: [],
   dropDownStyle: [],
+  placeholderStyle: {},
   arrowSize: 16,
   isVisible: false,
   error: false,
@@ -97,6 +100,7 @@ DropDown.propTypes = {
   value: PropTypes.any,
   isVisible: PropTypes.bool,
   error: PropTypes.any,
+  placeholderStyle: PropTypes.object,
 };
 
 export default DropDown;

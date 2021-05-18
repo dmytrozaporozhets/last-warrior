@@ -463,6 +463,9 @@ export default {
   pH30: {
     paddingHorizontal: 30,
   },
+  pH40: {
+    paddingHorizontal: 40,
+  },
   pV10: {
     paddingVertical: 10,
   },
@@ -806,4 +809,6 @@ export default {
     left: 0,
     right: 0,
   },
+  left20: {left: 20},
+  right20: {right: 20},
 };

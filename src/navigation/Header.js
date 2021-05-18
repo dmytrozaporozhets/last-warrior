@@ -10,19 +10,14 @@ import {
   REACT_HOOKS_STATE,
   REDUX_COUNTER,
   SCREEN_STACK,
-  TAB_SCREEN,
   REDUX,
   REDUX_TODOS,
   REACT_HOOKS_USER,
   NETWORK_FETCH,
   COUNTER,
-  LIBRARY_GUIDE,
   PROFILE_SCREEN,
   SETTINGS_SCREEN,
-  PRACTICE_SCREEN,
   CLASS_ROOM,
-  CHOOSE_CITIES,
-  SELECT_ITEM,
 } from '../screens/constants';
 import {
   BackButton,
@@ -87,33 +82,6 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={HeaderStyle.text} bold>
             Network
-          </Text>
-        ),
-      };
-    case LIBRARY_GUIDE:
-      return {
-        ...defaultHeader,
-        headerTitle: () => (
-          <Text style={HeaderStyle.txt} bold>
-            Application Guide
-          </Text>
-        ),
-      };
-    case TAB_SCREEN:
-      return {
-        ...defaultHeader,
-        headerTitle: () => (
-          <Text style={HeaderStyle.text} bold>
-            Tab
-          </Text>
-        ),
-      };
-    case PRACTICE_SCREEN:
-      return {
-        ...defaultHeader,
-        headerTitle: () => (
-          <Text style={HeaderStyle.text} bold>
-            Practice
           </Text>
         ),
       };
@@ -240,24 +208,6 @@ export const getHeaderOptions = (name) => {
         headerTitle: () => (
           <Text style={HeaderStyle.text} bold>
             Class Room
-          </Text>
-        ),
-      };
-    case CHOOSE_CITIES:
-      return {
-        ...defaultHeader,
-        headerTitle: () => (
-          <Text style={HeaderStyle.text} bold>
-            Cities
-          </Text>
-        ),
-      };
-    case SELECT_ITEM:
-      return {
-        ...defaultHeader,
-        headerTitle: () => (
-          <Text style={HeaderStyle.text} bold>
-            Select Item
           </Text>
         ),
       };

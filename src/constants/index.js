@@ -18,6 +18,7 @@ import {
   CLASS_ROOM,
   CHOOSE_CITIES,
   SELECT_ITEM,
+  SORT_ITEM,
 } from '../screens/constants';
 import {
   autumn,
@@ -51,6 +52,7 @@ export const libraryScreen = [
   {title: PRACTICE_SCREEN, pathway: PRACTICE_SCREEN, id: 7},
   {title: CHOOSE_CITIES, pathway: CHOOSE_CITIES, id: 8},
   {title: SELECT_ITEM, pathway: SELECT_ITEM, id: 9},
+  {title: SORT_ITEM, pathway: SORT_ITEM, id: 10},
 ];
 
 export const counterData = [
@@ -238,4 +240,6 @@ export const footballClub = [
   {title: 'Inter', championship: 'Serie A', id: 9},
   {title: 'Napoli', championship: 'Serie A', id: 10},
   {title: 'Roma', championship: 'Serie A', id: 11},
+  {title: 'AS Monaco', championship: 'Ligue 1', id: 12},
+  {title: 'Lyon', championship: 'Ligue 1', id: 13},
 ];
