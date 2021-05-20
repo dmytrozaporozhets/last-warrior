@@ -22,6 +22,4 @@ export const HeaderStyle = StyleSheet.create({
   },
   header: {color: Colors.yellow, ...sg.fS28},
   position: {position: 'absolute', ...sg.mT20},
-  text: {color: 'yellow', fontSize: 28},
-  txt: {color: 'yellow', fontSize: 24},
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, ScreenView} from '../../components';
+import {Button, Header, ScreenView} from '../../components';
 import {View, ScrollView} from 'react-native';
 import {Colors, sg} from '../../styling';
 // import firebase from '@react-native-firebase/app';
@@ -21,10 +21,12 @@ import {NETWORK_FETCH} from '../constants';
 
 const Network = ({navigation}) => {
   const goTo = (route) => () => navigation.navigate(route);
+  const goBack = () => navigation.goBack();
   return (
     <ScreenView
       childrenStyle={{backgroundColor: Colors.black}}
       statusBarColor={Colors.black}>
+      <Header onBack={goBack} />
       <ScrollView>
         <View
           style={{

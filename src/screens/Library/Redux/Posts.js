@@ -3,7 +3,7 @@ import {View, ImageBackground, ScrollView} from 'react-native';
 import {darkSky} from '../../../../assets/link/image';
 import {Colors, sg} from '../../../styling';
 import {DisplayScreenStyle} from '../../../styling/screens/DisplayScreen';
-import {ScreenView, PostsList, PostForm, Spinner} from '../../../components';
+import {ScreenView, PostsList, PostForm, Spinner, Header} from '../../../components';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   onCreateFetchPost,
@@ -11,7 +11,8 @@ import {
   onResetPost,
 } from '../../../redax/posts';
 
-const Posts = () => {
+const Posts = ({navigation}) => {
+  const goBack = () => navigation.goBack();
   const dispatch = useDispatch();
   const syncPosts = useSelector((state) => state.post.posts);
   const asyncPosts = useSelector((state) => state.post.fetchPosts);
@@ -23,6 +24,7 @@ const Posts = () => {
   return (
     <ScreenView statusBarColor={Colors.black}>
       <ImageBackground source={darkSky} style={DisplayScreenStyle.image}>
+        <Header onBack={goBack} />
         <ScrollView keyboardShouldPersistTaps="handled">
           <View style={sg.flex}>
             <PostForm

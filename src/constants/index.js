@@ -243,3 +243,8 @@ export const footballClub = [
   {title: 'AS Monaco', championship: 'Ligue 1', id: 12},
   {title: 'Lyon', championship: 'Ligue 1', id: 13},
 ];
+
+export const loginWith = [
+  {title: 'Login with GitHub', icon: 'github', id: 1, type: 'github'},
+  {title: 'Login with Google', icon: 'google', id: 2, type: 'google'},
+];

@@ -73,7 +73,6 @@ import {
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
-import {getHeaderOptions} from './Header';
 import {Colors} from '../styling';
 
 const Stack = createStackNavigator();
@@ -101,9 +100,9 @@ export const MyTabs = () => {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'yellow',
-        inactiveTintColor: '#B5B5B5',
-        style: {backgroundColor: 'black', paddingHorizontal: 10},
+        activeTintColor: Colors.yellow,
+        inactiveTintColor: Colors.gray2,
+        style: {backgroundColor: Colors.black, paddingHorizontal: 10},
       }}>
       <Tab.Screen name={HOME_SCREEN} component={Home} />
       <Tab.Screen name={LIBRARY} component={Library} />
@@ -130,13 +129,13 @@ export const MainStackScreen = () => {
           animationEnabled: false,
           headerStyle: {
             height: Platform.OS === 'ios' ? 60 + insets.top : 60,
-            backgroundColor: 'black',
+            backgroundColor: Colors.black,
           },
           headerTitleAlign: 'center',
-          headerTintColor: 'white',
+          headerTintColor: Colors.white,
           headerLeft: () => null,
         }}>
-        {!auth.token || !auth.loggedIn ? (
+        {auth.token || auth.loggedIn ? (
           <>
             <Stack.Screen
               name={WELCOME_HOME}
@@ -146,32 +145,32 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={SCREEN_STACK}
               component={MyTabs}
-              options={{...getHeaderOptions(SCREEN_STACK)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={HOME_SCREEN}
               component={Home}
-              options={{...getHeaderOptions(HOME_SCREEN)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={PROFILE_SCREEN}
               component={Profile}
-              options={{...getHeaderOptions(PROFILE_SCREEN)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={SETTINGS_SCREEN}
               component={Settings}
-              options={{...getHeaderOptions(SETTINGS_SCREEN)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={LIBRARY}
               component={Library}
-              options={{...getHeaderOptions(LIBRARY)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REDUX_COUNTER}
               component={Counter}
-              options={{...getHeaderOptions(REDUX_COUNTER)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={TAB_SCREEN}
@@ -186,79 +185,87 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={NETWORK_REQUEST}
               component={Network}
-              options={{...getHeaderOptions(NETWORK_REQUEST)}}
+              options={{headerShown: false}}
             />
-            <Stack.Screen name={ABOUT} component={About} />
-            <Stack.Screen name={INFO} component={Info} />
+            <Stack.Screen
+              name={ABOUT}
+              component={About}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={INFO}
+              component={Info}
+              options={{headerShown: false}}
+            />
             <Stack.Screen
               name={REACT_HOOKS}
               component={ReactHooks}
-              options={{...getHeaderOptions(REACT_HOOKS)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_EFFECT}
               component={UseEffect}
-              options={{...getHeaderOptions(REACT_HOOKS_EFFECT)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_REF}
               component={UseRef}
-              options={{...getHeaderOptions(REACT_HOOKS_REF)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_STATE}
               component={UseState}
-              options={{...getHeaderOptions(REACT_HOOKS_STATE)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_MEMO}
               component={UseMemo}
-              options={{...getHeaderOptions(REACT_HOOKS_MEMO)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_REDUCER}
               component={UseReducer}
-              options={{...getHeaderOptions(REACT_HOOKS_REDUCER)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_CONTEXT}
               component={UseContext}
-              options={{...getHeaderOptions(REACT_HOOKS_CONTEXT)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_CALLBACK}
               component={UseCallback}
-              options={{...getHeaderOptions(REACT_HOOKS_CALLBACK)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REDUX}
               component={Redux}
-              options={{...getHeaderOptions(REDUX)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REDUX_TODOS}
               component={Posts}
-              options={{...getHeaderOptions(REDUX_TODOS)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={REACT_HOOKS_USER}
               component={UseUser}
-              options={{...getHeaderOptions(REACT_HOOKS_USER)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={NETWORK_FETCH}
               component={Fetch}
-              options={{...getHeaderOptions(NETWORK_FETCH)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={COUNTER}
               component={CounterView}
-              options={{...getHeaderOptions(COUNTER)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={CLASS_ROOM}
               component={ClassRoom}
-              options={{...getHeaderOptions(CLASS_ROOM)}}
+              options={{headerShown: false}}
             />
             <Stack.Screen
               name={CHOOSE_CITIES}

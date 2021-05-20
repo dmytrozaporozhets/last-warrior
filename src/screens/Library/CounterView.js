@@ -1,12 +1,13 @@
 import React from 'react';
-import {ScreenView} from '../../components';
+import {Header, ScreenView} from '../../components';
 import HandlerCounter from '../../components/HandlerCounter';
 import {ScrollView, View} from 'react-native';
 import {Colors, sg} from '../../styling';
 import {useDispatch, useSelector} from 'react-redux';
 import {decrementCounter, incrementCounter} from '../../redax/interface';
 
-const CounterView = () => {
+const CounterView = ({navigation}) => {
+  const goBack = () => navigation.goBack();
   const count = useSelector((state) => state.interface.count);
   const dispatch = useDispatch();
   const switchOperation = (operation) => () => {
@@ -25,6 +26,7 @@ const CounterView = () => {
     <ScreenView
       statusBarColor={Colors.black}
       childrenStyle={{backgroundColor: Colors.black}}>
+      <Header onBack={goBack} />
       <ScrollView>
         <View style={[sg.flex, sg.mH40]}>
           <HandlerCounter

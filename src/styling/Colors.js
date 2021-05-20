@@ -18,7 +18,7 @@ const colors = {
   gray9: '#3F3F3F',
   gray10: '#AFB1B2',
   gray11: '#585F68',
-  white: 'white',
+  white: '#FFFFFF',
   yellow: 'yellow',
   dark: 'black',
   blue: '#0A8DCA',
@@ -26,8 +26,8 @@ const colors = {
   blue3: '#3e2dac',
   black: '#000000',
   orange: 'orange',
-  green: 'green',
-  red: 'red',
+  green: '#2FB538',
+  red: '#EA0B20',
   red2: '#FFC061',
   modalOverlay: 'rgba(245, 244, 244, 0.65)',
   inputBgLight: 'rgba(64,64,64,0.05)',
@@ -36,6 +36,7 @@ const colors = {
   darkBlue: 'darkblue',
   aqua: 'aqua',
   aquamarine: 'aquamarine',
+  pink: '#B42E61',
 };
 
 export default colors;

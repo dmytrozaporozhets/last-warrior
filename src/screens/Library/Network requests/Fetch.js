@@ -1,11 +1,18 @@
 import React from 'react';
-import {Button, PhotosCard, ScreenView, Spinner} from '../../../components';
+import {
+  Button,
+  Header,
+  PhotosCard,
+  ScreenView,
+  Spinner,
+} from '../../../components';
 import {ScrollView, View} from 'react-native';
-import {sg} from '../../../styling';
+import {Colors, sg} from '../../../styling';
 import {useDispatch, useSelector} from 'react-redux';
 import {onCreateRequest, onReset} from '../../../redax/network';
 
-const Fetch = () => {
+const Fetch = ({navigation}) => {
+  const goBack = () => navigation.goBack();
   const dispatch = useDispatch();
   const request = useSelector((state) => state.network.fetchRequest);
   const loading = useSelector((state) => state.network.isLoading);
@@ -13,7 +20,10 @@ const Fetch = () => {
   const resetFetchPost = () => dispatch(onReset());
 
   return (
-    <ScreenView>
+    <ScreenView
+      childrenStyle={{backgroundColor: Colors.black}}
+      statusBarColor={Colors.black}>
+      <Header onBack={goBack} />
       <ScrollView>
         <View style={[sg.flex, sg.mH20]}>
           <View style={[sg.row, sg.mT30, sg.mB10]}>

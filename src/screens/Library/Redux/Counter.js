@@ -11,14 +11,14 @@ import {astroSky, darkSky} from '../../../../assets/link/image';
 import {Colors, sg} from '../../../styling';
 import {DisplayScreenStyle} from '../../../styling/screens/DisplayScreen';
 import {buttonCounter} from '../../../constants';
-import {ScreenView} from '../../../components';
+import {Header, ScreenView} from '../../../components';
 
-const Counter = () => {
+const Counter = ({navigation}) => {
   const [theme, setTheme] = useState(true);
-
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const disabled = state.interface.disabled;
+  const goBack = () => navigation.goBack();
 
   const switchTheme = () => {
     setTheme(!theme);
@@ -43,10 +43,11 @@ const Counter = () => {
     }
   };
   return (
-    <ScreenView statusBarColor={Colors.black} >
+    <ScreenView statusBarColor={Colors.black}>
       <ImageBackground
         source={theme ? darkSky : astroSky}
         style={DisplayScreenStyle.image}>
+        <Header onBack={goBack} />
         <View style={sg.flex}>
           <View style={DisplayScreenStyle.containerTheme}>
             <TouchableOpacity

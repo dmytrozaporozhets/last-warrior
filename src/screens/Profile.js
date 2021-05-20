@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import {View, ImageBackground} from 'react-native';
+import {View} from 'react-native';
 import {ProfileScreenStyle} from '../styling/screens/PtofileScreen';
 import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
-import {highBuild4} from '../../assets/link/image';
-import {ScreenView, UserCard} from '../components/index';
+import {Header, ScreenView, UserCard} from '../components/index';
 import {Colors, sg} from '../styling';
 import {userDataResponse} from '../redax/auth/actions';
 import {requestUserUrl} from '../../assets/link/request';
@@ -31,19 +30,18 @@ const Profile = () => {
 
   return (
     <ScreenView statusBarColor={Colors.black}>
-      <ImageBackground source={highBuild4} style={sg.flex}>
-        <View style={ProfileScreenStyle.home}>
-          {user ? (
-            <UserCard
-              user={user?.name}
-              email={user?.email}
-              login={user?.login}
-              url={user?.url}
-              style={[sg.mV10, sg.mT20]}
-            />
-          ) : null}
-        </View>
-      </ImageBackground>
+      <Header onProfile isSelectedProfile={true} logo />
+      <View style={ProfileScreenStyle.home}>
+        {user ? (
+          <UserCard
+            user={user?.name}
+            email={user?.email}
+            login={user?.login}
+            url={user?.url}
+            style={[sg.mV10, sg.mT20]}
+          />
+        ) : null}
+      </View>
     </ScreenView>
   );
 };
