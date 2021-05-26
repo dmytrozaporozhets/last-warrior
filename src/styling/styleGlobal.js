@@ -156,6 +156,9 @@ export default {
   mH45: {
     marginHorizontal: 45,
   },
+  mH50: {
+    marginHorizontal: 50,
+  },
   mB0: {
     marginBottom: 0,
   },
@@ -734,6 +737,9 @@ export default {
   },
   lH15: {
     lineHeight: 15,
+  },
+  lH16: {
+    lineHeight: 16,
   },
   lH17: {
     lineHeight: 17,

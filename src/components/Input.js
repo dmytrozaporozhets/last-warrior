@@ -31,15 +31,15 @@ const Input = ({
 
   const renderBorderColor = () => {
     if (errorText) {
-      return 'red';
+      return Colors.red;
     }
     if (verification) {
-      return '#21ae8c';
+      return Colors.jungleGreen;
     }
     if (dark) {
-      return 'white';
+      return Colors.white;
     } else {
-      return '#22232b';
+      return Colors.header;
     }
   };
 
@@ -70,10 +70,11 @@ const Input = ({
     }
   };
 
-  const txtColor = dark ? 'white' : '#282828';
+  const txtColor = dark ? Colors.white : '#282828';
   return (
     <View style={[InputStyle.container, containerStyle]}>
-      <Text style={[InputStyle.label, {color: light ? 'white' : txtColor}]}>
+      <Text
+        style={[InputStyle.label, {color: light ? Colors.white : txtColor}]}>
         {label}
       </Text>
       <View>
@@ -86,7 +87,7 @@ const Input = ({
           value={renderValue()}
           selectionColor="#FFE483"
           style={{
-            color: editable === false ? '#787777' : txtColor,
+            color: editable === false ? Colors.darkGray : txtColor,
             minHeight: multiline ? numberOfLines * 22 : 22,
             ...InputStyle.input,
             paddingRight: securedEntry ? 50 : 20,
@@ -99,23 +100,29 @@ const Input = ({
           <TouchableOpacity style={InputStyle.eye} onPress={switchVisibility}>
             <Icon
               name={isPasswordVisible ? 'eye' : 'eye-slash'}
-              style={[sg.fS16, {color: light ? 'black' : txtColor}]}
+              style={[sg.fS16, {color: light ? Colors.black : txtColor}]}
             />
           </TouchableOpacity>
         )}
         {errorText && !securedEntry && (
           <TouchableOpacity style={InputStyle.eye} onPress={onError}>
-            <Icon name="info-circle" style={[sg.fS16, {color: 'red'}]} />
+            <Icon name="info-circle" style={[sg.fS16, {color: Colors.red}]} />
           </TouchableOpacity>
         )}
         {info && (
           <TouchableOpacity style={InputStyle.eye} onPress={onError}>
-            <Icon name="info-circle" style={[sg.fS18, {color: 'blue'}]} />
+            <Icon
+              name="info-circle"
+              style={[sg.fS18, {color: Colors.orange}]}
+            />
           </TouchableOpacity>
         )}
         {verification && (
           <TouchableOpacity style={InputStyle.eye} onPress={onVerification}>
-            <Icon name="check-circle" style={{...sg.fS18, color: '#21ae8c'}} />
+            <Icon
+              name="check-circle"
+              style={{...sg.fS18, color: Colors.jungleGreen}}
+            />
           </TouchableOpacity>
         )}
         {errorText && <Text style={InputStyle.errorText}>{errorText}</Text>}

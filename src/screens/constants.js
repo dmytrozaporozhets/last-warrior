@@ -6,6 +6,7 @@ export const SETTINGS_SCREEN = 'Settings';
 export const PRACTICE_SCREEN = 'Practice';
 export const LIBRARY = 'Library';
 export const SIGN_IN = 'Sign In';
+export const SIGN_UP = 'Sign UP';
 export const AUTH = 'Auth';
 export const NETWORK_REQUEST = 'Network Request';
 export const ABOUT = 'About';

@@ -3,7 +3,7 @@ import {View, TouchableOpacity, Alert} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {signIn} from '../redax/auth/actions';
 import {Button, Input, ScreenView, Spinner, Text} from '../components/index';
-import {AUTH} from './constants';
+import {AUTH, SIGN_UP} from './constants';
 import {Colors, sg} from '../styling';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {SignInStyle} from '../styling/screens/SignIn';
@@ -13,6 +13,7 @@ const SignIn = ({navigation}) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const onCreate = () => navigation.navigate(SIGN_UP);
   const onLoginWith = (account) => () => {
     switch (account) {
       case 'github': {
@@ -68,7 +69,10 @@ const SignIn = ({navigation}) => {
           light
         />
         <Button title="Send" onPress={ComeIn} style={sg.mV15} />
-        <TouchableOpacity style={[sg.aSEnd, sg.mR20]} activeOpacity={0.5}>
+        <TouchableOpacity
+          style={[sg.aSEnd, sg.mR20]}
+          activeOpacity={0.5}
+          onPress={onCreate}>
           <Text style={{color: Colors.pink}}>Create a new account?</Text>
         </TouchableOpacity>
         <View style={[sg.aICenter, sg.width100p, sg.mT20]}>

@@ -1,5 +1,5 @@
-export const firstFon = require('../../assets/images/firstFon.jpg');
-export const secondFon = require('../../assets/images/secondFon.jpg');
+export const firstFon = require('../images/image4.jpg');
+export const secondFon = require('../images/image3.jpg');
 export const work = require('../images/work.jpeg');
 
 export const smoke = {

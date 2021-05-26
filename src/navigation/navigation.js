@@ -34,6 +34,7 @@ import {
   CityInfoModal,
   SelectItem,
   SortItem,
+  SignUp,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -70,6 +71,7 @@ import {
   CITY_INFO_MODAL,
   SELECT_ITEM,
   SORT_ITEM,
+  SIGN_UP,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -298,6 +300,11 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={AUTH}
               component={ComeInOAuth}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={SIGN_UP}
+              component={SignUp}
               options={{headerShown: false}}
             />
           </>

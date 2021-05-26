@@ -248,3 +248,10 @@ export const loginWith = [
   {title: 'Login with GitHub', icon: 'github', id: 1, type: 'github'},
   {title: 'Login with Google', icon: 'google', id: 2, type: 'google'},
 ];
+
+export const Genders = [
+  {label: 'Male', value: 'male'},
+  {label: 'Female', value: 'female'},
+  {label: 'Non-Binary', value: 'unknown'},
+  {label: 'Prefer not to say', value: 'unknown'},
+];

@@ -1120,6 +1120,12 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/datetimepicker@react-native-community/datetimepicker":
+  version "3.5.0"
+  resolved "https://codeload.github.com/react-native-community/datetimepicker/tar.gz/08072aed9bd24d061c906305d3a71230860c1ae9"
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-community/eslint-config@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@react-native-community/eslint-config/-/eslint-config-1.1.0.tgz"
@@ -1161,6 +1167,10 @@
   version "11.1.1"
   resolved "https://registry.npmjs.org/@react-native-firebase/dynamic-links/-/dynamic-links-11.1.1.tgz"
   integrity sha512-mjcRd6swGEYv+bZkznAlVdzHTOUaj/l3nJJzNuqxqMlshYNpzsOPOWoUpytIZPRo2Doh7ZuFvTEZsvVnZgmyGw==
+
+"@react-native-picker/picker@^1.8.3", "@react-native-picker/picker@react-native-picker/picker":
+  version "1.16.1"
+  resolved "https://codeload.github.com/react-native-picker/picker/tar.gz/5a4ba06be462f834fcd6e26ad3098b3e2528bcb6"
 
 "@react-navigation/bottom-tabs@^5.11.8":
   version "5.11.8"
@@ -5843,6 +5853,21 @@ react-native-iphone-x-helper@^1.3.0:
   version "1.3.0"
   resolved "https://registry.npmjs.org/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.3.0.tgz"
   integrity sha512-+/bcZWFeZt0xSS/+3CHM5K7qPL4vDO/3ARLIowzFpUPGZiPsv9+NET+XNqqseRYwFJwYMmtX+Q4TZKxAVy09ew==
+
+react-native-modal-datetime-picker@^9.2.3:
+  version "9.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-9.2.3.tgz#9a06b32f2b5a5a0e3d1ffbc81de3f91d44d280bb"
+  integrity sha512-fMQFQ5kLeKP6Z4412CvqcXzTAl8YCke2Hb1VI5M4CAnGtYYHvQS6EXzKoxwRgFOm7bqwGZHtpQP5Krc181BXvQ==
+  dependencies:
+    prop-types "^15.7.2"
+
+react-native-picker-select@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-picker-select/-/react-native-picker-select-8.0.4.tgz#3f7f1f42df69b06e7d2c10338288332a6c40fd10"
+  integrity sha512-orBjPIwBkV5oipyVw263YNMI56f6Kj3p/ejabZoCYYNSG3AiLVVhC2RqsxMgDA7IayyURAW+AlV+mDJyVqLBkg==
+  dependencies:
+    "@react-native-picker/picker" "^1.8.3"
+    lodash.isequal "^4.5.0"
 
 react-native-reanimated@^1.13.1:
   version "1.13.1"
