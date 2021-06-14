@@ -5,7 +5,6 @@ const colors = {
   hotPink: '#FF69B4',
   red: '#FF0000',
   primary: '#E41513',
-  primaryDark: '#BB1210',
   pink: '#B42E61',
   secondary: '#4C5053',
   btnSecondaryBG: '#4C5053',

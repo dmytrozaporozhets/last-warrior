@@ -35,6 +35,9 @@ import {
   SelectItem,
   SortItem,
   SignUp,
+  SelectCheckbox,
+  TaskRoom,
+  AddProgress,
 } from '../screens';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ComeInOAuth from '../services/auth/ComeInOAuth';
@@ -72,6 +75,9 @@ import {
   SELECT_ITEM,
   SORT_ITEM,
   SIGN_UP,
+  SELECT_CHECKBOX,
+  TASK_ROOM,
+  ADD_PROGRESS,
 } from '../screens/constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
@@ -137,7 +143,7 @@ export const MainStackScreen = () => {
           headerTintColor: Colors.white,
           headerLeft: () => null,
         }}>
-        {auth.token || auth.loggedIn ? (
+        {!auth.token || !auth.loggedIn ? (
           <>
             <Stack.Screen
               name={WELCOME_HOME}
@@ -287,6 +293,21 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={SORT_ITEM}
               component={SortItem}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={SELECT_CHECKBOX}
+              component={SelectCheckbox}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={TASK_ROOM}
+              component={TaskRoom}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={ADD_PROGRESS}
+              component={AddProgress}
               options={{headerShown: false}}
             />
           </>

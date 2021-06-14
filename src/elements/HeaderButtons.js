@@ -22,18 +22,30 @@ export const LogoIcon = ({name}) => {
   );
 };
 
-export const BackButton = ({onPress, style}) => {
+export const BackButton = ({
+  onPress,
+  style,
+  colorIcon = Colors.yellow,
+  size = 22,
+  disabled,
+}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={style}>
-      <Icon name="caret-left" size={22} color={Colors.yellow} />
+    <TouchableOpacity onPress={onPress} style={style} disabled={disabled}>
+      <Icon name="caret-left" size={size} color={colorIcon} />
     </TouchableOpacity>
   );
 };
 
-export const SkipButton = ({onPress, style}) => {
+export const SkipButton = ({
+  onPress,
+  style,
+  colorIcon = Colors.yellow,
+  size = 22,
+  disabled,
+}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={style}>
-      <Icon name="caret-right" size={22} color={Colors.yellow} />
+    <TouchableOpacity onPress={onPress} style={style} disabled={disabled}>
+      <Icon name="caret-right" size={size} color={colorIcon} />
     </TouchableOpacity>
   );
 };

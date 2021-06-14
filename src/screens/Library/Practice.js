@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Header, ScreenView, Text} from '../../components';
+import {Button, Header, ScreenView} from '../../components';
 import {Colors, sg} from '../../styling';
 import {View, Image} from 'react-native';
 import {highBuild, highBuild2, highBuild3} from '../../../assets/link/image';
