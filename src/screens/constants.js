@@ -31,3 +31,7 @@ export const CHOOSE_CITIES = 'Choose Cities';
 export const CITY_INFO_MODAL = 'City Info Modal';
 export const SELECT_ITEM = 'Select Item';
 export const SORT_ITEM = 'Sort Item';
+export const SELECT_CHECKBOX = 'Select Checkbox';
+export const TASK_ROOM = 'Task Room';
+export const ADD_PROGRESS = 'Add Progress';
+export const CHECKOUT = 'Checkout';
