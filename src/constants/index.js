@@ -19,6 +19,9 @@ import {
   CHOOSE_CITIES,
   SELECT_ITEM,
   SORT_ITEM,
+  SELECT_CHECKBOX,
+  TASK_ROOM,
+  ADD_PROGRESS,
 } from '../screens/constants';
 import {
   autumn,
@@ -43,16 +46,28 @@ export const buttonCounter = [
 ];
 
 export const libraryScreen = [
-  {title: REACT_HOOKS, pathway: REACT_HOOKS, id: 1},
-  {title: REDUX, pathway: REDUX, id: 2},
-  {title: TAB_SCREEN, pathway: TAB_SCREEN, id: 3},
-  {title: NETWORK_REQUEST, pathway: NETWORK_REQUEST, id: 4},
-  {title: COUNTER, pathway: COUNTER, id: 5},
-  {title: CLASS_ROOM, pathway: CLASS_ROOM, id: 6},
-  {title: PRACTICE_SCREEN, pathway: PRACTICE_SCREEN, id: 7},
-  {title: CHOOSE_CITIES, pathway: CHOOSE_CITIES, id: 8},
-  {title: SELECT_ITEM, pathway: SELECT_ITEM, id: 9},
-  {title: SORT_ITEM, pathway: SORT_ITEM, id: 10},
+  {title: TASK_ROOM, pathway: TASK_ROOM, id: 1},
+  {title: REACT_HOOKS, pathway: REACT_HOOKS, id: 2},
+  {title: REDUX, pathway: REDUX, id: 3},
+  {title: TAB_SCREEN, pathway: TAB_SCREEN, id: 4},
+  {title: NETWORK_REQUEST, pathway: NETWORK_REQUEST, id: 5},
+  {title: COUNTER, pathway: COUNTER, id: 6},
+  {title: CLASS_ROOM, pathway: CLASS_ROOM, id: 7},
+  {title: PRACTICE_SCREEN, pathway: PRACTICE_SCREEN, id: 8},
+  {title: CHOOSE_CITIES, pathway: CHOOSE_CITIES, id: 9},
+  {title: SELECT_ITEM, pathway: SELECT_ITEM, id: 10},
+  {title: SORT_ITEM, pathway: SORT_ITEM, id: 11},
+  {title: SELECT_CHECKBOX, pathway: SELECT_CHECKBOX, id: 12},
+  {title: ADD_PROGRESS, pathway: ADD_PROGRESS, id: 13},
+];
+
+export const taskGroup = [
+  {title: 'Task 1', pathway: '', id: 1},
+  {title: 'Task 2', pathway: '', id: 2},
+  {title: 'Task 3', pathway: '', id: 3},
+  {title: 'Task 4', pathway: '', id: 4},
+  {title: 'Task 5', pathway: '', id: 5},
+  {title: 'Task 6', pathway: '', id: 6},
 ];
 
 export const counterData = [
