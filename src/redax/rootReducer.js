@@ -1,24 +1,14 @@
-import React from 'react';
 import {combineReducers} from 'redux';
-import {AccessTokenReducer} from './Form/reducer';
-import {
-  ChangeColorFonReducer,
-  ChangeColorTextReducer,
-  ChangeThemeReducer,
-  ChangeWindowsReducer,
-  OnResetReducer,
-} from './About/reducesAbout';
-import {blockButtons, counterReducer} from './Display/reducer';
+import {AccessTokenReducer} from './auth/reducer';
+import InterfaceReducer from './interface/reducer';
+import PostReducer from './posts';
+import NetworkReducer from './network';
 
 export const rootReducer = combineReducers({
-  counter: counterReducer,
-  block: blockButtons,
+  interface: InterfaceReducer,
   token: AccessTokenReducer,
-  background: ChangeColorFonReducer,
-  text: ChangeColorTextReducer,
-  theme: ChangeThemeReducer,
-  windows: ChangeWindowsReducer,
-  reset: OnResetReducer,
   loading: AccessTokenReducer,
   auth: AccessTokenReducer,
+  post: PostReducer,
+  network: NetworkReducer,
 });

@@ -733,7 +733,7 @@
     <string description="Placeholder for a single date [CHAR_LIMIT=60]" name="mtrl_picker_date_header_unselected">Selected date</string>
     <string description="a11y string to indicate this is a header for a column of days for one day of the week (e.g., Monday) [CHAR_LIMIT=NONE]" name="mtrl_picker_day_of_week_column_header">Column of days: %1$s</string>
     <string description="Indicates that the user entered date cannot be parsed because its format is wrong. [CHAR_LIMIT=36]" name="mtrl_picker_invalid_format">Invalid format.</string>
-    <string description="Tells a user what an example valid entry looks like. [CHAR_LIMIT=18]" name="mtrl_picker_invalid_format_example">Example: %1$s</string>
+    <string description="Tells a user what an example valid entry looks like. [CHAR_LIMIT=18]" name="mtrl_picker_invalid_format_example">Practice: %1$s</string>
     <string description="Tells a user what format is expected for their date entry. [CHAR_LIMIT=18]" name="mtrl_picker_invalid_format_use">Use: %1$s</string>
     <string description="Notifies the user that the two entered dates do not represent a valid range of dates [CHAR_LIMIT=36]" name="mtrl_picker_invalid_range">Invalid range.</string>
     <string description="a11y string that informs the user that tapping this button will switch the year [CHAR_LIMIT=NONE]" name="mtrl_picker_navigate_to_year_description">Navigate to year %1$s</string>
@@ -1857,7 +1857,7 @@
 
         <!-- Toolbar styles -->
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Index</item>
 
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>
@@ -2055,7 +2055,7 @@
 
         <!-- Toolbar styles -->
         <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
-        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Navigation</item>
+        <item name="toolbarNavigationButtonStyle">@style/Widget.AppCompat.Toolbar.Button.Index</item>
 
         <item name="editTextStyle">@style/Widget.AppCompat.EditText</item>
         <item name="editTextBackground">@drawable/abc_edit_text_material</item>
@@ -2496,7 +2496,7 @@
         <item name="android:paddingRight">8dp</item>
     </style>
     <style name="Base.Widget.AppCompat.Toolbar" parent="Base.V7.Widget.AppCompat.Toolbar"/>
-    <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget">
+    <style name="Base.Widget.AppCompat.Toolbar.Button.Index" parent="android:Widget">
         <item name="android:background">?attr/controlBackground</item>
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
@@ -3120,8 +3120,8 @@
     <style name="TextAppearance.Design.CollapsingToolbar.Expanded" parent="TextAppearance.AppCompat.Display1">
     <item name="android:textColor">?android:attr/textColorPrimary</item>
   </style>
-    <style name="TextAppearance.Design.Counter" parent="TextAppearance.AppCompat.Caption"/>
-    <style name="TextAppearance.Design.Counter.Overflow" parent="TextAppearance.AppCompat.Caption">
+    <style name="TextAppearance.Design.HandlerCounter" parent="TextAppearance.AppCompat.Caption"/>
+    <style name="TextAppearance.Design.HandlerCounter.Overflow" parent="TextAppearance.AppCompat.Caption">
     <item name="android:textColor">@color/design_error</item>
   </style>
     <style name="TextAppearance.Design.Error" parent="TextAppearance.AppCompat.Caption">
@@ -3678,7 +3678,7 @@
     <style name="Widget.AppCompat.TextView" parent="Base.Widget.AppCompat.TextView"/>
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
-    <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <style name="Widget.AppCompat.Toolbar.Button.Index" parent="Base.Widget.AppCompat.Toolbar.Button.Index"/>
     <style name="Widget.Compat.NotificationActionContainer" parent=""/>
     <style name="Widget.Compat.NotificationActionText" parent=""/>
     <style name="Widget.Design.AppBarLayout" parent="android:Widget">
@@ -3771,8 +3771,8 @@
     <item name="endIconTint">@color/design_icon_tint</item>
     <item name="startIconTint">@color/design_icon_tint</item>
 
-    <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
-    <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
+    <item name="counterTextAppearance">@style/TextAppearance.Design.HandlerCounter</item>
+    <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.HandlerCounter.Overflow</item>
     <item name="errorTextAppearance">@style/TextAppearance.Design.Error</item>
     <item name="helperTextTextAppearance">@style/TextAppearance.Design.HelperText</item>
     <item name="hintTextAppearance">@style/TextAppearance.Design.Hint</item>
@@ -4421,16 +4421,16 @@
         <attr format="dimension" name="itemPadding"/>
         <!-- Set true to hide the action bar on a vertical nested scroll of content. -->
         <attr format="boolean" name="hideOnContentScroll"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetStart"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetEnd"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetLeft"/>
-        <!-- Minimum inset for content views within a bar. Navigation buttons and
+        <!-- Minimum inset for content views within a bar. Index buttons and
              menu views are excepted. Only valid for some themes and configurations. -->
         <attr format="dimension" name="contentInsetRight"/>
         <!-- Minimum inset for content views within a bar when a navigation button
@@ -7030,18 +7030,18 @@
       <enum name="screen" value="15"/>
     </attr>
 
-    <!-- Whether the layout is laid out as if the character counter will be displayed. -->
+    <!-- Whether the layout is laid out as if the character interface will be displayed. -->
     <attr format="boolean" name="counterEnabled"/>
-    <!-- The max length to display in the character counter. -->
+    <!-- The max length to display in the character interface. -->
     <attr format="integer" name="counterMaxLength"/>
-    <!-- TextAppearance of the character counter. -->
+    <!-- TextAppearance of the character interface. -->
     <attr format="reference" name="counterTextAppearance"/>
-    <!-- Text color of the character counter.
+    <!-- Text color of the character interface.
          If set, this takes precedence over counterTextAppearance. -->
     <attr format="reference" name="counterTextColor"/>
-    <!-- TextAppearance of the character counter when the text is longer than the max. -->
+    <!-- TextAppearance of the character interface when the text is longer than the max. -->
     <attr format="reference" name="counterOverflowTextAppearance"/>
-    <!-- Text color of the character counter when the text is longer than the max.
+    <!-- Text color of the character interface when the text is longer than the max.
          If set, this takes precedence over counterOverflowTextAppearance. -->
     <attr format="reference" name="counterOverflowTextColor"/>
 

@@ -156,6 +156,9 @@ export default {
   mH45: {
     marginHorizontal: 45,
   },
+  mH50: {
+    marginHorizontal: 50,
+  },
   mB0: {
     marginBottom: 0,
   },
@@ -215,6 +218,9 @@ export default {
   },
   mT30: {
     marginTop: 30,
+  },
+  mT35: {
+    marginTop: 35,
   },
   mT40: {
     marginTop: 40,
@@ -292,6 +298,9 @@ export default {
     marginRight: 15,
   },
   mR20: {
+    marginRight: 20,
+  },
+  mR25: {
     marginRight: 20,
   },
   mR30: {
@@ -451,8 +460,14 @@ export default {
   pH20: {
     paddingHorizontal: 20,
   },
+  pH25: {
+    paddingHorizontal: 25,
+  },
   pH30: {
     paddingHorizontal: 30,
+  },
+  pH40: {
+    paddingHorizontal: 40,
   },
   pV10: {
     paddingVertical: 10,
@@ -465,6 +480,21 @@ export default {
   },
   pV30: {
     paddingVertical: 30,
+  },
+  width50p: {
+    width: '50%',
+  },
+  width60p: {
+    width: '60%',
+  },
+  width70p: {
+    width: '70%',
+  },
+  width80p: {
+    width: '80%',
+  },
+  width90p: {
+    width: '90%',
   },
   width100p: {
     width: '100%',
@@ -517,6 +547,9 @@ export default {
   width150: {
     width: 150,
   },
+  width200: {
+    width: 200,
+  },
   width290: {
     width: 290,
   },
@@ -552,6 +585,9 @@ export default {
   },
   height60: {
     height: 60,
+  },
+  height100: {
+    height: 100,
   },
   border: {
     borderWidth: 1,
@@ -702,6 +738,9 @@ export default {
   lH15: {
     lineHeight: 15,
   },
+  lH16: {
+    lineHeight: 16,
+  },
   lH17: {
     lineHeight: 17,
   },
@@ -719,6 +758,9 @@ export default {
   },
   lH22: {
     lineHeight: 22,
+  },
+  lH32: {
+    lineHeight: 32,
   },
   resizeModeContain: {
     resizeMode: 'contain',
@@ -773,4 +815,6 @@ export default {
     left: 0,
     right: 0,
   },
+  left20: {left: 20},
+  right20: {right: 20},
 };

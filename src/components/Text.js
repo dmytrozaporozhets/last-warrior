@@ -2,10 +2,11 @@ import React from 'react';
 import {Text as TextRN, Dimensions} from 'react-native';
 import {StyleSheet} from 'react-native';
 import PropTypes from 'prop-types';
+import {Colors} from "../styling";
 
 const standartWidth = 414;
 
-export const Text = (props) => {
+const Text = (props) => {
   const {
     children,
     bold,
@@ -20,7 +21,7 @@ export const Text = (props) => {
   const coeficient = windowWidth / standartWidth;
   const oldFontSize = style ? StyleSheet.flatten(style).fontSize : null;
   const oldLineHeight = style ? StyleSheet.flatten(style).lineHeight : null;
-  const hyperlinkColor = {color: '#35d6e5'};
+  const hyperlinkColor = {color: Colors.aqua};
   return (
     <TextRN
       {...props}
@@ -28,10 +29,10 @@ export const Text = (props) => {
         style,
         oldFontSize && {fontSize: oldFontSize * coeficient},
         oldLineHeight && {lineHeight: oldLineHeight * coeficient},
-        // {fontFamily: 'SourceCodePro-Regular'},
-        // bold && {fontFamily: 'SourceCodePro-Bold'},
-        // semiBold && {fontFamily: 'SourceCodePro-SemiBold'},
-        // italic && {fontFamily: 'SourceCodePro-Italic'},
+        {fontFamily: 'SourceCodePro-Regular'},
+        bold && {fontFamily: 'SourceCodePro-Bold'},
+        semiBold && {fontFamily: 'SourceCodePro-SemiBold'},
+        italic && {fontFamily: 'SourceCodePro-Italic'},
         hyperlinksColor && hyperlinkColor,
       ]}
       onPress={onPress}
@@ -41,13 +42,14 @@ export const Text = (props) => {
   );
 };
 
+export default Text;
+
 Text.defaultProps = {
   style: [],
   bold: false,
   italic: false,
   semiBold: false,
   hyperlinksColor: false,
-  onPress: () => null,
 };
 
 Text.propTypes = {

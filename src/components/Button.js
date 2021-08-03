@@ -1,33 +1,40 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
-// import {Text} from './Text';
+import {TouchableOpacity} from 'react-native';
+import {Text} from '../components/index';
 import PropTypes from 'prop-types';
+import {ButtonStyleSize, ButtonStyleType} from '../styling/components/Button';
 
-export const Button = ({title, onPress, style, disabled}) => {
+const Button = ({
+  title,
+  onPress,
+  style,
+  disabled,
+  activeOpacity,
+  btnType,
+  color,
+  size,
+}) => {
+  let type = btnType;
+  if (disabled) {
+    type = 'disabled';
+  }
   return (
     <TouchableOpacity
       onPress={onPress}
       disabled={disabled}
-      activeOpacity={0.5}
+      activeOpacity={activeOpacity}
       style={[
-        {
-          width: 100,
-          height: 50,
-          borderWidth: 2,
-          borderRadius: 7,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'steelblue',
-          borderColor: 'black',
-        },
+        ButtonStyleSize[size].container,
+        ButtonStyleType[type].backColor,
+        ButtonStyleType[type].border,
         style,
       ]}>
       <Text
-        style={{
-          textAlign: 'center',
-          fontSize: 18,
-          color: 'black',
-        }}
+        style={[
+          ButtonStyleSize[size].txt,
+          ButtonStyleType[type].txt,
+          color && {color},
+        ]}
         bold>
         {title}
       </Text>
@@ -35,15 +42,30 @@ export const Button = ({title, onPress, style, disabled}) => {
   );
 };
 
+export default Button;
+
 Button.defaultProps = {
+  btnType: 'yellow',
+  size: 'large',
   disabled: false,
-  style: [],
+  style: {},
+  activeOpacity: 0.5,
   onPress: () => null,
 };
 
 Button.propTypes = {
   style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  btnType: PropTypes.oneOf([
+    'yellow',
+    'orange',
+    'green',
+    'blue',
+    'primary',
+    'red',
+  ]),
+  size: PropTypes.oneOf(['large', 'medium', 'small']),
   title: PropTypes.string,
+  activeOpacity: PropTypes.number,
   disabled: PropTypes.bool,
   onPress: PropTypes.any,
 };
