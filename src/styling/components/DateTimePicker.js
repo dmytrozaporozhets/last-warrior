@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {Colors, sg} from '../index';
 
-export const DatePickerStyle = StyleSheet.create({
+export const DateTimePickerStyle = StyleSheet.create({
   label: {...sg.fS13, ...sg.lH16, ...sg.mB5},
   button: {
     borderWidth: 1,
@@ -11,6 +11,7 @@ export const DatePickerStyle = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     alignItems: 'center',
+    backgroundColor: Colors.white,
   },
   icon: {...sg.fS18, color: Colors.header},
 });
