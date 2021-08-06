@@ -22,7 +22,7 @@ import {
   SELECT_CHECKBOX,
   TASK_ROOM,
   ADD_PROGRESS,
-} from '../screens/constants';
+} from '../navigation/constants';
 import {
   autumn,
   England,
