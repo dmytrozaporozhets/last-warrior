@@ -13,7 +13,7 @@ import {
   SortButton,
 } from '../elements/HeaderButtons';
 import {useNavigation} from '@react-navigation/native';
-import {PROFILE_SCREEN, SETTINGS_SCREEN} from '../screens/constants';
+import {PROFILE_SCREEN, SETTINGS_SCREEN} from '../navigation/constants';
 
 const Header = ({
   onBack,

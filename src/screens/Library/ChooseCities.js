@@ -3,7 +3,7 @@ import {ScrollView, View} from 'react-native';
 import {CategoriesTab, CityCard, Header, ScreenView} from '../../components';
 import {Colors, sg} from '../../styling';
 import {fakeCities, fakeCountries} from '../../constants';
-import {CITY_INFO_MODAL} from '../constants';
+import {CITY_INFO_MODAL} from '../../navigation/constants';
 
 const ChooseCities = ({navigation}) => {
   const goBack = () => navigation.goBack();

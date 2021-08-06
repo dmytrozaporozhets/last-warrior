@@ -78,7 +78,7 @@ import {
   SELECT_CHECKBOX,
   TASK_ROOM,
   ADD_PROGRESS,
-} from '../screens/constants';
+} from './constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Platform} from 'react-native';
 import {Colors} from '../styling';

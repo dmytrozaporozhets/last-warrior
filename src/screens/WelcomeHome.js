@@ -4,7 +4,7 @@ import {Button, ScreenView, Text} from '../components/index';
 import {moon} from '../../assets/link/image';
 import {WelcomeHomeStyle} from '../styling/screens/WelcomeHomeStyle';
 import {Colors} from '../styling';
-import {SCREEN_STACK} from './constants';
+import {SCREEN_STACK} from '../navigation/constants';
 
 const WelcomeHome = ({navigation}) => {
   const onNext = () => navigation.navigate(SCREEN_STACK);

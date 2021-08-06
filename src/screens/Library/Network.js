@@ -4,7 +4,7 @@ import {View, ScrollView} from 'react-native';
 import {Colors, sg} from '../../styling';
 // import firebase from '@react-native-firebase/app';
 // import dynamicLinks from '@react-native-firebase/dynamic-links';
-import {NETWORK_FETCH} from '../constants';
+import {NETWORK_FETCH} from '../../navigation/constants';
 
 // function DynamicLinks() {
 //   useEffect(() => {

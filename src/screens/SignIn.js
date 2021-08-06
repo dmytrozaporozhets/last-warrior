@@ -3,7 +3,7 @@ import {View, TouchableOpacity, Alert} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {signIn} from '../redax/auth/actions';
 import {Button, Input, ScreenView, Spinner, Text} from '../components/index';
-import {AUTH, SIGN_UP} from './constants';
+import {AUTH, SIGN_UP} from '../navigation/constants';
 import {Colors, sg} from '../styling';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {SignInStyle} from '../styling/screens/SignIn';

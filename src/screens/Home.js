@@ -1,8 +1,6 @@
 import React from 'react';
 import {ScrollView, View} from 'react-native';
-
 import {Header, ScreenView, Text} from '../components/index';
-
 import {Colors} from '../styling';
 
 const Home = ({navigation}) => {
