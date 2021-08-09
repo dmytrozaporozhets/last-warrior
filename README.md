@@ -1,2 +1,2 @@
-# react-native-my-project
+# last-warrior
 My first mobile application
