@@ -143,7 +143,7 @@ export const MainStackScreen = () => {
           headerTintColor: Colors.white,
           headerLeft: () => null,
         }}>
-        {!auth.token || !auth.loggedIn ? (
+        {auth.token || auth.loggedIn ? (
           <>
             <Stack.Screen
               name={WELCOME_HOME}

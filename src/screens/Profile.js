@@ -12,6 +12,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token.token);
   const user = useSelector((state) => state.auth.user);
+  console.log(user);
 
   useEffect(() => {
     axios

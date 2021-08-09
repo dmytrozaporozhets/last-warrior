@@ -5,7 +5,7 @@ export const SignInStyle = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    marginHorizontal: 40,
+    paddingHorizontal: 40,
     marginTop: 20,
   },
   box: {

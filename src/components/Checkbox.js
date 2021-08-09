@@ -32,7 +32,7 @@ const Checkbox = ({
       activeOpacity={0.5}
       onPress={onPress}>
       <Icon
-        name={icon}
+        name={icon ? 'check-square' : 'square'}
         size={sizeIcon}
         color={colorIcon}
         style={[sg.mH10, iconStyle]}

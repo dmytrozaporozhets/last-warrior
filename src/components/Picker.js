@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Colors, sg} from '../styling';
 import {PickerStyle} from '../styling/components/Picker';
 import {Text} from '../components';
+import {isIos} from '../utils';
 
 const Picker = (props) => {
   const {
@@ -32,6 +33,10 @@ const Picker = (props) => {
     ? {backgroundColor: Colors.header, borderColor: Colors.white}
     : {backgroundColor: Colors.white, borderColor: Colors.black};
 
+  const submit = () => onSelect(selectedValue);
+
+  const onChoose = (val) => onSelect(val);
+
   return (
     <View style={sg.flex}>
       {label && <Text style={PickerStyle.label}>{label}</Text>}
@@ -50,10 +55,9 @@ const Picker = (props) => {
             placeholder: {color: dark ? Colors.white : Colors.gray6},
           }}
           value={selectedValue}
-          onValueChange={(value) => {
-            onSelect(value);
-            setSelectedValue(value);
-          }}
+          onValueChange={isIos ? setSelectedValue : onChoose}
+          onDonePress={submit}
+          onClose={submit}
           items={items}
           {...props}
         />
