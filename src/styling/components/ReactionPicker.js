@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import sg from '../sg';
+import {sg} from '../../styling';
 
 export const ReactionPickerStyle = StyleSheet.create({
   viewContainer: {
