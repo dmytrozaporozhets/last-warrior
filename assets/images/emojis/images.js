@@ -1,0 +1,15 @@
+export const images = {
+  like_gif: require('./like.gif'),
+  like_static: require('./ic_like.png'),
+  like_static_fill: require('./ic_like_fill.png'),
+  love_gif: require('./love.gif'),
+  love_static: require('./love2.png'),
+  haha_gif: require('./haha.gif'),
+  haha_static: require('./haha2.png'),
+  wow_gif: require('./wow.gif'),
+  wow_static: require('./wow2.png'),
+  sad_gif: require('./sad.gif'),
+  sad_static: require('./sad2.png'),
+  angry_gif: require('./angry.gif'),
+  angry_static: require('./angry2.png'),
+};

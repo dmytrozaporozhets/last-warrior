@@ -1,0 +1,6 @@
+export const iconSet = {
+  redMarker:
+    '<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink"><path stroke-width="2" stroke-miterlimit="10" stroke="#000000" fill="#E41513" d="M32 2a20 20 0 0 0-20 20c0 18 20 39 20 39s20-21 20-39A20 20 0 0 0 32 2z" data-name="layer2" stroke-linejoin="round" stroke-linecap="round"></path><circle stroke-width="2" stroke-miterlimit="10" stroke="#202020" fill="#FFFFFF" r="8" cy="22" cx="32" data-name="layer1" stroke-linejoin="round" stroke-linecap="round"></circle></svg>',
+  greenMarker:
+    '<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title" aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink"><path stroke-width="2" stroke-miterlimit="10" stroke="#000000" fill="#21ae8c" d="M32 2a20 20 0 0 0-20 20c0 18 20 39 20 39s20-21 20-39A20 20 0 0 0 32 2z" data-name="layer2" stroke-linejoin="round" stroke-linecap="round"></path><circle stroke-width="2" stroke-miterlimit="10" stroke="#202020" fill="#FFFFFF" r="8" cy="22" cx="32" data-name="layer1" stroke-linejoin="round" stroke-linecap="round"></circle></svg>',
+};

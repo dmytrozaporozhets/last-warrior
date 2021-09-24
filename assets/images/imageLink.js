@@ -1,6 +1,6 @@
-export const firstFon = require('../images/image4.jpg');
-export const secondFon = require('../images/image3.jpg');
-export const work = require('../images/work.jpeg');
+export const firstFon = require('./image4.jpg');
+export const secondFon = require('./image3.jpg');
+export const work = require('./work.jpeg');
 
 export const smoke = {
   uri:

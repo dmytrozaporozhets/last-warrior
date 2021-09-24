@@ -1,9 +1,15 @@
 import React from 'react';
 import {View, ImageBackground, ScrollView} from 'react-native';
-import {darkSky} from '../../../../assets/link/image';
+import {darkSky} from '../../../../assets/images/imageLink';
 import {Colors, sg} from '../../../styling';
 import {DisplayScreenStyle} from '../../../styling/screens/DisplayScreen';
-import {ScreenView, PostsList, PostForm, Spinner, Header} from '../../../components';
+import {
+  ScreenView,
+  PostsList,
+  PostForm,
+  Spinner,
+  Header,
+} from '../../../components';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   onCreateFetchPost,

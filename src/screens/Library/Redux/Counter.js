@@ -7,7 +7,7 @@ import {
   resetCounter,
 } from '../../../redax/interface';
 import {useSelector, useDispatch} from 'react-redux';
-import {astroSky, darkSky} from '../../../../assets/link/image';
+import {astroSky, darkSky} from '../../../../assets/images/imageLink';
 import {Colors, sg} from '../../../styling';
 import {DisplayScreenStyle} from '../../../styling/screens/DisplayScreen';
 import {buttonCounter} from '../../../constants';

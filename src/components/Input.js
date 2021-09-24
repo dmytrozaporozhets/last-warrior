@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {TextInput, View, TouchableOpacity} from 'react-native';
-import Text from '../components/Text';
+import {Text} from './index';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Colors, sg} from '../styling';
 import {InputStyle} from '../styling/components/Input';

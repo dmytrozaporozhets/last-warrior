@@ -36,7 +36,7 @@ import {
   Ukraine,
   USA,
   winter,
-} from '../../assets/link/image';
+} from '../../assets/images/imageLink';
 
 export const buttonCounter = [
   {title: '+', color: 'blue', operation: 'add', id: 1},
