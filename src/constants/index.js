@@ -16,12 +16,12 @@ import {
   REACT_HOOKS_USER,
   COUNTER,
   CLASS_ROOM,
-  CHOOSE_CITIES,
   SELECT_ITEM,
   SORT_ITEM,
   SELECT_CHECKBOX,
   TASK_ROOM,
   ADD_PROGRESS,
+  CHOOSE_ITEM,
 } from '../navigation/constants';
 import {
   autumn,
@@ -45,20 +45,12 @@ export const buttonCounter = [
   {title: 'Reset', color: 'orange', operation: 'reset', id: 4},
 ];
 
-export const libraryScreen = [
-  {title: TASK_ROOM, pathway: TASK_ROOM, id: 1},
-  {title: REACT_HOOKS, pathway: REACT_HOOKS, id: 2},
-  {title: REDUX, pathway: REDUX, id: 3},
-  {title: TAB_SCREEN, pathway: TAB_SCREEN, id: 4},
-  {title: NETWORK_REQUEST, pathway: NETWORK_REQUEST, id: 5},
-  {title: COUNTER, pathway: COUNTER, id: 6},
-  {title: CLASS_ROOM, pathway: CLASS_ROOM, id: 7},
-  {title: PRACTICE_SCREEN, pathway: PRACTICE_SCREEN, id: 8},
-  {title: CHOOSE_CITIES, pathway: CHOOSE_CITIES, id: 9},
-  {title: SELECT_ITEM, pathway: SELECT_ITEM, id: 10},
-  {title: SORT_ITEM, pathway: SORT_ITEM, id: 11},
-  {title: SELECT_CHECKBOX, pathway: SELECT_CHECKBOX, id: 12},
-  {title: ADD_PROGRESS, pathway: ADD_PROGRESS, id: 13},
+export const mainCategories = [
+  {title: SELECT_ITEM, pathway: SELECT_ITEM, image: London, id: 1},
+  {title: SORT_ITEM, pathway: SORT_ITEM, image: London, id: 2},
+  {title: CHOOSE_ITEM, pathway: CHOOSE_ITEM, image: London, id: 3},
+  {title: SELECT_CHECKBOX, pathway: SELECT_CHECKBOX, image: London, id: 4},
+  {title: ADD_PROGRESS, pathway: ADD_PROGRESS, image: London, id: 5},
 ];
 
 export const taskGroup = [

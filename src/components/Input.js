@@ -13,6 +13,7 @@ const Input = ({
   securedEntry,
   onChange,
   containerStyle,
+  labelStyle,
   editable,
   onError,
   dark,
@@ -24,6 +25,7 @@ const Input = ({
   isExpiryDate,
   placeholder,
   light,
+  search,
 }) => {
   const multiline = numberOfLines && numberOfLines > 1;
   const [isPasswordVisible, setPassVisibility] = useState(!!securedEntry);
@@ -70,13 +72,18 @@ const Input = ({
     }
   };
 
-  const txtColor = dark ? Colors.white : '#282828';
   return (
-    <View style={[InputStyle.container, containerStyle]}>
-      <Text
-        style={[InputStyle.label, {color: light ? Colors.white : txtColor}]}>
-        {label}
-      </Text>
+    <View style={[{minHeight: search ? 50 : 70}, containerStyle]}>
+      {!search && (
+        <Text
+          style={[
+            InputStyle.labelTxt,
+            {color: dark ? Colors.blackNero : Colors.white},
+            labelStyle,
+          ]}>
+          {label}
+        </Text>
+      )}
       <View>
         <TextInput
           autoCapitalize="none"
@@ -87,7 +94,12 @@ const Input = ({
           value={renderValue()}
           selectionColor="#FFE483"
           style={{
-            color: editable === false ? Colors.darkGray : txtColor,
+            color:
+              editable === false
+                ? Colors.darkGray
+                : dark
+                ? Colors.white
+                : Colors.blackNero,
             minHeight: multiline ? numberOfLines * 22 : 22,
             ...InputStyle.input,
             paddingRight: securedEntry ? 50 : 20,
@@ -100,7 +112,16 @@ const Input = ({
           <TouchableOpacity style={InputStyle.eye} onPress={switchVisibility}>
             <Icon
               name={isPasswordVisible ? 'eye' : 'eye-slash'}
-              style={[sg.fS16, {color: light ? Colors.black : txtColor}]}
+              style={[
+                sg.fS16,
+                {
+                  color: light
+                    ? Colors.black
+                    : dark
+                    ? Colors.white
+                    : Colors.blackNero,
+                },
+              ]}
             />
           </TouchableOpacity>
         )}
@@ -125,7 +146,16 @@ const Input = ({
             />
           </TouchableOpacity>
         )}
-        {errorText && <Text style={InputStyle.errorText}>{errorText}</Text>}
+        {search && (
+          <View style={InputStyle.search}>
+            <Icon name="search" style={[sg.fS18, {color: Colors.gray6}]} />
+          </View>
+        )}
+        {errorText !== undefined && (
+          <View style={sg.height25}>
+            {errorText && <Text style={InputStyle.errorText}>{errorText}</Text>}
+          </View>
+        )}
       </View>
     </View>
   );
@@ -133,11 +163,13 @@ const Input = ({
 
 Input.defaultProps = {
   containerStyle: [],
+  labelStyle: [],
   editable: true,
   dark: false,
   light: false,
   verification: false,
   info: false,
+  search: false,
   isCardNumber: false,
   isExpiryDate: false,
   onError: () => null,
@@ -147,6 +179,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
   containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  labelStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   numberOfLines: PropTypes.number,
   value: PropTypes.string,
   label: PropTypes.string,
@@ -160,6 +193,7 @@ Input.propTypes = {
   errorSecurityCode: PropTypes.bool,
   isCardNumber: PropTypes.bool,
   isExpiryDate: PropTypes.bool,
+  search: PropTypes.bool,
   onError: PropTypes.any,
   onVerification: PropTypes.any,
   onChange: PropTypes.any,

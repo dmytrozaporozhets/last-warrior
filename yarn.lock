@@ -6291,6 +6291,13 @@ react-native-splash-screen@^3.2.0:
   resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
   integrity sha512-Ls9qiNZzW/OLFoI25wfjjAcrf2DZ975hn2vr6U9gyuxi2nooVbzQeFoQS5vQcbCt9QX5NY8ASEEAtlLdIa6KVg==
 
+react-native-svg-uri@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/react-native-svg-uri/-/react-native-svg-uri-1.2.3.tgz#2f67f30564068a0fee68a751845332a5185a1aab"
+  integrity sha1-L2fzBWQGig/uaKdRhFMypRhaGqs=
+  dependencies:
+    xmldom "^0.1.22"
+
 react-native-svg@^12.1.1:
   version "12.1.1"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.1.tgz#5f292410b8bcc07bbc52b2da7ceb22caf5bcaaee"
@@ -7937,7 +7944,7 @@ xmldoc@^1.1.2:
   dependencies:
     sax "^1.2.1"
 
-xmldom@0.1.x:
+xmldom@0.1.x, xmldom@^0.1.22:
   version "0.1.31"
   resolved "https://registry.npmjs.org/xmldom/-/xmldom-0.1.31.tgz"
   integrity sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==

@@ -31,7 +31,7 @@ const Profile = () => {
 
   return (
     <ScreenView statusBarColor={Colors.black}>
-      <Header onProfile isSelectedProfile={true} logo />
+      <Header logo onSettings />
       <View style={ProfileScreenStyle.home}>
         {user ? (
           <UserCard

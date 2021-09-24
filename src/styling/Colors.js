@@ -41,6 +41,7 @@ const colors = {
   navy: '#000080',
   header: '#22232b',
   black: '#000000',
+  blackNero: '#282828',
   modalOverlay: 'rgba(245, 244, 244, 0.65)',
   inputBgLight: 'rgba(64,64,64,0.05)',
   darkGray: '#787777',

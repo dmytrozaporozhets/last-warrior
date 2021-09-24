@@ -29,5 +29,20 @@ export const InputStyle = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
   },
+  search: {
+    position: 'absolute',
+    left: 5,
+    paddingRight: 13,
+    marginRight: 5,
+    top: 16,
+    paddingHorizontal: 4,
+    fontSize: 14,
+    lineHeight: 16,
+  },
   errorText: {color: Colors.red, marginTop: 4, fontSize: 12},
+  labelTxt: {
+    fontSize: 13,
+    lineHeight: 16,
+    marginBottom: 5,
+  },
 });

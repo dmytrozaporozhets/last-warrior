@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, View, KeyboardAvoidingView} from 'react-native';
-import {ScreenView, Text, Header, Input, DropDown, Button} from '../components';
+import {ScreenView, Text, Header, Input, Button, Picker} from '../components';
 import {Colors, sg} from '../styling';
 import {Genders} from '../constants';
 import {SignUpStyle} from '../styling/screens/SIgnUp';
@@ -24,9 +24,9 @@ const SignUp = ({navigation}) => {
                 It's quick and easy.
               </Text>
             </View>
-            <Input label="Login*" light />
-            <Input label="Name*" light />
-            <Input label="Surname*" light />
+            <Input label="Login*" dark />
+            <Input label="Name*" dark containerStyle={[sg.mV10]} />
+            <Input label="Surname*" dark />
             <View>
               <Text
                 style={{color: Colors.white, fontSize: 14, marginVertical: 10}}>
@@ -37,13 +37,22 @@ const SignUp = ({navigation}) => {
                   flexDirection: 'row',
                   alignSelf: 'center',
                 }}>
-                <DropDown items={[{label: '', value: ''}]} placeholder="Day" />
-                <DropDown
+                <Picker
                   items={[{label: '', value: ''}]}
-                  containerStyle={[sg.mH5]}
-                  placeholder="Month"
+                  placeholder={{label: 'Day', value: 'Day'}}
+                  dark
                 />
-                <DropDown items={[{label: '', value: ''}]} placeholder="Year" />
+                <Picker
+                  items={[{label: '', value: ''}]}
+                  placeholder={{label: 'Month', value: 'Month'}}
+                  containerStyle={[sg.mH5]}
+                  dark
+                />
+                <Picker
+                  placeholder={{label: 'Year', value: 'Year'}}
+                  items={[{label: '', value: ''}]}
+                  dark
+                />
               </View>
             </View>
             <View>
@@ -51,10 +60,14 @@ const SignUp = ({navigation}) => {
                 style={{color: Colors.white, fontSize: 14, marginVertical: 10}}>
                 Gender*
               </Text>
-              <DropDown items={Genders} placeholder="Gender" />
+              <Picker
+                items={Genders}
+                placeholder={[{label: 'Gender', value: 'Gender'}]}
+                dark
+              />
             </View>
-            <Input label="Password*" light />
-            <Input label="Re-enter password*" light />
+            <Input label="Password*" containerStyle={[sg.mT10]} dark />
+            <Input label="Re-enter password*" containerStyle={[sg.mT10]} dark />
             <Text
               style={{color: Colors.yellow, fontSize: 12, marginVertical: 10}}>
               By clicking Sign Up, you agree to our{' '}

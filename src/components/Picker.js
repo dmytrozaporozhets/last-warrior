@@ -6,6 +6,7 @@ import {Colors, sg} from '../styling';
 import {PickerStyle} from '../styling/components/Picker';
 import {Text} from '../components';
 import {isIos} from '../utils';
+import PropTypes from 'prop-types';
 
 const Picker = (props) => {
   const {
@@ -13,8 +14,10 @@ const Picker = (props) => {
     onSelect,
     items,
     containerStyle,
+    labelStyle,
+    pickerStyle,
     label,
-    icon = true,
+    icon,
     centered,
     dark,
   } = props;
@@ -38,9 +41,9 @@ const Picker = (props) => {
   const onChoose = (val) => onSelect(val);
 
   return (
-    <View style={sg.flex}>
-      {label && <Text style={PickerStyle.label}>{label}</Text>}
-      <View style={[PickerStyle.container, darkTheme, containerStyle]}>
+    <View style={[sg.flex, containerStyle]}>
+      {label && <Text style={[PickerStyle.label, labelStyle]}>{label}</Text>}
+      <View style={[PickerStyle.container, darkTheme, pickerStyle]}>
         <RNPickerSelect
           Icon={icon ? renderIcon : null}
           style={{
@@ -64,6 +67,28 @@ const Picker = (props) => {
       </View>
     </View>
   );
+};
+
+Picker.defaultProps = {
+  icon: true,
+  centered: false,
+  dark: false,
+  containerStyle: [],
+  pickerStyle: [],
+  labelStyle: [],
+  onSelect: () => null,
+};
+
+Picker.propTypes = {
+  items: PropTypes.array.isRequired,
+  onSelect: PropTypes.func,
+  initialValue: PropTypes.string,
+  icon: PropTypes.bool,
+  centered: PropTypes.bool,
+  dark: PropTypes.bool,
+  containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  pickerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  labelStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 export default Picker;

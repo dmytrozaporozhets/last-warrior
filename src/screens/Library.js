@@ -1,26 +1,41 @@
-import React from 'react';
-import {Header, ScreenView, Text} from '../components';
+import React, {useState} from 'react';
+import {
+  Header,
+  ScreenView,
+  SnapCarousel,
+  CategorySelectCard,
+} from '../components';
 import {ScrollView, View} from 'react-native';
 import {Colors, sg} from '../styling';
-import {libraryScreen} from '../constants';
+import {mainCategories} from '../constants';
 
 const Library = ({navigation}) => {
   const goTo = (route) => () => navigation.navigate(route);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const onSnap = (index: number) => setCurrentIndex(index);
+  const renderItem = ({item}) => (
+    <CategorySelectCard
+      {...item}
+      selected={currentIndex + 1 === item.id}
+      onPress={goTo(item.pathway)}
+    />
+  );
+
   return (
     <ScreenView statusBarColor={Colors.black}>
-      <Header onProfile isSelectedProfile={false} onSettings />
+      <Header />
       <ScrollView>
         <View style={[sg.flex, sg.mV15]}>
-          {libraryScreen.map((it) => (
-            <View style={{marginHorizontal: 20, marginTop: 20}} key={it.id}>
-              <Text
-                style={[sg.fS24, {color: Colors.yellow}]}
-                bold
-                onPress={goTo(it.pathway)}>
-                {it.id}. {it.title}
-              </Text>
-            </View>
-          ))}
+          <SnapCarousel
+            data={mainCategories}
+            index={currentIndex}
+            renderItem={renderItem}
+            onSnapToItem={onSnap}
+            alignment={'center'}
+            layout={'default'}
+            itemWidth={265}
+            inactiveSlideScale={0.8}
+          />
         </View>
       </ScrollView>
     </ScreenView>

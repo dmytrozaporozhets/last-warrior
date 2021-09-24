@@ -63,17 +63,15 @@ const SignIn = ({navigation}) => {
             placeholder="Enter login..."
             onChange={setLogin}
             value={login}
-            containerStyle={sg.mV10}
-            light
+            containerStyle={[sg.mV10, sg.width100p]}
           />
           <Input
             label="Password:"
             placeholder="Enter password..."
             onChange={setPassword}
             value={password}
-            containerStyle={sg.mV10}
+            containerStyle={[sg.mV10, sg.width100p]}
             securedEntry
-            light
           />
           <Button title="Send" onPress={ComeIn} style={sg.mV15} />
           <TouchableOpacity

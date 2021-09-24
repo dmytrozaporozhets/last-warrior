@@ -70,7 +70,7 @@ import {
   WELCOME_HOME,
   SETTINGS_SCREEN,
   CLASS_ROOM,
-  CHOOSE_CITIES,
+  CHOOSE_ITEM,
   CITY_INFO_MODAL,
   SELECT_ITEM,
   SORT_ITEM,
@@ -78,10 +78,12 @@ import {
   SELECT_CHECKBOX,
   TASK_ROOM,
   ADD_PROGRESS,
+  NEWS,
 } from './constants';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Platform} from 'react-native';
 import {Colors} from '../styling';
+import News from '../screens/News';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -95,13 +97,11 @@ export const MyTabs = () => {
             case HOME_SCREEN:
               return <Icon name="home" size={size} color={color} />;
             case LIBRARY:
-              return <Icon name="book" size={size} color={color} />;
+              return <Icon name="stream" size={size} color={color} />;
             case PROFILE_SCREEN:
               return <Icon name="user" size={size} color={color} />;
-            case INFO:
-              return <Icon name="info" size={size} color={color} />;
-            case ABOUT:
-              return <Icon name="server" size={size} color={color} />;
+            case NEWS:
+              return <Icon name="box-open" size={size} color={color} />;
             default:
               return <Icon name="folder" size={size} color={color} />;
           }
@@ -113,9 +113,9 @@ export const MyTabs = () => {
         style: {backgroundColor: Colors.black, paddingHorizontal: 10},
       }}>
       <Tab.Screen name={HOME_SCREEN} component={Home} />
+      <Tab.Screen name={NEWS} component={News} />
       <Tab.Screen name={LIBRARY} component={Library} />
-      <Tab.Screen name={ABOUT} component={About} />
-      <Tab.Screen name={INFO} component={Info} />
+      <Tab.Screen name={PROFILE_SCREEN} component={Profile} />
     </Tab.Navigator>
   );
 };
@@ -163,6 +163,11 @@ export const MainStackScreen = () => {
             <Stack.Screen
               name={PROFILE_SCREEN}
               component={Profile}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name={NEWS}
+              component={News}
               options={{headerShown: false}}
             />
             <Stack.Screen
@@ -276,7 +281,7 @@ export const MainStackScreen = () => {
               options={{headerShown: false}}
             />
             <Stack.Screen
-              name={CHOOSE_CITIES}
+              name={CHOOSE_ITEM}
               component={ChooseCities}
               options={{headerShown: false}}
             />

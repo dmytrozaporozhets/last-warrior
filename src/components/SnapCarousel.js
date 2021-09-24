@@ -4,7 +4,7 @@ import {Text} from './index';
 import Carousel from 'react-native-snap-carousel';
 import PropTypes from 'prop-types';
 
-const SnapCarousel = (
+const SnapCarousel = ({
   data,
   renderItem,
   sliderWidth,
@@ -16,7 +16,7 @@ const SnapCarousel = (
   index,
   inactiveSlideScale,
   slideStyle,
-) => {
+}) => {
   const carouselWidth = Dimensions.get('screen').width;
   const carouselHeight = 200;
   return (
@@ -55,11 +55,11 @@ SnapCarousel.defaultProps = {
 };
 
 SnapCarousel.propTypes = {
-  data: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
   renderItem: PropTypes.func.isRequired,
   alignment: 'start' || 'center' || 'end',
   layout: 'default' || 'stack' || 'tinder',
-  onSnapToItem: PropTypes.func.isRequired,
+  onSnapToItem: PropTypes.func,
   index: PropTypes.number,
   sliderWidth: PropTypes.number,
   itemHeight: PropTypes.number,
