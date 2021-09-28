@@ -8,6 +8,8 @@ export const ButtonWithIconStyle = StyleSheet.create({
     height: 45,
     justifyContent: 'center',
     marginVertical: 20,
+    ...sg.width100p,
   },
-  text: {...sg.fS16, ...sg.mL5},
+  textLeft: {...sg.fS16, ...sg.mL5},
+  textRight: {...sg.fS16, ...sg.mR5},
 });

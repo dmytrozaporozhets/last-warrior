@@ -5,38 +5,67 @@ import {
   SnapCarousel,
   CategorySelectCard,
 } from '../components';
-import {ScrollView, View} from 'react-native';
+import {ScrollView} from 'react-native';
 import {Colors, sg} from '../styling';
-import {mainCategories} from '../constants';
+import {mainCategories, reduxCategories} from '../constants';
 
 const Library = ({navigation}) => {
   const goTo = (route) => () => navigation.navigate(route);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const onSnap = (index: number) => setCurrentIndex(index);
-  const renderItem = ({item}) => (
-    <CategorySelectCard
-      {...item}
-      selected={currentIndex + 1 === item.id}
-      onPress={goTo(item.pathway)}
-    />
-  );
+  const [currentItemIndex, setCurrentItemIndex] = useState(2);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const onSnap = (type) => (index: number) => {
+    switch (type) {
+      case 'item':
+        return setCurrentItemIndex(index);
+      case 'redux':
+        return setCurrentIndex(index);
+      default:
+        return;
+    }
+  };
+  const renderItem = (type) => ({item}) => {
+    switch (type) {
+      case 'item':
+        return (
+          <CategorySelectCard
+            {...item}
+            selected={currentItemIndex + 1 === item.id}
+            onPress={goTo(item.pathway)}
+          />
+        );
+      case 'redux':
+        return <CategorySelectCard {...item} onPress={goTo(item.pathway)} />;
+      default:
+        return;
+    }
+  };
 
   return (
     <ScreenView statusBarColor={Colors.black}>
       <Header />
-      <ScrollView>
-        <View style={[sg.flex, sg.mV15]}>
-          <SnapCarousel
-            data={mainCategories}
-            index={currentIndex}
-            renderItem={renderItem}
-            onSnapToItem={onSnap}
-            alignment={'center'}
-            layout={'default'}
-            itemWidth={265}
-            inactiveSlideScale={0.8}
-          />
-        </View>
+      <ScrollView style={sg.flex}>
+        <SnapCarousel
+          data={mainCategories}
+          index={currentItemIndex}
+          renderItem={renderItem('item')}
+          onSnapToItem={onSnap('item')}
+          alignment={'center'}
+          layout={'default'}
+          itemWidth={200}
+          inactiveSlideScale={0.8}
+          containerStyle={sg.mT30}
+        />
+        <SnapCarousel
+          data={reduxCategories}
+          index={currentIndex}
+          renderItem={renderItem('redux')}
+          onSnapToItem={onSnap('redux')}
+          alignment={'center'}
+          layout={'default'}
+          itemWidth={200}
+          inactiveSlideScale={0.8}
+          containerStyle={sg.mT30}
+        />
       </ScrollView>
     </ScreenView>
   );

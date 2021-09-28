@@ -3,6 +3,7 @@ import {Dimensions, View} from 'react-native';
 import {Text} from './index';
 import Carousel from 'react-native-snap-carousel';
 import PropTypes from 'prop-types';
+import {Colors, sg} from '../styling';
 
 const SnapCarousel = ({
   data,
@@ -16,11 +17,13 @@ const SnapCarousel = ({
   index,
   inactiveSlideScale,
   slideStyle,
+  containerStyle,
+  textStyle,
 }) => {
   const carouselWidth = Dimensions.get('screen').width;
   const carouselHeight = 200;
   return (
-    <View>
+    <View style={containerStyle}>
       <Carousel
         data={data}
         renderItem={renderItem}
@@ -33,14 +36,16 @@ const SnapCarousel = ({
         onSnapToItem={onSnapToItem}
         inactiveSlideScale={inactiveSlideScale}
         slideStyle={slideStyle}
+        firstItem={index}
       />
       <Text
-        style={{
-          fontSize: 16,
-          textAlign: 'center',
-          color: '#000',
-          marginVertical: 30,
-        }}
+        style={[
+          sg.fS16,
+          sg.textCenter,
+          sg.mT20,
+          {color: Colors.white},
+          textStyle,
+        ]}
         semiBold>
         {index + 1} of {data.length}
       </Text>
@@ -50,6 +55,8 @@ const SnapCarousel = ({
 
 SnapCarousel.defaultProps = {
   slideStyle: [],
+  containerStyle: [],
+  textStyle: [],
   onSnapToItem: () => null,
   renderItem: () => null,
 };
@@ -57,14 +64,16 @@ SnapCarousel.defaultProps = {
 SnapCarousel.propTypes = {
   data: PropTypes.array.isRequired,
   renderItem: PropTypes.func.isRequired,
-  alignment: 'start' || 'center' || 'end',
-  layout: 'default' || 'stack' || 'tinder',
+  alignment: PropTypes.oneOf(['start', 'center', 'end']),
+  layout: PropTypes.oneOf(['default', 'stack', 'tinder']),
   onSnapToItem: PropTypes.func,
   index: PropTypes.number,
   sliderWidth: PropTypes.number,
   itemHeight: PropTypes.number,
   itemWidth: PropTypes.number,
   slideStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+  textStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
 };
 
 export default SnapCarousel;

@@ -815,6 +815,12 @@ export default {
     left: 0,
     right: 0,
   },
+  absolute: {position: 'absolute'},
   left20: {left: 20},
+  right0: {right: 0},
+  right10: {right: 10},
   right20: {right: 20},
+  right30: {right: 30},
+  right40: {right: 40},
+  right50: {right: 50},
 };

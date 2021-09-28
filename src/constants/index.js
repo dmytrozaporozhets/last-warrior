@@ -1,7 +1,4 @@
 import {
-  PRACTICE_SCREEN,
-  NETWORK_REQUEST,
-  REACT_HOOKS,
   REACT_HOOKS_CALLBACK,
   REACT_HOOKS_CONTEXT,
   REACT_HOOKS_EFFECT,
@@ -9,17 +6,12 @@ import {
   REACT_HOOKS_REDUCER,
   REACT_HOOKS_REF,
   REACT_HOOKS_STATE,
-  REDUX,
   REDUX_COUNTER,
-  REDUX_TODOS,
-  TAB_SCREEN,
+  REDUX_POSTS,
   REACT_HOOKS_USER,
-  COUNTER,
-  CLASS_ROOM,
   SELECT_ITEM,
   SORT_ITEM,
   SELECT_CHECKBOX,
-  TASK_ROOM,
   ADD_PROGRESS,
   CHOOSE_ITEM,
 } from '../navigation/constants';
@@ -51,6 +43,11 @@ export const mainCategories = [
   {title: CHOOSE_ITEM, pathway: CHOOSE_ITEM, image: London, id: 3},
   {title: SELECT_CHECKBOX, pathway: SELECT_CHECKBOX, image: London, id: 4},
   {title: ADD_PROGRESS, pathway: ADD_PROGRESS, image: London, id: 5},
+];
+
+export const reduxCategories = [
+  {title: REDUX_COUNTER, pathway: REDUX_COUNTER, image: London, id: 1},
+  {title: REDUX_POSTS, pathway: REDUX_POSTS, image: London, id: 2},
 ];
 
 export const taskGroup = [
@@ -101,11 +98,6 @@ export const reactHooks = [
   {title: 'useUser', id: 8, pathway: REACT_HOOKS_USER},
 ];
 
-export const reduxPractice = [
-  {title: 'Counter', id: 1, pathway: REDUX_COUNTER},
-  {title: 'Posts', id: 2, pathway: REDUX_TODOS},
-];
-
 export const fakePhotosData = [
   {
     albumId: 100,
@@ -131,48 +123,6 @@ export const fakePhotosData = [
 ];
 
 export const forbidden = ['fuck', 'spam', 'php'];
-
-export const weekends = [
-  {title: 'пн', color: 'black', id: 1},
-  {title: 'вт', color: 'black', id: 2},
-  {title: 'ср', color: 'black', id: 3},
-  {title: 'чт', color: 'black', id: 4},
-  {title: 'пт', color: 'black', id: 5},
-  {title: 'сб', color: 'red', id: 6},
-  {title: 'вс', color: 'red', id: 7},
-];
-export const days = [
-  {title: '1', color: 'black', select: false, id: 1},
-  {title: '2', color: 'black', select: false, id: 2},
-  {title: '3', color: 'black', select: false, id: 3},
-  {title: '4', color: 'black', select: false, id: 4},
-  {title: '5', color: 'black', select: false, id: 5},
-  {title: '6', color: 'red', select: false, id: 6},
-  {title: '7', color: 'red', select: false, id: 7},
-  {title: '8', color: 'black', select: false, id: 8},
-  {title: '9', color: 'black', select: false, id: 9},
-  {title: '10', color: 'black', select: false, id: 10},
-  {title: '11', color: 'black', select: false, id: 11},
-  {title: '12', color: 'black', select: false, id: 12},
-  {title: '13', color: 'red', select: false, id: 13},
-  {title: '14', color: 'red', select: false, id: 14},
-  {title: '15', color: 'black', select: false, id: 15},
-  {title: '16', color: 'black', select: false, id: 16},
-  {title: '17', color: 'black', select: false, id: 17},
-  {title: '18', color: 'black', select: false, id: 18},
-  {title: '19', color: 'black', select: false, id: 19},
-  {title: '20', color: 'red', select: false, id: 20},
-  {title: '21', color: 'red', select: false, id: 21},
-  {title: '22', color: 'black', select: false, id: 22},
-  {title: '23', color: 'black', select: false, id: 23},
-  {title: '24', color: 'black', select: true, id: 24},
-  {title: '25', color: 'black', select: false, id: 25},
-  {title: '26', color: 'black', select: false, id: 26},
-  {title: '27', color: 'red', select: false, id: 27},
-  {title: '28', color: 'red', select: false, id: 28},
-  {title: '29', color: 'black', select: false, id: 29},
-  {title: '30', color: 'black', select: false, id: 30},
-];
 
 export const fakeCities = [
   {city: 'Kiev', country: 'Ukraine', population: 2.967, id: 1},
@@ -261,4 +211,11 @@ export const Genders = [
   {label: 'Female', value: 'female'},
   {label: 'Non-Binary', value: 'unknown'},
   {label: 'Prefer not to say', value: 'unknown'},
+];
+
+export const statisticCategories = [
+  {category: 'Friends', quantity: 0, id: 1},
+  {category: 'Photos', quantity: 0, id: 2},
+  {category: 'Posts', quantity: 0, id: 3},
+  {category: 'Likes', quantity: 0, id: 4},
 ];

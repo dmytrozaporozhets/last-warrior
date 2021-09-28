@@ -73,3 +73,11 @@ export const SortButton = ({onPress, style}) => {
     </TouchableOpacity>
   );
 };
+
+export const EditButton = ({onPress, style, icon}) => {
+  return (
+    <TouchableOpacity onPress={onPress} style={style}>
+      <Icon name="edit" size={22} color={icon ? Colors.yellow : Colors.gray2} />
+    </TouchableOpacity>
+  );
+};

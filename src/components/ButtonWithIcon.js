@@ -16,6 +16,7 @@ const ButtonWithIcon = ({
   boldText,
   onPress,
   container,
+  rightIcon,
 }) => {
   const defaultColor = {
     color: disabled ? Colors.gray : color ? color : Colors.link,
@@ -30,12 +31,25 @@ const ButtonWithIcon = ({
       onPress={onPress}
       disabled={disabled}
       activeOpacity={0.5}>
-      <Icon name={icon} style={[sg.fS16, defaultColor, textStyle]} />
-      <Text
-        style={[ButtonWithIconStyle.text, defaultColor, textStyle]}
-        bold={boldText}>
-        {text}
-      </Text>
+      {rightIcon ? (
+        <>
+          <Icon name={icon} style={[sg.fS16, defaultColor, textStyle]} />
+          <Text
+            style={[ButtonWithIconStyle.textLeft, defaultColor, textStyle]}
+            bold={boldText}>
+            {text}
+          </Text>
+        </>
+      ) : (
+        <>
+          <Text
+            style={[ButtonWithIconStyle.textRight, defaultColor, textStyle]}
+            bold={boldText}>
+            {text}
+          </Text>
+          <Icon name={icon} style={[sg.fS16, defaultColor, textStyle]} />
+        </>
+      )}
     </TouchableOpacity>
   );
 };
@@ -45,6 +59,7 @@ ButtonWithIcon.defaultProps = {
   disabled: false,
   container: false,
   boldText: false,
+  rightIcon: false,
   containerStyle: [],
   textStyle: [],
   onPress: () => null,
@@ -57,6 +72,7 @@ ButtonWithIcon.propTypes = {
   boldText: PropTypes.bool,
   disabled: PropTypes.bool,
   container: PropTypes.bool,
+  rightIcon: PropTypes.bool,
   color: PropTypes.string,
   containerStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   textStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),

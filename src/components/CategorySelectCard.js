@@ -13,7 +13,7 @@ const CategorySelectCard = ({title, image, selected, onPress, style}) => {
       style={[CategorySelectCardStyle.container, style]}>
       {selected && (
         <View style={CategorySelectCardStyle.box}>
-          <Icon name="check" size={20} color={Colors.white} />
+          <Icon name="check" size={14} color={Colors.white} />
         </View>
       )}
       <Image source={image} style={CategorySelectCardStyle.image} />

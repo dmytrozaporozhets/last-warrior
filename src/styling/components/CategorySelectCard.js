@@ -4,7 +4,7 @@ import {Colors} from '../index';
 export const CategorySelectCardStyle = StyleSheet.create({
   container: {
     backgroundColor: Colors.white,
-    height: 350,
+    height: 240,
     borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
@@ -17,9 +17,9 @@ export const CategorySelectCardStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
-    height: 30,
-    width: 30,
+    height: 20,
+    width: 20,
   },
-  image: {width: 160, height: 160},
-  title: {fontSize: 20, position: 'absolute', bottom: 20, fontWeight: '500'},
+  image: {width: 160, height: 160, borderRadius: 7},
+  title: {fontSize: 20, position: 'absolute', bottom: 10, fontWeight: '500'},
 });

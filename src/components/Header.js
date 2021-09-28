@@ -1,11 +1,11 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
-import {Colors, sg} from '../styling';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import {View} from 'react-native';
+import {sg} from '../styling';
 import {Text} from './index';
 import {HeaderStyle} from '../styling/components/Header';
 import {
   BackButton,
+  EditButton,
   LogoIcon,
   ProfileButton,
   SettingsButton,
@@ -13,7 +13,11 @@ import {
   SortButton,
 } from '../elements/HeaderButtons';
 import {useNavigation} from '@react-navigation/native';
-import {PROFILE_SCREEN, SETTINGS_SCREEN} from '../navigation/constants';
+import {
+  EDIT_PROFILE,
+  PROFILE_SCREEN,
+  SETTINGS_SCREEN,
+} from '../navigation/constants';
 
 const Header = ({
   onBack,
@@ -22,8 +26,10 @@ const Header = ({
   onSort,
   onProfile,
   onSettings,
+  onEditProfile,
   isSelectedProfile = false,
   isSelectedSettings = false,
+  isEditProfile = false,
 }) => {
   const navigation = useNavigation();
   return (
@@ -68,6 +74,17 @@ const Header = ({
             isSelectedSettings
               ? navigation.goBack()
               : navigation.navigate(SETTINGS_SCREEN)
+          }
+          style={[HeaderStyle.position, sg.right20]}
+          icon={isSelectedSettings}
+        />
+      )}
+      {onEditProfile && (
+        <EditButton
+          onPress={() =>
+            isEditProfile
+              ? navigation.goBack()
+              : navigation.navigate(EDIT_PROFILE)
           }
           style={[HeaderStyle.position, sg.right20]}
           icon={isSelectedSettings}

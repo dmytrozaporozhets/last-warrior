@@ -63,7 +63,7 @@ import {
   REACT_HOOKS_CALLBACK,
   REDUX,
   REDUX_COUNTER,
-  REDUX_TODOS,
+  REDUX_POSTS,
   REACT_HOOKS_USER,
   NETWORK_FETCH,
   COUNTER,
@@ -79,11 +79,13 @@ import {
   TASK_ROOM,
   ADD_PROGRESS,
   NEWS,
+  EDIT_PROFILE,
 } from './constants';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {Platform} from 'react-native';
 import {Colors} from '../styling';
 import News from '../screens/News';
+import EditProfile from '../screens/Profile/EditProfile';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -176,6 +178,11 @@ export const MainStackScreen = () => {
               options={{headerShown: false}}
             />
             <Stack.Screen
+              name={EDIT_PROFILE}
+              component={EditProfile}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
               name={LIBRARY}
               component={Library}
               options={{headerShown: false}}
@@ -256,7 +263,7 @@ export const MainStackScreen = () => {
               options={{headerShown: false}}
             />
             <Stack.Screen
-              name={REDUX_TODOS}
+              name={REDUX_POSTS}
               component={Posts}
               options={{headerShown: false}}
             />
