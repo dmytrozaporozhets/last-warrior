@@ -3,11 +3,10 @@ import {Colors} from '../index';
 
 export const CategorySelectCardStyle = StyleSheet.create({
   container: {
-    backgroundColor: Colors.white,
-    height: 240,
+    backgroundColor: Colors.orange,
+    height: 200,
     borderRadius: 14,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   box: {
     backgroundColor: Colors.green,
@@ -20,6 +19,12 @@ export const CategorySelectCardStyle = StyleSheet.create({
     height: 20,
     width: 20,
   },
-  image: {width: 160, height: 160, borderRadius: 7},
-  title: {fontSize: 20, position: 'absolute', bottom: 10, fontWeight: '500'},
+  image: {width: 160, height: 140, borderRadius: 7, marginTop: 20},
+  title: {
+    fontSize: 20,
+    position: 'absolute',
+    bottom: 10,
+    fontWeight: '500',
+    color: Colors.white,
+  },
 });

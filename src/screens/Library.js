@@ -26,13 +26,7 @@ const Library = ({navigation}) => {
   const renderItem = (type) => ({item}) => {
     switch (type) {
       case 'item':
-        return (
-          <CategorySelectCard
-            {...item}
-            selected={currentItemIndex + 1 === item.id}
-            onPress={goTo(item.pathway)}
-          />
-        );
+        return <CategorySelectCard {...item} onPress={goTo(item.pathway)} />;
       case 'redux':
         return <CategorySelectCard {...item} onPress={goTo(item.pathway)} />;
       default:

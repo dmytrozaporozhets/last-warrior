@@ -55,7 +55,7 @@ Checkbox.defaultProps = {
 
 Checkbox.propTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
   colorIcon: PropTypes.string,
   sizeIcon: PropTypes.number,
   onPress: PropTypes.any,

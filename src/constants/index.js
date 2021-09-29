@@ -28,6 +28,7 @@ import {
   Ukraine,
   USA,
   winter,
+  lightningLogo,
 } from '../../assets/images/imageLink';
 
 export const buttonCounter = [
@@ -38,16 +39,21 @@ export const buttonCounter = [
 ];
 
 export const mainCategories = [
-  {title: SELECT_ITEM, pathway: SELECT_ITEM, image: London, id: 1},
-  {title: SORT_ITEM, pathway: SORT_ITEM, image: London, id: 2},
-  {title: CHOOSE_ITEM, pathway: CHOOSE_ITEM, image: London, id: 3},
-  {title: SELECT_CHECKBOX, pathway: SELECT_CHECKBOX, image: London, id: 4},
-  {title: ADD_PROGRESS, pathway: ADD_PROGRESS, image: London, id: 5},
+  {title: SELECT_ITEM, pathway: SELECT_ITEM, image: lightningLogo, id: 1},
+  {title: SORT_ITEM, pathway: SORT_ITEM, image: lightningLogo, id: 2},
+  {title: CHOOSE_ITEM, pathway: CHOOSE_ITEM, image: lightningLogo, id: 3},
+  {
+    title: SELECT_CHECKBOX,
+    pathway: SELECT_CHECKBOX,
+    image: lightningLogo,
+    id: 4,
+  },
+  {title: ADD_PROGRESS, pathway: ADD_PROGRESS, image: lightningLogo, id: 5},
 ];
 
 export const reduxCategories = [
-  {title: REDUX_COUNTER, pathway: REDUX_COUNTER, image: London, id: 1},
-  {title: REDUX_POSTS, pathway: REDUX_POSTS, image: London, id: 2},
+  {title: REDUX_COUNTER, pathway: REDUX_COUNTER, image: lightningLogo, id: 1},
+  {title: REDUX_POSTS, pathway: REDUX_POSTS, image: lightningLogo, id: 2},
 ];
 
 export const taskGroup = [

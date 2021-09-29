@@ -13,6 +13,7 @@ const arrowCheckbox = [
 
 const SelectCheckbox = ({navigation}) => {
   const [values, setValues] = useState([]);
+  console.log(values);
   const goBack = () => navigation.goBack();
 
   const onSelectValue = (item) => () => {
@@ -34,47 +35,22 @@ const SelectCheckbox = ({navigation}) => {
       <Button
         title="RESET"
         size="small"
-        style={[sg.aSCenter, sg.mT10]}
+        style={[sg.aSCenter, sg.mT20, sg.aSEnd, sg.mR30]}
         onPress={onReset}
       />
       <View style={{...sg.mH30, ...sg.mT25}}>
-        <View
-          style={{
-            borderWidth: 3,
-            borderStyle: 'solid',
-            borderColor: values.includes(2) ? Colors.primary : Colors.lime,
-            height: 50,
-            justifyContent: 'center',
-            backgroundColor: values.includes(3) ? Colors.bisque : Colors.olive,
-          }}>
-          <Icon
-            name={values.includes(1) ? 'plus' : 'minus'}
-            size={30}
-            color={values.includes(1) ? Colors.pink : Colors.orange}
-            style={[sg.mH10, sg.aSCenter]}
-          />
-        </View>
         {arrowCheckbox.map((it, index) => (
-          <Checkbox
-            {...it}
-            containerStyle={index !== 0 ? sg.mT10 : sg.mT10}
-            onPress={onSelectValue(it)}
-            icon={values.includes(it.id) ? 'check-square' : 'square'}
-            colorIcon={Colors.btnPrimaryBG}
-            sizeIcon={20}
-          />
+          <View key={it.id}>
+            <Checkbox
+              {...it}
+              containerStyle={[index !== 0 && sg.mT10]}
+              onPress={onSelectValue(it)}
+              icon={values.includes(it.id)}
+              colorIcon={Colors.btnPrimaryBG}
+              sizeIcon={20}
+            />
+          </View>
         ))}
-        {values.includes(4) && (
-          <Text
-            style={[
-              sg.fS20,
-              sg.aSCenter,
-              sg.mT10,
-              {color: Colors.white, textAlign: 'center'},
-            ]}>
-            You click button with name 'Click 4'
-          </Text>
-        )}
       </View>
     </ScreenView>
   );

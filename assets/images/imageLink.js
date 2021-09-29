@@ -180,3 +180,8 @@ export const autumn = {
   uri:
     'https://cdn.icon-icons.com/icons2/1715/PNG/512/2730383-fall-inkcontober-leaf-orange-season_112685.png',
 };
+
+export const lightningLogo = {
+  uri:
+    'https://codesign.com.bd/conversations/content/images/2020/03/Sprint-logo-design-Codesign-agency.png',
+};

@@ -24,11 +24,11 @@ const Profile = ({navigation}) => {
 
   useEffect(() => {
     fetchGitHub(token)
-      .then((response) => {
-        dispatch(userDataResponse(response.data));
-        console.log(response.data);
+      .then((resp) => {
+        dispatch(userDataResponse(resp.data));
+        console.log(resp.data);
       })
-      .catch((error) => console.log(error));
+      .catch((e) => console.log(e));
   }, []);
 
   const goTo = (route) => () => navigation.navigate(route);
@@ -38,7 +38,7 @@ const Profile = ({navigation}) => {
       <View style={sg.flex}>
         <View style={ProfileScreenStyle.box}>
           <View style={[sg.absolute, sg.right0, sg.mT10]}>
-            <Text style={ProfileScreenStyle.login}>{user.login}</Text>
+            <Text style={ProfileScreenStyle.login}>{user?.login}</Text>
             <ButtonWithIcon
               text="Online"
               icon="mobile-alt"
@@ -48,12 +48,7 @@ const Profile = ({navigation}) => {
               disabled={true}
             />
             <TouchableOpacity>
-              <Text
-                style={{
-                  color: Colors.blue2,
-                  fontSize: 14,
-                  ...sg.mT5,
-                }}>
+              <Text style={[sg.fS14, sg.mT5, {color: Colors.blue2}]}>
                 Set status
               </Text>
             </TouchableOpacity>
