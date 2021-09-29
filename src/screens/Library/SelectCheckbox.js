@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Button, Checkbox, Header, ScreenView, Text} from '../../components';
+import {Button, Checkbox, Header, ScreenView} from '../../components';
 import {View} from 'react-native';
 import {Colors, sg} from '../../styling';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const arrowCheckbox = [
   {title: 'Click 1', id: 1},
